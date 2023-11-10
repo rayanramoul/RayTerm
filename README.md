@@ -9,6 +9,7 @@ Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-
 | Keybinding  | Description |
 | ------------- | ------------- |
 | y y p | Duplicate line |
+| Ctrl p | Telescope lookup a file |
 | Space + fs | File search |
 | % | Create a new file |
 | d | Create a new directory |
