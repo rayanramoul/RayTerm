@@ -13,6 +13,7 @@ and
 ### Debug LSP :
 Launch the command :
 :lua print(vim.inspect(vim.lsp.get_active_clients()))
+;LspInfo
 
 ### Neovim Keybinds :
 Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-should-i-learn.html
