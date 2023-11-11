@@ -10,6 +10,10 @@ Copilot is already setup in the editor you just have to run the first time :
 and 
 :Copilot setup
 
+### Debug LSP :
+Launch the command :
+:lua print(vim.inspect(vim.lsp.get_active_clients()))
+
 ### Neovim Keybinds :
 Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-should-i-learn.html
 | Keybinding  | Description |
