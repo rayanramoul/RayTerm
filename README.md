@@ -11,6 +11,7 @@ Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-
 | y y p | Duplicate line |
 | Ctrl p | Telescope lookup a file |
 | Space + fs | File search |
+| Ctrl + f | Tmux Jump Between projects |
 | % | Create a new file |
 | d | Create a new directory |
 | dd | Delete a line |
@@ -29,6 +30,12 @@ Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-
 | Harpoon Ctrl s | nav file 4 |  
 | Ctrl y | Accept an LSP suggestion |
 
+LSP :
+
+| Ctrl y | Accept an LSP suggestion |
+| Ctrl n | Next LSP suggestion |
+| Ctrl p | Previous LSP suggestion |
+| g d | Jump to Definition |
 # The vim Language
 ## Buffers, Splits/Windows and Tabs
 
