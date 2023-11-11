@@ -4,6 +4,12 @@ wget https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 
 and then run all the .sh scripts in that directory!
 
+### Setup Copilot :
+Copilot is already setup in the editor you just have to run the first time : 
+:Copilot setup
+and 
+:Copilot setup
+
 ### Neovim Keybinds :
 Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-should-i-learn.html
 | Keybinding  | Description |
