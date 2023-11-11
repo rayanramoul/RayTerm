@@ -16,6 +16,8 @@ Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-
 | ------------- | ------------- |
 
 Explore Project :
+| Keybinding  | Description |
+| ------------- | ------------- |
 | Ctrl p | Telescope lookup a file |
 | Space pv | Go back to file explorer |
 | Space + fs | File search |
@@ -32,6 +34,8 @@ Explore Project :
 | Harpoon Ctrl s | nav file 4 |  
 
 In File
+| Keybinding  | Description |
+| ------------- | ------------- |
 | y y p | Duplicate line |
 | d | Create a new directory |
 | dd | Delete a line |
@@ -41,6 +45,8 @@ In File
 | { | Jump previous paragraph | 
 
 LSP :
+| Keybinding  | Description |
+| ------------- | ------------- |
 | Ctrl y | Accept an LSP suggestion |
 | Ctrl n | Next LSP suggestion |
 | Ctrl p | Previous LSP suggestion |
