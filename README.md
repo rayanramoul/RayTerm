@@ -25,6 +25,7 @@ Explore Project :
 | Keybinding  | Description |
 | ------------- | ------------- |
 | Ctrl p | Telescope lookup a file |
+| Space pf | Telescope lookup a GIT file |
 | Space pv | Go back to file explorer |
 | Space + fs | File search |
 | Ctrl + f | Tmux Jump Between projects |
