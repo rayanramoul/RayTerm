@@ -42,6 +42,10 @@ In File
 | Keybinding  | Description |
 | ------------- | ------------- |
 | y y p | Duplicate line |
+| x | Delete character under cursor |
+| r | Replace character under cursor |
+| A | Move in insert mode to beginning of the line |
+| a | Move in insert mode AFTER the cursor |
 | d | Create a new directory |
 | dd | Delete a line |
 | f + Character | Search/go-to where the caracter appears in the line |
