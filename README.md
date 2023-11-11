@@ -18,6 +18,7 @@ Launch the command :
 Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-should-i-learn.html
 | Keybinding  | Description |
 | ------------- | ------------- |
+| :!command (for example run binary or do python) | Execute shell commands |
 
 Explore Project :
 | Keybinding  | Description |
