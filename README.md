@@ -39,7 +39,7 @@ Explore Project :
 | Ctrl p | Telescope lookup a file |
 | Space pf | Telescope lookup a GIT file |
 | Space pv | Go back to file explorer |
-| Space + fs | File search |
+| Space + ps | Content File search |
 | Ctrl + f | Tmux Jump Between projects |
 | % | Create a new file |
 | d | Create a new directory |
