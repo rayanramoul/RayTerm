@@ -4,6 +4,9 @@ wget https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 
 and then run all the .sh scripts in that directory!
 
+### Ensure all LSPs are setup :
+:MasonInstallAll
+
 ### Setup Copilot :
 Copilot is already setup in the editor you just have to run the first time : 
 :Copilot setup
