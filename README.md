@@ -3,6 +3,11 @@
 wget https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 
 and then run all the .sh scripts in that directory!
+### To Do :
+- Make the autoformat work on save (now it works with Space + f + m)
+- Make the debugger ui work
+- Configure Harpoon.
+- Review all the remaps.
 
 ### Ensure all LSPs are setup :
 :MasonInstallAll
