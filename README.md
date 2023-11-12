@@ -13,7 +13,16 @@ and
 ### Debug LSP :
 Launch the command :
 :lua print(vim.inspect(vim.lsp.get_active_clients()))
-;LspInfo
+:LspInfo
+
+### Conda envionements :
+They're managed through https://github.com/kmontocam/nvim-conda
+Commands
+
+-    :CondaActivate - lists conda environments in menu and activates selected
+-    :CondaActivate <env_name> - activates the given conda environment
+-    :CondaDeactivate - deactivates the active conda environment
+
 
 ### Neovim Keybinds :
 Reference  for Tutorial : https://ofirgall.github.io/learn-nvim/chapters/00-why-should-i-learn.html
