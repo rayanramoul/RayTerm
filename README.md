@@ -8,7 +8,7 @@ and then run all the .sh scripts in that directory!
 Copilot is already setup in the editor you just have to run the first time : 
 :Copilot setup
 and 
-:Copilot setup
+:Copilot enable
 
 ### Debug LSP :
 Launch the command :
