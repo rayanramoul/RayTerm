@@ -68,6 +68,7 @@ In File
 | d | Create a new directory |
 | dd | Delete a line |
 | f + Character | Search/go-to where the caracter appears in the line |
+| g d | Jump to DEFINITION |
 | Space u | Open Undo tree |
 | Space gs | Open Fugitive Git manipulation |
 | { | Jump previous paragraph | 
