@@ -6,7 +6,6 @@ and then run all the .sh scripts in that directory!
 ### To Do :
 - Make the autoformat work on save (now it works with Space + f + m)
 - Make the debugger ui work
-- Configure Harpoon.
 - Review all the remaps.
 
 ### Ensure all LSPs are setup :
@@ -69,6 +68,8 @@ In File
 | dd | Delete a line |
 | f + Character | Search/go-to where the caracter appears in the line |
 | g d | Jump to DEFINITION |
+| Ctrl d | Half page JUMP FORWARD |
+| Ctrl u | Half page JUMP BACKWARD |
 | Space u | Open Undo tree |
 | Space gs | Open Fugitive Git manipulation |
 | { | Jump previous paragraph | 
@@ -80,6 +81,18 @@ LSP :
 | Ctrl n | Next LSP suggestion |
 | Ctrl p | Previous LSP suggestion |
 | g d | Previous LSP suggestion |
+
+HARPOON :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Ctrl a | APPEND file to harpoon |
+| Ctrl e | TOGGLE MENU |
+| Ctrl t | Nav 1 |
+| Ctrl h | Nav 2 |
+| Ctrl n | Nav 3 |
+| Ctrl s | Nav 4 |
+
+
 # The vim Language
 ## Buffers, Splits/Windows and Tabs
 
