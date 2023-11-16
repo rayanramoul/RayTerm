@@ -49,12 +49,6 @@ Explore Project :
 | d | Create a new directory |
 | Ctrl e | Toggle/Show harpoon menu |
 | D (in file explorer | Delete file |
-| Harpoon Space a | Add file |
-| Harpoon Ctrl e | toggle quick menu |
-| Harpoon Ctrl h | nav file 1 |  
-| Harpoon Ctrl t | nav file 2 |  
-| Harpoon Ctrl n | nav file 3 |  
-| Harpoon Ctrl s | nav file 4 |  
 
 In File
 | Keybinding  | Description |
@@ -72,7 +66,7 @@ In File
 | Ctrl u | Half page JUMP BACKWARD |
 | Space u | Open Undo tree |
 | Space gs | Open Fugitive Git manipulation |
-| { | Jump previous paragraph | 
+| {/} | Jump between Paragraphs | 
 
 LSP :
 | Keybinding  | Description |
@@ -81,6 +75,14 @@ LSP :
 | Ctrl n | Next LSP suggestion |
 | Ctrl p | Previous LSP suggestion |
 | g d | Previous LSP suggestion |
+
+MULTI PAGE :
+Every multi page command start usually with Ctrl w
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Ctrl w h/j/k/l | Move in directions between the windows |
+| Ctrl w s | Create Horizontal split |
+| Ctrl w o | Close all windows |
 
 HARPOON :
 | Keybinding  | Description |
