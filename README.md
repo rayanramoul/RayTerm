@@ -67,6 +67,9 @@ In File
 | Space u | Open Undo tree |
 | Space gs | Open Fugitive Git manipulation |
 | {/} | Jump between Paragraphs | 
+| vi" | Select everything inside " | 
+| vi( | Select everything inside ( |
+
 
 LSP :
 | Keybinding  | Description |
@@ -94,7 +97,15 @@ HARPOON :
 | Ctrl n | Nav 3 |
 | Ctrl s | Nav 4 |
 
+Indentation :
+Here's a step-by-step example:
 
+- Move to the first line you want to indent.
+- Press v to start visual mode.
+- Select the lines with the arrow keys.
+- Press > to indent right or < to indent left.
+- Press Esc to exit visual mode.
+    
 # The vim Language
 ## Buffers, Splits/Windows and Tabs
 
