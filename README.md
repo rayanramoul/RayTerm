@@ -4,7 +4,6 @@ wget https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 
 and then run all the .sh scripts in that directory!
 ### To Do :
-- Make the debugger ui work
 - Review all the remaps.
 
 ### Ensure all LSPs are setup :
@@ -104,6 +103,7 @@ DAP DEBUGGING :
 | Space d b | TOGGLE BREAKPOINT |
 | Space d l | RUN LAST |
 | Space d c | CONTINUE |
+| Space d u i | DAP UI TOGGLE |
 
 Indentation :
 Here's a step-by-step example:
