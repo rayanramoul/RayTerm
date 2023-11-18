@@ -91,6 +91,7 @@ HARPOON :
 | Keybinding  | Description |
 | ------------- | ------------- |
 | Ctrl a | APPEND file to harpoon |
+| Ctrl x | REMOVE file to harpoon |
 | Ctrl e | TOGGLE MENU |
 | Ctrl t | Nav 1 |
 | Ctrl h | Nav 2 |
