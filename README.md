@@ -68,6 +68,7 @@ In File
 | {/} | Jump between Paragraphs | 
 | vi" | Select everything inside " | 
 | vi( | Select everything inside ( |
+| Visual mode : g c | COMMENT |
 
 
 LSP :
