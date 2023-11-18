@@ -62,6 +62,8 @@ In File
 | Keybinding  | Description |
 | ------------- | ------------- |
 | y y p | Duplicate line |
+| u | Undo |
+| Ctrl r | Redo |
 | x | Delete character under cursor |
 | r | Replace character under cursor |
 | A | Move in insert mode to beginning of the line |
