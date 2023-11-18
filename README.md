@@ -60,6 +60,7 @@ In File
 | dd | Delete a line |
 | f + Character | Search/go-to where the caracter appears in the line |
 | g d | Jump to DEFINITION |
+| Ctrl O | Jump BACK FROM DEFINITION |
 | Ctrl d | Half page JUMP FORWARD |
 | Ctrl u | Half page JUMP BACKWARD |
 | Space u | Open Undo tree |
@@ -76,7 +77,6 @@ LSP :
 | Ctrl y | Accept an LSP suggestion |
 | Ctrl n | Next LSP suggestion |
 | Ctrl p | Previous LSP suggestion |
-| g d | Previous LSP suggestion |
 
 MULTI PAGE :
 Every multi page command start usually with Ctrl w
