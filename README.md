@@ -1,5 +1,10 @@
 # Getting Started :
-# NeoVIM
+Welcome to the NeoVim configuration guide. This document provides a comprehensive overview of setting up and using my NeoVim configuration, including keybindings, plugins, and additional tools like tmux.
+Initial Setup
+
+To get started with this NeoVim configuration, clone the repository into your NeoVim configuration directory:
+
+# Initial Setup
 ```bash
 git clone https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 ```
@@ -91,7 +96,9 @@ Every multi page command start usually with Ctrl w
 | ------------- | ------------- |
 | Ctrl w h/j/k/l | Move in directions between the windows |
 | Ctrl w s | Create Horizontal split |
-| Ctrl w o | Close all windows |
+| Ctrl w v | Create Vertical split |
+| Ctrl w o | Close all splits except current |
+| Ctrl w c | Close current split |
 
 HARPOON :
 | Keybinding  | Description |
@@ -120,7 +127,34 @@ Here's a step-by-step example:
 - Select the lines with the arrow keys.
 - Press > to indent right or < to indent left.
 - Press Esc to exit visual mode.
-    
+
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Ctrl-b "	| Split pane horizontally |
+| Ctrl-b %	| Split pane vertically |
+| Ctrl-b arrow key	| Navigate between panes (use arrow keys for direction) |
+| Ctrl-b c	| Create a new window |
+| Ctrl-b w	| List windows to select |
+| Ctrl-b n	| Move to the next window |
+| Ctrl-b p	| Move to the previous window |
+| Ctrl-b &	| Kill the current window |
+| Ctrl-b x	| Kill the current pane |
+| Ctrl-b [	| Enter scroll mode (navigate using arrow keys, exit with q) |
+| Ctrl-b ]	| Paste from the tmux buffer |
+| Ctrl-b z	| Toggle pane zoom |
+| Ctrl-b d	| Detach from the current session |
+| Ctrl-b t	| Show a large clock in the current pane |
+| Ctrl-b ,	| Rename the current window |
+| Ctrl-b $	| Rename the current session |
+| Ctrl-b o	| Rotate panes |
+| Ctrl-b ;	| Toggle between the current and previous pane |
+| Ctrl-b q	| Show pane numbers (press number to switch to that pane) |
+| Ctrl-b {	| Move the current pane left |
+| Ctrl-b }	| Move the current pane right |
+| Ctrl-b L	| Move to the previously selected pane |
+| Ctrl-b M	| Toggle mouse mode on/off |
+| Ctrl-b :	| Enter command mode |
+
 # The vim Language
 ## Buffers, Splits/Windows and Tabs
 
