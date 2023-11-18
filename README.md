@@ -98,6 +98,12 @@ HARPOON :
 | Ctrl n | Nav 3 |
 | Ctrl s | Nav 4 |
 
+DAP DEBUGGING :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Space d b | TOGGLE BREAKPOINT |
+| Space d l | RUN LAST |
+
 Indentation :
 Here's a step-by-step example:
 
