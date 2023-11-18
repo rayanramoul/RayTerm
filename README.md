@@ -103,6 +103,7 @@ DAP DEBUGGING :
 | ------------- | ------------- |
 | Space d b | TOGGLE BREAKPOINT |
 | Space d l | RUN LAST |
+| Space d c | CONTINUE |
 
 Indentation :
 Here's a step-by-step example:
