@@ -66,9 +66,13 @@ In File
 | Ctrl r | Redo |
 | x | Delete character under cursor |
 | r | Replace character under cursor |
+| _ | JUMP BEGINNING LINE |
+| $ | JUMP END LINE |
+| r | Replace character under cursor |
 | A | Move in insert mode to beginning of the line |
 | a | Move in insert mode AFTER the cursor |
-| d | Create a new directory |
+| a | Move in insert mode AFTER the cursor |
+| d | Delete and put in buffer |
 | dd | Delete a line |
 | f + Character | Search/go-to where the caracter appears in the line |
 | g d | Jump to DEFINITION |
