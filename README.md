@@ -1,6 +1,8 @@
 # Getting Started :
 # NeoVIM
-wget https://github.com/rayanramoul/nvim-configs ~/.config/nvim
+```bash
+git clone https://github.com/rayanramoul/nvim-configs ~/.config/nvim
+```
 
 and then run all the .sh scripts in that directory!
 ### To Do :
@@ -11,22 +13,27 @@ and then run all the .sh scripts in that directory!
 
 ### Setup Copilot :
 Copilot is already setup in the editor you just have to run the first time : 
+```
 :Copilot setup
-and 
+```
+and
+```
 :Copilot enable
+```
 
 ### Debug LSP :
 Launch the command :
+```
 :lua print(vim.inspect(vim.lsp.get_active_clients()))
 :LspInfo
-
+```
 ### Conda envionements :
 They're managed through https://github.com/kmontocam/nvim-conda
 Commands
 
--    :CondaActivate - lists conda environments in menu and activates selected
--    :CondaActivate <env_name> - activates the given conda environment
--    :CondaDeactivate - deactivates the active conda environment
+-    ```:CondaActivate``` - lists conda environments in menu and activates selected
+-    ```:CondaActivate <env_name>``` - activates the given conda environment
+-    ```:CondaDeactivate``` - deactivates the active conda environment
 
 
 ### Neovim Keybinds :
@@ -191,22 +198,6 @@ Basic binds
     u - Undo, check out undotree
     Ctrl-r - Redo
     zz - Recenter the screen, there are more binds for screen actions but this is the most important one
-
-Basic movements
-Arrows
-
-    h - left
-    j - down
-    k - up
-    l - right
-
-It takes some time getting used to it but it's worth it, I recommend disabling the arrow keys for movement and try the game hjkl in vim-be-good.
-
--- Disable arrows movement
-map('', '<Up>', '<Nop>')
-map('', '<Down>', '<Nop>')
-map('', '<Left>', '<Nop>')
-map('', '<Right>', '<Nop>')
 
 Multiply Movement
 
