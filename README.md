@@ -10,8 +10,6 @@ git clone https://github.com/rayanramoul/nvim-configs ~/.config/nvim
 ```
 
 and then run all the .sh scripts in that directory!
-### To Do :
-- Review all the remaps.
 
 ### Ensure all LSPs are setup :
 :MasonInstallAll
