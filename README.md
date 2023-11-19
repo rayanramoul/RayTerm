@@ -1,3 +1,11 @@
+<div align="center">
+ <h1>RayTerm</h1>
+  <img src="https://github.com/rayanramoul/RayTerm/blob/master/screenshot.png?raw=true" alt="RayTerm">
+  </img>
+
+</div>
+
+
 # Getting Started :
 Welcome to the NeoVim configuration guide. This document provides a comprehensive overview of setting up and using my NeoVim configuration, including keybindings, plugins, and additional tools like tmux.
 Initial Setup
