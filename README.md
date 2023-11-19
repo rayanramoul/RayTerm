@@ -177,8 +177,6 @@ Here's a step-by-step example:
 This section provides an overview of the plugins used in this NeoVim configuration, along with their purpose and functionality.
 
 ### Core Functionality
-
-- **[ray](#)**: *(Link or description needed, as it's not a well-known plugin.)*
 - **[lazy.nvim](https://github.com/folke/lazy.nvim)**: A plugin to facilitate lazy loading of other plugins, improving startup time.
 
 ### Navigation & File Management
@@ -187,7 +185,6 @@ This section provides an overview of the plugins used in this NeoVim configurati
 - **[nvim-tree/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)**: A file explorer tree for navigating and managing your filesystem.
 - **[theprimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)**: Bookmark manager for quick navigation between frequently used files.
 - **[numToStr/Navigator.nvim](https://github.com/numToStr/Navigator.nvim)**: Seamlessly navigate between splits and windows.
-- **[prichrd/netrw.nvim](#)**: *(This seems to be a custom or lesser-known plugin; a link or description would be helpful.)*
 
 ### User Interface Enhancements
 
