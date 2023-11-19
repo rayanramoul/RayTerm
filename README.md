@@ -65,6 +65,8 @@ Explore Project :
 | a (in file explorer) | Create new File |
 | A (in file explorer) | Create new Directory |
 | r (in file explorer) | Rename  |
+| q (in file explorer) | Close  |
+| m (in file explorer) | Move  |
 
 
 In File
