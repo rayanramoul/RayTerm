@@ -63,7 +63,6 @@ Explore Project :
 | Ctrl + f | Tmux Jump Between projects |
 | % | Create a new file |
 | d | Create a new directory |
-| Ctrl e | Toggle/Show harpoon menu |
 | D (in file explorer | Delete file |
 
 In File
@@ -124,10 +123,10 @@ HARPOON :
 | Ctrl a | APPEND file to harpoon |
 | Ctrl x | REMOVE file to harpoon |
 | Ctrl e | TOGGLE MENU |
-| Ctrl t | Nav 1 |
-| Ctrl h | Nav 2 |
-| Ctrl n | Nav 3 |
-| Ctrl s | Nav 4 |
+| Alt 1 | Nav 1 |
+| Alt 2 | Nav 2 |
+| Alt 3 | Nav 3 |
+| Alt 4 | Nav 4 |
 
 DAP DEBUGGING :
 | Keybinding  | Description |
