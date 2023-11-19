@@ -79,6 +79,7 @@ In File
 | r | Replace character under cursor |
 | _ | JUMP BEGINNING LINE |
 | $ | JUMP END LINE |
+| p | New LINE |
 | r | Replace character under cursor |
 | A | Move in insert mode to beginning of the line |
 | a | Move in insert mode AFTER the cursor |
@@ -139,6 +140,7 @@ DAP DEBUGGING :
 | Space d l | RUN LAST |
 | Space d c | CONTINUE |
 | Space d u i | DAP UI TOGGLE |
+| Space 5 | RUN CURRENT FILE |
 
 Indentation :
 Here's a step-by-step example:
