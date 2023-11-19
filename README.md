@@ -61,9 +61,11 @@ Explore Project :
 | Space pv | Go back to file explorer |
 | Space + ps | Content File search |
 | Ctrl + f | Tmux Jump Between projects |
-| % | Create a new file |
-| d | Create a new directory |
-| D (in file explorer | Delete file |
+| d | Delete |
+| a (in file explorer) | Create new File |
+| A (in file explorer) | Create new Directory |
+| r (in file explorer) | Rename  |
+
 
 In File
 | Keybinding  | Description |
