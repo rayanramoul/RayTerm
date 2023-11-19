@@ -142,6 +142,13 @@ DAP DEBUGGING :
 | Space d u i | DAP UI TOGGLE |
 | Space 5 | RUN CURRENT FILE |
 
+TMUX :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Ctrl b h/j/k/l | Move between Panes |
+| Shift Alt h/l | Move between Windows |
+
+
 Indentation :
 Here's a step-by-step example:
 
