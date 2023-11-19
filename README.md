@@ -74,7 +74,8 @@ In File
 | a | Move in insert mode AFTER the cursor |
 | d | Delete and put in buffer |
 | dd | Delete a line |
-| f + Character | Search/go-to Forward where the caracter appears in the line |
+| f + Character | Jump-on Forward where the caracter appears in the line |
+| t + Character | Jump-to Forward where the caracter appears in the line |
 | g d | Jump to DEFINITION |
 | Ctrl O | Jump BACK FROM DEFINITION |
 | Ctrl d | Half page JUMP FORWARD |
