@@ -95,6 +95,11 @@ In File
 | vi( | Select everything inside ( |
 | Visual mode : g c | COMMENT |
 
+TERMINAL :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Ctrl t | Open/Close Terminal |
+
 
 LSP :
 | Keybinding  | Description |
