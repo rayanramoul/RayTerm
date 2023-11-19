@@ -123,10 +123,10 @@ HARPOON :
 | Ctrl a | APPEND file to harpoon |
 | Ctrl x | REMOVE file to harpoon |
 | Ctrl e | TOGGLE MENU |
-| Alt 1 | Nav 1 |
-| Alt 2 | Nav 2 |
-| Alt 3 | Nav 3 |
-| Alt 4 | Nav 4 |
+| Space 1 | Nav 1 |
+| Space 2 | Nav 2 |
+| Space 3 | Nav 3 |
+| Space 4 | Nav 4 |
 
 DAP DEBUGGING :
 | Keybinding  | Description |
