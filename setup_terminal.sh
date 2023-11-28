@@ -165,7 +165,7 @@ install_packages_ubuntu_amazon() {
       exit 1
   fi
 
-  $PKG_INSTALL_CMD neovim zsh tmux fzf
+  $PKG_INSTALL_CMD neovim zsh tmux fzf lazygit bat exa fd-find ripgrep ansible lsd fastfetch bpytop
   install_common_packages
 }
 
@@ -175,6 +175,7 @@ if [ "$OS" = "Linux" ]; then
   if [ -f /etc/arch-release ]; then
     echo "Running setup for Arch Linux..."
     pacman -Sy --noconfirm neovim zsh fzf tmux
+    pacman -Sy --noconfirm bpytop lsd fastfetch ansible bat exa fd ripgrep lazygit
     install_common_packages
   else
     echo "Running setup for Ubuntu or Amazon Linux..."
@@ -190,7 +191,7 @@ elif [ "$OS" = "Darwin" ]; then
   fi
 
   # Install packages using Homebrew
-  brew install neovim zsh
+  brew install neovim zsh tmux fzf lazygit bat exa fd ripgrep ansible lsd fastfetch bpytop
   brew install --cask alacritty
 
   install_common_packages
