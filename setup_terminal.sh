@@ -78,9 +78,50 @@ install_common_packages() {
   wget -O ~/.p10k.zsh https://raw.githubusercontent.com/rayanramoul/RayTerm/master/.p10k.zsh
 
   echo "Installing Miniconda..."
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  chmod +x Miniconda3-latest-Linux-x86_64.sh
-  ./Miniconda3-latest-Linux-x86_64.sh -b -p "$HOME/miniconda"
+  # Function to install miniconda
+install_miniconda3() {
+  # Check if Conda is already installed
+  if command -v conda >/dev/null 2>&1;
+  then
+      echo "${YELLOW} Conda is already installed. ${RESET}"
+  else
+    echo "${YELLOW} Conda is not installed. Installing... ${RESET}"
+
+    case "$(uname -s)" in
+      Linux*)
+      # Download and install Miniconda
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      chmod +x Miniconda3-latest-Linux-x86_64.sh
+      bash Miniconda3-latest-Linux-x86_64.sh
+
+      # Initialize Conda for the current shell
+      source $HOME/miniconda3/etc/profile.d/conda.sh
+
+      echo "${YELLOW}Initializing Conda for the default shell $(basename $SHELL) ${RESET}"
+      # Get the shell's configuration file
+      shell_config=""
+
+      case "$(basename $SHELL)" in
+          bash) shell_config=~/.bashrc;;
+          zsh) shell_config=~/.zshrc;;
+          *)   echo "${RED}Shell type $(basename $SHELL) is not supported. Manual initialization may be required.${RESET}";;
+      esac
+
+      if [ -n "$shell_config" ]; then
+          # Initialize Conda for the restarted shell
+          ~/miniconda3/bin/conda init $(basename $SHELL)
+
+      echo  "${YELLOW} Conda has been automatically initialized in your terminal and you should see (base). if not, restart it manually and verify that it's inside your file shell_config.${RESET}"
+    fi
+    ;;
+    *)
+      echo "${RED}Miniconda installation with this script is only supported on Linux at the moment.${RESET}"
+      ;;
+    esac
+  fi
+}
+
+install_miniconda3
 
   echo "Installing tmux..."
   if [ "$OS" = "Linux" ]; then
