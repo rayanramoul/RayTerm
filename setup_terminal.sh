@@ -74,8 +74,8 @@ install_common_packages() {
   echo "Downloading .zshrc and .p10k.zsh..."
   # Remove existing config files if they exist
   rm -f ~/.zshrc ~/.p10k.zsh
-  wget -O ~/.zshrc https://raw.githubusercontent.com/your_username/your_repo/master/dotfiles/.zshrc
-  wget -O ~/.p10k.zsh https://raw.githubusercontent.com/your_username/your_repo/master/dotfiles/.p10k.zsh
+  wget -O ~/.zshrc https://raw.githubusercontent.com/rayanramoul/RayTerm/master/.zshrc
+  wget -O ~/.p10k.zsh https://raw.githubusercontent.com/rayanramoul/RayTerm/master/.p10k.zsh
 
   echo "Installing Miniconda..."
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
