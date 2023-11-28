@@ -185,6 +185,13 @@ Here's a step-by-step example:
 | Ctrl-b M	| Toggle mouse mode on/off |
 | Ctrl-b :	| Enter command mode |
 
+# TODO
+- Add bpytop
+- Add lsd insted of ls
+- Add fast neofetch at the start of zsh call
+- Add ANSIBLE ssh restoration
+- Add bat instead of cat
+
 # NeoVim Plugin Overview
 
 This section provides an overview of the plugins used in this NeoVim configuration, along with their purpose and functionality.

@@ -4,6 +4,41 @@
 OS="$(uname)"
 echo "Detected OS: $OS"
 
+# Function to install wget depending on the OS
+install_wget() {
+  echo "Installing wget..."
+
+  if [ "$OS" = "Darwin" ]; then
+    # Install wget using Homebrew on macOS
+    if ! command -v brew &> /dev/null; then
+      echo "Homebrew not found. Installing Homebrew first..."
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    brew install wget
+  elif [ "$OS" = "Linux" ]; then
+    # For Linux, determine if it's Arch, Ubuntu, or Amazon Linux
+    if [ -f /etc/arch-release ]; then
+      pacman -Sy --noconfirm wget
+    else
+      # For Ubuntu or Amazon Linux
+      if command -v apt &> /dev/null; then
+        apt-get update && apt-get install -y wget
+      elif command -v yum &> /dev/null; then
+        yum install -y wget
+      else
+        echo "Neither apt nor yum found. Exiting."
+        exit 1
+      fi
+    fi
+  else
+    echo "Unsupported OS for wget installation."
+    exit 1
+  fi
+}
+
+# Install wget first
+install_wget
+
 # Function to get the Python command
 get_python_cmd() {
   if command -v python3 &>/dev/null; then
@@ -13,7 +48,7 @@ get_python_cmd() {
   fi
 }
 
-# Installation and configuration steps that are common between Arch Linux and macOS
+# Installation and configuration steps that are common between Arch Linux, macOS, Ubuntu, and Amazon Linux
 install_common_packages() {
   echo "Installing Oh-My-Zsh..."
   sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -28,8 +63,6 @@ install_common_packages() {
   echo "Installing additional fonts from 'fonts' folder..."
   cp -r fonts/* "${FONT_PATH}/"
 
-  echo "Generating an SSH key..."
-  ssh-keygen -t rsa -b 4096 # specifying the type and bit length for the key
 
   echo "Configuring Zsh plugins..."
   ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
@@ -41,17 +74,17 @@ install_common_packages() {
   echo "Downloading .zshrc and .p10k.zsh..."
   # Remove existing config files if they exist
   rm -f ~/.zshrc ~/.p10k.zsh
-  wget -O ~/.zshrc https://raw.githubusercontent.com/rayanramoul/BetterLinux/master/dotfiles/.zshrc
-  wget -O ~/.p10k.zsh https://raw.githubusercontent.com/rayanramoul/BetterLinux/master/dotfiles/.p10k.zsh
+  wget -O ~/.zshrc https://raw.githubusercontent.com/your_username/your_repo/master/dotfiles/.zshrc
+  wget -O ~/.p10k.zsh https://raw.githubusercontent.com/your_username/your_repo/master/dotfiles/.p10k.zsh
 
   echo "Installing Miniconda..."
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  sudo chmod +x Miniconda3-latest-Linux-x86_64.sh
-  ./Miniconda3-latest-Linux-x86_64.sh
+  chmod +x Miniconda3-latest-Linux-x86_64.sh
+  ./Miniconda3-latest-Linux-x86_64.sh -b -p "$HOME/miniconda"
 
   echo "Installing tmux..."
   if [ "$OS" = "Linux" ]; then
-    sudo pacman -S --noconfirm tmux
+    pacman -S --noconfirm tmux
   elif [ "$OS" = "Darwin" ]; then
     brew install tmux
   fi
@@ -59,15 +92,16 @@ install_common_packages() {
 
   echo "Installing fzf..."
   if [ "$OS" = "Linux" ]; then
-    sudo pacman -S --noconfirm fzf
+    pacman -S --noconfirm fzf lazygit
   elif [ "$OS" = "Darwin" ]; then
     brew install fzf
+    brew install lazygit
   fi
   echo "Default keybindings for fzf: 'Ctrl-r' for command history search and 'Ctrl-t' for file search."
 
   echo "Installing Alacritty..."
   if [ "$OS" = "Linux" ]; then
-    sudo pacman -S --noconfirm alacritty
+    pacman -S --noconfirm alacritty
   elif [ "$OS" = "Darwin" ]; then
     brew install --cask alacritty
   fi
@@ -76,13 +110,35 @@ install_common_packages() {
   cp .alacritty/* ~/.config/alacritty/
 }
 
+# Function to install packages on Ubuntu or Amazon Linux
+install_packages_ubuntu_amazon() {
+  # Determine package manager (apt for Ubuntu, yum for Amazon Linux)
+  if command -v apt &> /dev/null; then
+      PKG_MANAGER="apt"
+      PKG_INSTALL_CMD="apt-get install -y"
+  elif command -v yum &> /dev/null; then
+      PKG_MANAGER="yum"
+      PKG_INSTALL_CMD="yum install -y"
+  else
+      echo "Neither apt nor yum found. Exiting."
+      exit 1
+  fi
+
+  $PKG_INSTALL_CMD neovim zsh tmux fzf
+  install_common_packages
+}
+
 # Install packages depending on OS
 if [ "$OS" = "Linux" ]; then
-  echo "Running setup for Arch Linux..."
-  # Install packages using pacman and yay
-  sudo pacman -Sy --noconfirm neovim alacritty zsh
-  yay -S --noconfirm neovim alacritty zsh
-  install_common_packages
+  # Determine if it's Arch, Ubuntu, or Amazon Linux
+  if [ -f /etc/arch-release ]; then
+    echo "Running setup for Arch Linux..."
+    pacman -Sy --noconfirm neovim zsh fzf tmux
+    install_common_packages
+  else
+    echo "Running setup for Ubuntu or Amazon Linux..."
+    install_packages_ubuntu_amazon
+  fi
 
 elif [ "$OS" = "Darwin" ]; then
   echo "Running setup for macOS..."
@@ -118,3 +174,4 @@ PYTHON_CMD=$(get_python_cmd)
 $PYTHON_CMD -m venv debugpy
 $HOME/.virtualenvs/debugpy/bin/python -m pip install debugpy
 cd - # Go back to the previous directory
+
