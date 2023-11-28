@@ -66,6 +66,16 @@ plugins = {
         end,
     },
     {'theprimeagen/harpoon'},
+    {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 	{'mbbill/undotree'},
 	{'github/copilot.vim'},
     -- Fugitive is a Git wrapper so awesome, it should be illegal
@@ -135,7 +145,14 @@ plugins = {
       lazy = false,
       priority = 1000,
       opts = {},
-    }
+    },
+    {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 }
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(plugins, opts)

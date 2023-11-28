@@ -148,6 +148,11 @@ TMUX :
 | Ctrl b h/j/k/l | Move between Panes |
 | Shift Alt h/l | Move between Windows |
 
+GIT :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| Space g g | Activate LazyGit |
+
 
 Indentation :
 Here's a step-by-step example:
