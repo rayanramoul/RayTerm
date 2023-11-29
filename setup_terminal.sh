@@ -30,8 +30,15 @@ install_wget() {
         apt install -y bat 
         apt install -y curl
         apt install -y python-pip
+        apt install -y python3-pip
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
+    npm install -g ruff-lsp
+
+    # Rust tools
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    rustup default stable
+    rustup component add rust-src
       elif command -v yum &> /dev/null; then
         yum install -y wget
         yum install -y python-pip
@@ -41,6 +48,12 @@ install_wget() {
         yum install -y lazygit
         yum install -y bat
         yum install -y curl
+    npm install -g ruff-lsp
+
+    # Rust tools
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    rustup default stable
+    rustup component add rust-src
       else
         echo "Neither apt nor yum found. Exiting."
         exit 1
