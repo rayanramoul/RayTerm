@@ -24,9 +24,11 @@ install_wget() {
     else
       # For Ubuntu or Amazon Linux
       if command -v apt &> /dev/null; then
-        apt-get update && apt-get install -y wget
+        apt-get update && apt-get install -y wget fzf lazygit
+        wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
+        dpkg -i lsd-musl_1.0.0_amd64.deb
       elif command -v yum &> /dev/null; then
-        yum install -y wget
+        yum install -y wget fzf lazygit
       else
         echo "Neither apt nor yum found. Exiting."
         exit 1
@@ -161,9 +163,15 @@ install_packages_ubuntu_amazon() {
       wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.2.3/fastfetch-2.2.3-Linux.deb
       apt install ./fastfetch-2.2.3-Linux.deb
       PKG_INSTALL_CMD="apt-get install -y"
+      LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+      tar xf lazygit.tar.gz lazygit
+      install lazygit /usr/local/bin
   elif command -v yum &> /dev/null; then
       PKG_MANAGER="yum"
       PKG_INSTALL_CMD="yum install -y"
+      dnf copr enable atim/lazygit -y
+      dnf install lazygit
   else
       echo "Neither apt nor yum found. Exiting."
       exit 1
