@@ -18,7 +18,7 @@ install_wget() {
   elif [ "$OS" = "Linux" ]; then
     # For Linux, determine if it's Arch, Ubuntu, or Amazon Linux
     if [ -f /etc/arch-release ]; then
-      pacman -Sy --noconfirm wget
+      pacman -Sy --noconfirm wget yay
     else
       # For Ubuntu or Amazon Linux
       if command -v apt &> /dev/null; then
