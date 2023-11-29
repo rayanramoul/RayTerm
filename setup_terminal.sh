@@ -183,8 +183,10 @@ install_packages_ubuntu_amazon() {
   fi
 
   $PKG_INSTALL_CMD zsh tmux fzf lazygit bat exa fd-find ripgrep ansible lsd fastfetch bpytop
-  $PKG_INSTALL_CMD snapd
-  snap install --edge nvim --classic
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+  tar xzf nvim-linux64.tar.gz
+  mv nvim-linux64/bin/nvim /usr/bin/nvim
+  mv nvim-linux64/share/nvim /usr/share/nvim
   install_common_packages
 }
 
