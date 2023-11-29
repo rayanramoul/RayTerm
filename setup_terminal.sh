@@ -14,21 +14,21 @@ install_wget() {
       echo "Homebrew not found. Installing Homebrew first..."
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
-    brew install wget
+    brew install wget curl
   elif [ "$OS" = "Linux" ]; then
     # For Linux, determine if it's Arch, Ubuntu, or Amazon Linux
     if [ -f /etc/arch-release ]; then
-      pacman -Sy --noconfirm wget
+      pacman -Sy --noconfirm wget curl
       pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
       cd .. && rm -rf yay-bin
     else
       # For Ubuntu or Amazon Linux
       if command -v apt &> /dev/null; then
-        apt-get update && apt-get install -y wget fzf lazygit bat
+        apt-get update && apt-get install -y wget fzf lazygit bat curl
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
       elif command -v yum &> /dev/null; then
-        yum install -y wget fzf lazygit bat
+        yum install -y wget fzf lazygit bat curl
       else
         echo "Neither apt nor yum found. Exiting."
         exit 1
