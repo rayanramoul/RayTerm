@@ -18,7 +18,9 @@ install_wget() {
   elif [ "$OS" = "Linux" ]; then
     # For Linux, determine if it's Arch, Ubuntu, or Amazon Linux
     if [ -f /etc/arch-release ]; then
-      pacman -Sy --noconfirm wget yay
+      pacman -Sy --noconfirm wget
+      pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+      cd .. && rm -rf yay-bin
     else
       # For Ubuntu or Amazon Linux
       if command -v apt &> /dev/null; then
