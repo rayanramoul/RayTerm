@@ -148,7 +148,7 @@ install_miniconda3
   fi
   echo "Alacritty installed. Configuring..."
   mkdir -p ~/.config/alacritty
-  cp .alacritty/* ~/.config/alacritty/
+  cp alacritty/* ~/.config/alacritty/
 }
 
 # Function to install packages on Ubuntu or Amazon Linux
@@ -202,7 +202,8 @@ fi
 
 # Change the default shell to Zsh
 echo "Changing the default shell to Zsh..."
-chsh -s "$(which zsh)"
+rm ~/.bash_profile
+cp .bash_profile ~/.bash_profile
 
 echo "Use the Obsidian theme for your terminal emulator of choice!"
 
