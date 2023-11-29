@@ -24,7 +24,11 @@ install_wget() {
     else
       # For Ubuntu or Amazon Linux
       if command -v apt &> /dev/null; then
-        apt-get update && apt-get install -y wget fzf lazygit bat curl
+        apt-get update && apt-get install -y wget
+        apt install -y fzf 
+        apt install -y lazygit 
+        apt install -y bat 
+        apt install -y curl
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
       elif command -v yum &> /dev/null; then
