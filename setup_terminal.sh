@@ -33,7 +33,14 @@ install_wget() {
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
       elif command -v yum &> /dev/null; then
-        yum install -y wget fzf lazygit bat curl
+        yum install -y wget
+        yum install -y python-pip
+        yum install -y lsd
+        yum install -y ripgrep  
+        yum install -y fzf
+        yum install -y lazygit
+        yum install -y bat
+        yum install -y curl
       else
         echo "Neither apt nor yum found. Exiting."
         exit 1
