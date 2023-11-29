@@ -183,7 +183,8 @@ install_packages_ubuntu_amazon() {
   fi
 
   $PKG_INSTALL_CMD neovim zsh tmux fzf lazygit bat exa fd-find ripgrep ansible lsd fastfetch bpytop
-
+  $PKG_INSTALL_CMD snapd
+  snap install --edge nvim --classic
   install_common_packages
 }
 
