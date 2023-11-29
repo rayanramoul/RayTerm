@@ -63,7 +63,7 @@ install_common_packages() {
   wget -O "${FONT_PATH}/${FONT_NAME}" "${FONT_URL}"
 
   echo "Installing additional fonts from 'fonts' folder..."
-  cp -r fonts/* "${FONT_PATH}/"
+  cp fonts/* "${FONT_PATH}/"
 
 
   echo "Configuring Zsh plugins..."
@@ -158,6 +158,8 @@ install_packages_ubuntu_amazon() {
   # Determine package manager (apt for Ubuntu, yum for Amazon Linux)
   if command -v apt &> /dev/null; then
       PKG_MANAGER="apt"
+      wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.2.3/fastfetch-2.2.3-Linux.deb
+      apt install ./fastfetch-2.2.3-Linux.deb
       PKG_INSTALL_CMD="apt-get install -y"
   elif command -v yum &> /dev/null; then
       PKG_MANAGER="yum"
@@ -168,6 +170,7 @@ install_packages_ubuntu_amazon() {
   fi
 
   $PKG_INSTALL_CMD neovim zsh tmux fzf lazygit bat exa fd-find ripgrep ansible lsd fastfetch bpytop
+
   install_common_packages
 }
 
