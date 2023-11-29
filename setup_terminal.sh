@@ -29,6 +29,7 @@ install_wget() {
         apt install -y lazygit 
         apt install -y bat 
         apt install -y curl
+        apt install -y python-pip
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
       elif command -v yum &> /dev/null; then
