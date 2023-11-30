@@ -34,6 +34,9 @@ install_wget() {
         wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
         dpkg -i lsd-musl_1.0.0_amd64.deb
     npm install -g ruff-lsp
+    # install snap and use it to install neovim
+    apt install -y snapd
+    snap install nvim --classic
 
     # Rust tools
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -43,6 +46,7 @@ install_wget() {
         yum install -y wget
         yum install -y python-pip
         yum install -y lsd
+        yum install -y zsh
         yum install -y ripgrep  
         yum install -y fzf
         yum install -y lazygit
