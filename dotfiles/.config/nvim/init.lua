@@ -26,6 +26,16 @@ plugins = {
     end
     },
 {"norcalli/nvim-colorizer.lua"},
+    {
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup {
+      -- config
+    }
+  end,
+  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+},
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'nvim-tree/nvim-tree.lua'},
     {'mfussenegger/nvim-dap'},
@@ -33,6 +43,7 @@ plugins = {
     {'nvim-treesitter/nvim-treesitter-context'},
     {'akinsho/toggleterm.nvim'},
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    {'liuchengxu/vista.vim'},
     {
         'mfussenegger/nvim-dap-python',
         ft = {'python'},
