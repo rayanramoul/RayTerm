@@ -14,7 +14,7 @@ To get started with this NeoVim configuration, clone the repository into your Ne
 
 # Initial Setup
 ```bash
-git clone https://github.com/rayanramoul/nvim-configs ~/.config/nvim
+git clone https://github.com/rayanramoul/RayTerm ~/.config/
 ```
 
 and then run all the .sh scripts in that directory!
