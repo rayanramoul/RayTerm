@@ -254,7 +254,10 @@ This section provides an overview of the plugins used in this NeoVim configurati
 - **[kmontocam/nvim-conda](https://github.com/kmontocam/nvim-conda)**: Manage Conda environments within Neovim.
 - **[nvimdev/guard.nvim](#)**: *(This seems to be a custom or lesser-known plugin; a link or description would be helpful.)*
 
-  
+# Zsh Keybindings :
+- Ctrl + f : global fuzzy finder.
+- Ctrl + e : tmux sessionizer.
+
 # The vim Language
 ## Buffers, Splits/Windows and Tabs
 
