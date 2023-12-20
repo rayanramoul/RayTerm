@@ -41,7 +41,6 @@ plugins = {
     {'mfussenegger/nvim-dap'},
     {'terrortylor/nvim-comment'},
     {'nvim-treesitter/nvim-treesitter-context'},
-    {'akinsho/toggleterm.nvim'},
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {'liuchengxu/vista.vim'},
     {
@@ -164,7 +163,12 @@ plugins = {
       config = function ()
         require('neoscroll').setup {}
       end
-    }
+    },
+    {"ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {}
+    end
+    },
 }
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(plugins, opts)

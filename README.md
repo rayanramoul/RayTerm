@@ -245,7 +245,6 @@ This section provides an overview of the plugins used in this NeoVim configurati
 ### Utility & Miscellaneous
 
 - **[terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)**: Easily comment out lines or sections of code.
-- **[akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)**: A Neovim plugin to persist and toggle multiple terminals.
 - **[mbbill/undotree](https://github.com/mbbill/undotree)**: Visualize the undo tree to navigate through changes.
 - **[github/copilot.vim](https://github.com/github/copilot.vim)**: GitHub Copilot plugin for autocompleting code.
 - **[tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)**: A Git wrapper so powerful, it should be illegal.
