@@ -190,6 +190,13 @@ Here's a step-by-step example:
 | Ctrl-b M	| Toggle mouse mode on/off |
 | Ctrl-b :	| Enter command mode |
 
+Interaction with selectors :
+| Keybinding  | Description |
+| ------------- | ------------- |
+| v i "	| Select inside "" |
+| c i "	| Change/remove inside "" |
+
+
 # TODO
 - Add bpytop
 - Add lsd insted of ls
