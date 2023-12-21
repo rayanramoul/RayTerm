@@ -1,5 +1,4 @@
 <div align="center">
-<h1>RayTerm</h1>
  
 <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/logo.png?raw=true">
 </img>
