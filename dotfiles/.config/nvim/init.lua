@@ -32,6 +32,10 @@ plugins = {
   config = function()
     require('dashboard').setup {
       -- config
+        theme='hyper',
+        config={
+            header= require('ray.ascii'),
+                }
     }
   end,
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
