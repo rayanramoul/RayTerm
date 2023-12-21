@@ -5,18 +5,22 @@
 <h1>RayTerm</h1>
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
 <h6 align="center">
-  <a href="https://github.com/catppuccin/catppuccin#-palette">Palette</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Neovim">Neovim</a>
   ·
-  <a href="https://github.com/catppuccin/catppuccin#-ports-and-more">Ports</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Terminal">Terminal</a>
   ·
-  <a href="https://github.com/catppuccin/catppuccin#-showcase">Showcase</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Tmux">Tmux</a>
   ·
-  <a href="https://github.com/catppuccin/catppuccin/tree/main/docs">Docs</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/ArchLinux">ArchLinux</a>
+  ·
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/MacOS">MacOS</a>
+  ·
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Windows">Windows</a>
 </h6>
 
 &nbsp;
 
- <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/screenshot.png?raw=true" alt="RayTerm" width="800">
+ <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/screenshot.png?raw=true" alt="RayTerm" width="600">
   </img>
 
 </div>
