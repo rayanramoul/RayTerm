@@ -1,3 +1,10 @@
+# Why NeoVim ?
+- Extensibility and Plugins: Offers a powerful plugin architecture, making it highly customizable and extensible. Users can enhance and tailor their editing environment to suit their specific needs.
+- Modern Codebase and Development: Neovim is built with a focus on maintainability and extensibility. It inherits the strengths of Vim but aims to improve upon them with a more modern codebase, making it easier for developers to contribute and address issues.
+- Built-in Terminal Emulation: Neovim includes a built-in terminal emulator, allowing users to run shell commands and interact with the system directly from the editor. This feature streamlines workflows and reduces the need to switch between the text editor and an external terminal.
+- Async Support: Asynchronous plugin execution is a key feature of Neovim, enabling background tasks without freezing the editor. This improves performance and responsiveness, particularly when dealing with resource-intensive operations or external tools.
+- Community Support and Active Development: Neovim has an active and growing community of users and developers. Regular updates and new features ensure that the editor stays relevant and up-to-date with modern coding practices.
+
 # Getting Started :
 Welcome to the NeoVim configuration guide. This document provides a comprehensive overview of setting up and using my NeoVim configuration, including keybindings, plugins, and additional tools like tmux.
 Initial Setup

@@ -1,3 +1,9 @@
+# Why Tmux ?
+- Terminal Multiplexing: Tmux allows users to split a single terminal into multiple panes, each capable of running different commands. This enhances productivity by enabling multitasking within a single terminal window.
+- Session Management: Tmux supports the creation and management of sessions, allowing users to detach from a session and later reattach, even from a different location. This feature is particularly useful for remote development or for persisting work across different sessions.
+- Customization and Scripting: Tmux is highly customizable through a configuration file, enabling users to define key bindings, customize the status bar, and adjust other settings. It also supports scripting, allowing automation and integration with other tools.
+- Remote Accessibility: Tmux facilitates remote collaboration and access to a shared terminal session. Multiple users can connect to the same Tmux session simultaneously, making it a valuable tool for pair programming or remote assistance.
+- Resilience and Continuity: In case of a network disconnection or system crash, Tmux sessions remain active and recoverable. This ensures that work is not lost, providing a level of resilience and continuity in terminal-based workflows.
 # tmux shortcuts & cheatsheet
 
 start new:
