@@ -7,6 +7,8 @@
 - twm : https://github.com/koekeishiya/yabai
 - shortcuts : https://github.com/koekeishiya/skhd
 - status bar : https://github.com/Jean-Tinland/simple-bar
+
+
 ## Interesting Apps
 - Resize windows like in Windows : https://rectangleapp.com/
 - Keeps not sleepy : https://apps.apple.com/fr/app/amphetamine/id937984704?mt=12
