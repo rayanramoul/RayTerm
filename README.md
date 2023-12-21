@@ -1,6 +1,6 @@
 <div align="center">
  
-<img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/logo.png?raw=true">
+<img width="200" src="https://github.com/rayanramoul/RayTerm/blob/master/assets/logo.png?raw=true">
 </img>
 <h1>RayTerm</h1>
 
