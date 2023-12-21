@@ -1,3 +1,10 @@
+# Getting Started :
+Welcome to the NeoVim configuration guide. This document provides a comprehensive overview of setting up and using my NeoVim configuration, including keybindings, plugins, and additional tools like tmux.
+Initial Setup
+
+To get started with this NeoVim configuration, clone the repository into your NeoVim configuration directory:
+
+
 ### Ensure all LSPs are setup :
 :MasonInstallAll
 
