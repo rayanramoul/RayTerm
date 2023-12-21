@@ -20,7 +20,10 @@
 
 &nbsp;
 
- <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/screenshot.png?raw=true" alt="RayTerm" width="600">
+ <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true" alt="RayTerm" width="600">
+  </img>
+
+   <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true" alt="RayTerm" width="600">
   </img>
 
 </div>
