@@ -155,6 +155,9 @@ plugins = {
     }
     },
     {'christoomey/vim-tmux-navigator', lazy=false},
+    { "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+    }, 
     {
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
