@@ -3,7 +3,7 @@
 <img width="200" src="https://github.com/rayanramoul/RayTerm/blob/master/assets/logo.png?raw=true">
 </img>
 <h1>RayTerm</h1>
-
+<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
  <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/screenshot.png?raw=true" alt="RayTerm">
   </img>
 
