@@ -23,7 +23,7 @@ cd ~/RayTerm
 
 # Ask the user if they want to install all packages and set up dotfiles
 
-read -p "Do you want to install all packages and set up dotfiles? otherwise setup only dotfiles (y/n): " answer
+read -p "Do you want to install all packages and set up dotfiles? otherwise setup only dotfiles (y/n): " -s -n 1 answer
 
 if [ "$answer" == "y" ]; then
     # Execute the setup_all.sh script

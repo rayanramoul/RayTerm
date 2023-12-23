@@ -31,7 +31,7 @@
 # Get Started
 
 ```bash
-curl -Lks https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh | /bin/bash
+curl -Lks https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh | bash
 ```
 
 # What is this ?
