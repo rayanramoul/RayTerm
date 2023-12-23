@@ -28,6 +28,12 @@
 
 </div>
 
+# Get Started
+
+```bash
+curl -Lks https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh | /bin/bash
+```
+
 # What is this ?
 RayTerm is a set of configuration, dotfiles and software to ensure a vision on the optimal environement to code in.
 It is :
@@ -35,17 +41,6 @@ It is :
 - Coherent and reproducible workflows from an OS to another.
 - Strongly relying on terminal tools : Neovim, Tmux, Zsh, Fzf, etc.
 - All prettier with Catppuccin !
-
-# Get Started
-
-```bash
-git clone https://github.com/rayanramoul/RayTerm
-cd RayTerm
-./setup_all.sh # Install everything 
-./setup_dotfiles.sh # OR only get the dotfiles 
-
-curl -Lks https://raw.githubusercontent.com/rayanramoul/RayTerm/master/setup_all.sh | /bin/bash
-```
 
 
 
