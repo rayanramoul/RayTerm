@@ -91,6 +91,8 @@ In File
 | vi" | Select everything inside " | 
 | vi( | Select everything inside ( |
 | Visual mode : g c | COMMENT |
+| ]m | Jump to next Function/Method |
+
 
 TERMINAL :
 | Keybinding  | Description |
