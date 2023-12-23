@@ -43,6 +43,8 @@ git clone https://github.com/rayanramoul/RayTerm
 cd RayTerm
 ./setup_all.sh # Install everything 
 ./setup_dotfiles.sh # OR only get the dotfiles 
+
+curl -Lks https://raw.githubusercontent.com/rayanramoul/RayTerm/master/setup_all.sh | /bin/bash
 ```
 
 
