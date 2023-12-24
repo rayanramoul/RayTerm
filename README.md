@@ -42,5 +42,9 @@ It is :
 - Strongly relying on terminal tools : Neovim, Tmux, Zsh, Fzf, etc.
 - All prettier with Catppuccin !
 
-
-
+# How ?
+The idea is to have one main key associated with each part of the system 
+- `Alt` for the window manager.
+- `Ctrl` for the terminal.
+- `Ctrl + b` for tmux.
+- `Ctrl` and `Space` for neovim.
