@@ -4,6 +4,36 @@
 - Customization and Scripting: Tmux is highly customizable through a configuration file, enabling users to define key bindings, customize the status bar, and adjust other settings. It also supports scripting, allowing automation and integration with other tools.
 - Remote Accessibility: Tmux facilitates remote collaboration and access to a shared terminal session. Multiple users can connect to the same Tmux session simultaneously, making it a valuable tool for pair programming or remote assistance.
 - Resilience and Continuity: In case of a network disconnection or system crash, Tmux sessions remain active and recoverable. This ensures that work is not lost, providing a level of resilience and continuity in terminal-based workflows.
+
+# Explanation of the configuration file
+    Terminal Overrides: Set terminal overrides for xterm.
+    Tmux Plugin Manager (TPM): Load TPM and various plugins for enhancing tmux functionality.
+    Mouse Support: Enable mouse support.
+    Base Index: Set base index values for windows and panes.
+    Renumber Windows: Automatically renumber windows when one is closed.
+    Status Bar Position: Set the status bar position to the top.
+    Window Navigation Keybindings: Use Alt + H/L to navigate to the previous/next window.
+    Copy Mode Settings: Use vi mode for copy mode with additional key bindings.
+    Open Pane in Current Directory: Bindings for opening a new pane or window in the current directory.
+    Launch Tmux Plugin Manager: Run TPM to install and manage tmux plugins.
+
+Feel free to customize these settings according to your preferences and workflow. If you have specific questions about any part of the configuration, feel free to ask!
+
+# Explanation of Keybindings:
+
+    Alt + H (Meta + H): Switch to the previous window.
+    Alt + L (Meta + L): Switch to the next window.
+    Ctrl + b + 1, 2, 3, ... (Customizable): Switch to windows by index. Currently commented out; uncomment and customize if needed.
+    Copy Mode (Vi Mode):
+        v: Begin selection in copy mode.
+        y: Copy the selected text.
+        r: Toggle rectangle selection.
+    Ctrl + b + c (Customizable): Create a new window in the current directory.
+    Ctrl + b + s (Customizable): Split the current window horizontally in the current directory.
+    Ctrl + b + v (Customizable): Split the current window vertically in the current directory.
+
+Feel free to modify these keybindings according to your preferences. If you have specific questions about any particular keybinding or need further clarification, let me know!
+
 # tmux shortcuts & cheatsheet
 
 start new:
