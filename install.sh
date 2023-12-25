@@ -28,11 +28,11 @@ read -p "Do you want to install all packages and set up dotfiles? otherwise setu
 if [ "$answer" == "y" ]; then
     # Execute the setup_all.sh script
     echo "Executing setup_all.sh..."
-    bash setup_all.sh
+    bash ansible/scripts/setup_all.sh
 elif [ "$answer" == "n" ]; then
     # Execute the setup_dotfiles.sh script
     echo "Executing setup_dotfiles.sh..."
-    bash setup_dotfiles.sh
+    bash ansible/scripts/backup_and_link.sh
 else
     echo "Invalid choice. Exiting..."
 fi
