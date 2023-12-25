@@ -196,17 +196,22 @@ Interaction with selectors :
 
 This section provides an overview of the plugins used in this NeoVim configuration, along with their purpose and functionality.
 
-### Core Functionality
+
+
+## Core Functionality
+
+
 - **[lazy.nvim](https://github.com/folke/lazy.nvim)**: A plugin to facilitate lazy loading of other plugins, improving startup time.
 
-### Navigation & File Management
+
+## Navigation & File Management
 
 - **[nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)**: A highly extendable fuzzy finder over lists.
 - **[nvim-tree/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)**: A file explorer tree for navigating and managing your filesystem.
 - **[theprimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)**: Bookmark manager for quick navigation between frequently used files.
 - **[numToStr/Navigator.nvim](https://github.com/numToStr/Navigator.nvim)**: Seamlessly navigate between splits and windows.
 
-### User Interface Enhancements
+## User Interface Enhancements
 
 - **[rose-pine/neovim](https://github.com/rose-pine/neovim)**: The Rose Pine theme for a comfortable and aesthetic coding environment.
 - **[akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)**: An elegant and powerful buffer line (tab line) plugin.
@@ -215,12 +220,13 @@ This section provides an overview of the plugins used in this NeoVim configurati
 - **[gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim)**: Enhances command-line completion, search, and more.
 - **[folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)**: A clean, dark Neovim theme that celebrates the lights of downtown Tokyo at night.
 
-### Syntax & Language Support
+## Syntax & Language Support
 
 - **[nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Treesitter configurations and abstraction layer for Neovim.
 - **[nvim-treesitter/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)**: Shows the context of the current function/class you're in.
 
-### Development & Debugging
+
+## Development & Debugging
 
 - **[mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)**: A Debug Adapter Protocol client implementation for stepping through code and breakpoints.
 - **[rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)**: A UI for nvim-dap.
@@ -228,16 +234,17 @@ This section provides an overview of the plugins used in this NeoVim configurati
 - **[simrat39/rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)**: Extra functionality for Rust programming.
 - **[mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)**: An asynchronous linter plugin.
 
-### Language Server Protocol (LSP) & Autocompletion
+## Language Server Protocol (LSP) & Autocompletion
 
 - **[neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)**: Quickstart configurations for the Nvim LSP client.
+
 - **[williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)**: Portable package manager for Neovim that installs language servers, linters, and formatters.
 - **[hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)**: Autocompletion plugin that integrates with various sources.
 - **[hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)**: Nvim-cmp source for neovim's built-in language server client.
 - **[L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: A snippet engine for Neovim written in Lua.
 - **[hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)**: Path autocompletion for nvim-cmp.
 
-### Utility & Miscellaneous
+## Utility & Miscellaneous
 
 - **[terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)**: Easily comment out lines or sections of code.
 - **[mbbill/undotree](https://github.com/mbbill/undotree)**: Visualize the undo tree to navigate through changes.
@@ -247,7 +254,3 @@ This section provides an overview of the plugins used in this NeoVim configurati
 - **[rmagatti/auto-session](https://github.com/rmagatti/auto-session)**: A small automated session manager for Neovim.
 - **[kmontocam/nvim-conda](https://github.com/kmontocam/nvim-conda)**: Manage Conda environments within Neovim.
 - **[nvimdev/guard.nvim](#)**: .
-
-
-### Command Line results :
-:r !cmd
