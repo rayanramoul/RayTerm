@@ -5,17 +5,17 @@
 <h1>RayTerm</h1>
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
 <h6 align="center">
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Neovim">Neovim</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Neovim.md">Neovim</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Terminal">Terminal</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Terminal.md">Terminal</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Tmux">Tmux</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Tmux.md">Tmux</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/ArchLinux">ArchLinux</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/ArchLinux.md">ArchLinux</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/MacOS">MacOS</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/MacOS.md">MacOS</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Windows">Windows</a>
+  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Windows.md">Windows</a>
 </h6>
 
 &nbsp;
