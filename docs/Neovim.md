@@ -89,7 +89,9 @@ In File
 | Space gs | Open Fugitive Git manipulation |
 | {/} | Jump between Paragraphs | 
 | vi" | Select everything inside " | 
-| vi( | Select everything inside ( |
+| vi( | Select everything inside next ( |
+| ci( | Change everything inside next ( |
+| va{ | Select everything inside actual { |
 | Visual mode : g c | COMMENT |
 | ]m | Jump to next Function/Method |
 
