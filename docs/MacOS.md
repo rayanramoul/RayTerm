@@ -1,5 +1,5 @@
 <div align="center">
-# MacOS
+    <h1>MacOS</h1>
 
     ![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true)
 </div>
