@@ -110,7 +110,7 @@ VerbosePkgLists
 ParallelDownloads = 3
 ILoveCandy
 ~~~
-6. ALso Uncomment
+6. Also Uncomment
 ~~~
 [multilib]
 Include = /etc/pacman.d/mirrorlist
