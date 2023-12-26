@@ -51,6 +51,15 @@ The idea is to have one main key associated with each part of the system
 - `Ctrl + b` for tmux.
 - `Ctrl` and `Space` for neovim.
 
+# Docs
+You can find my documentation of each part of my workflow in the [docs](docs) folder.
+- [Neovim](docs/Neovim.md): My neovim configuration.
+- [Terminal](docs/Terminal.md): My terminal configuration.
+- [Tmux](docs/Tmux.md): My tmux configuration.
+- [ArchLinux](docs/ArchLinux.md): My ArchLinux installation guide.
+- [MacOS](docs/MacOS.md): My MacOS installation guide.
+- [Windows](docs/Windows.md): My Windows installation guide.
+
 # Development
 This repository is delivered with a set of Dockefiles to ensure a reproducible development environement.
 So if you want to altere it and test it let's say on Ubuntu you can do it with the following command :
