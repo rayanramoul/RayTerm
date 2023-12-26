@@ -34,9 +34,14 @@ _ArchLinux Setup_
 sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh -O -)"
 ```
 The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. 
-If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles)
+If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles) and for example run [Stow](https://www.gnu.org/software/stow/) to symlink your config with the repositories ones :
+```bash
+git clone https://github.com/rayanramoul/RayTerm/
+cd RayTerm
+stow -t $HOME -R dotfiles
+```
 
-_for Windows you can check the [Windows](docs/Windows.md) docs.
+_for Windows you can check the [Windows](docs/Windows.md) doc_
 
 # What is this ?
 RayTerm is a set of configuration, dotfiles and software to ensure a vision on the optimal environement to code in.
