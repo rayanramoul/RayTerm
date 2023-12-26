@@ -1,4 +1,8 @@
-# BetterMacOS
+<div align="center">
+# MacOS
+
+    ![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true)
+</div>
 
 Fetch Script : neoFetch
 Editor : Neovim
