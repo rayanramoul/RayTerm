@@ -1,3 +1,10 @@
+<div align="center">
+    <h1>Neovim</h1>
+    <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/neovim_preview.png?raw=true"/>
+</div>
+
+
+
 # Why NeoVim ?
 - Extensibility and Plugins: Offers a powerful plugin architecture, making it highly customizable and extensible. Users can enhance and tailor their editing environment to suit their specific needs.
 - Modern Codebase and Development: Neovim is built with a focus on maintainability and extensibility. It inherits the strengths of Vim but aims to improve upon them with a more modern codebase, making it easier for developers to contribute and address issues.
