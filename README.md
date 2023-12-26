@@ -33,7 +33,7 @@ _ArchLinux Setup_
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh -O -)"
 ```
-The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. 
+The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. <br>
 If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles) and for example run [Stow](https://www.gnu.org/software/stow/) to symlink your config with the repositories ones :
 ```bash
 git clone https://github.com/rayanramoul/RayTerm/
