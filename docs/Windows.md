@@ -18,15 +18,15 @@
 - Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
 
 # How to 
-- Install (WSL)[https://learn.microsoft.com/en-us/windows/wsl/install].
-- Install (Wox)[https://github.com/Wox-launcher/Wox/releases] Launcher.
-- Install (GlazeWM)[https://github.com/glazerdesktop/GlazeWM]
-- Put this (file)[https://github.com/rayanramoul/RayTerm/blob/master/dotfiles/.glaze-wm/config.yaml] in your C:/Users/<USER>/.glaze-wm/config.yaml
-- Download (Alacritty)[https://github.com/alacritty/alacritty/releases] on Windows or get Windos Terminal and some (themes)[https://terminalsplash.com/].
-- Download and install the (fonts)[https://github.com/rayanramoul/RayTerm/tree/master/dotfiles/.fonts]
+- Install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+- Install [Wox](https://github.com/Wox-launcher/Wox/releases) Launcher.
+- Install [GlazeWM](https://github.com/glazerdesktop/GlazeWM)
+- Put this [file](https://github.com/rayanramoul/RayTerm/blob/master/dotfiles/.glaze-wm/config.yaml) in your C:/Users/<USER>/.glaze-wm/config.yaml
+- Download [Alacritty](https://github.com/alacritty/alacritty/releases] on Windows or get Windos Terminal and some [themes](https://terminalsplash.com/).
+- Download and install the [fonts](https://github.com/rayanramoul/RayTerm/tree/master/dotfiles/.fonts).
 - To use WSL as default in Alacritty : rrun wsl --set-default Arch
-- And then go to %APPDATA%\alacritty\alacritty.yml, and put this (config)[https://github.com/rayanramoul/RayTerm/blob/master/dotfiles/.config/alacritty/alacritty.yml] and uncomment the  line for WSL shell
-- Install  (ExplorerPatcher)[https://github.com/valinet/ExplorerPatcher/releases] to get rid of the Windows Task Bar.
+- And then go to %APPDATA%\alacritty\alacritty.yml, and put this [config](https://github.com/rayanramoul/RayTerm/blob/master/dotfiles/.config/alacritty/alacritty.yml) and uncomment the  line for WSL shell
+- Install  [ExplorerPatcher](https://github.com/valinet/ExplorerPatcher/releases) to get rid of the Windows Task Bar.
 - Then inside your WSL you can run the command :
 
 ```bash
