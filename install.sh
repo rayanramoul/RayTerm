@@ -68,19 +68,16 @@ install_ansible() {
   esac
 }
 
-# Determine the OS
+# Determine the OS and WSL distribution using lsb_release
 OS=$(uname -a)
+WSL_DISTRO=$(lsb_release -si 2>/dev/null)
 
-# Check if running on WSL
-if echo "$OS" | grep -qi "microsoft"; then
-  # Determine the specific WSL distribution
-  WSL_DISTRO=$(wsl.exe -l -q | head -n 1)
-
+if [ "$WSL_DISTRO" ]; then
   case "$WSL_DISTRO" in
-    Ubuntu*)
+    Ubuntu)
       install_ansible ubuntu
       ;;
-    Arch*)
+    Arch)
       install_ansible arch
       ;;
     *)
