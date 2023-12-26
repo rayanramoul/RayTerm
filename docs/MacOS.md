@@ -10,7 +10,8 @@ Hotkeys : Skhd
 Launcher : Raycast
 Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
 Color Scheme : Catppuccin Mocha
-
+Zsh Theme : Powerlevel10k
+Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
 
 Yabai and Skhd Configuration Explanation
 Yabai Configuration (yabairc)
