@@ -3,18 +3,19 @@
     <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true"/>
 </div>
 
-Fetch Script : neoFetch
-Editor : Neovim
-Terminal : Alacritty
-Window Manager : Yabai
-Status Bar : Simple Bar
-Terminal Multiplexer : Tmux
-Hotkeys : Skhd
-Launcher : Raycast
-Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
-Color Scheme : Catppuccin Mocha
-Zsh Theme : Powerlevel10k
-Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
+# Summary :
+- Fetch Script : neoFetch
+- Editor : Neovim
+- Terminal : Alacritty
+- Window Manager : Yabai
+- Status Bar : Simple Bar
+- Terminal Multiplexer : Tmux
+- Hotkeys : Skhd
+- Launcher : Raycast
+- Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
+- Color Scheme : Catppuccin Mocha
+- Zsh Theme : Powerlevel10k
+- Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
 
 Yabai and Skhd Configuration Explanation
 Yabai Configuration (yabairc)
