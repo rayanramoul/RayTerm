@@ -1,4 +1,8 @@
-# BetterLinux
+# ArchLinux
+<div align="center">
+![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/arch_preview.png?raw=true)
+</div>
+
 This repository is dedicated to reproduce my local ArchLinux setup (starter packages, i3 setup, nvidia drivers, games packages, etc.)
 
 Fetch Script : neoFetch
