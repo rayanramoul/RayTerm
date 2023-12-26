@@ -36,15 +36,21 @@ This repository is dedicated to reproduce my local ArchLinux setup (starter pack
 
 
 
-Overview
+# How To
+One command :
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh -O -)"
+```
+The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. <br>
+If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles) and for example run [Stow](https://www.gnu.org/software/stow/) to symlink your config with the repositories ones :
+```bash
+git clone https://github.com/rayanramoul/RayTerm/
+cd RayTerm
+stow -t $HOME -R dotfiles
+```
 
-This i3wm (i3 Window Manager) configuration file is designed to create a productive and visually appealing desktop environment. i3wm is a tiling window manager known for its efficiency and minimalism. The configuration incorporates various tools and features to enhance the user experience, including custom workspace assignments, keybindings for common tasks, color schemes, transparency settings, and more.
-Tools and Features
-### Window Manager Configuration
-- Font: FiraCode Nerd Font is set as the font for window titles.
-- Modifier Key: The Win key is set as the modifier (Mod1).
 
-### Autostart Applications
+# Autostart Applications
 - dex is used for XDG autostart.
 - xss-lock is employed to lock the screen before suspend.
 - nm-applet is started for NetworkManager support.
@@ -56,38 +62,7 @@ Tools and Features
 
 
 
-
-
-Keybindings Reference
-
-Here is a table summarizing the keybindings in the i3wm configuration:
-| Keybinding |	Action |
-| ------------- | -------------
-| $mod+Return | Open terminal (alacritty) |
-| $mod+Shift+q | Kill focused window |
-| $mod+space | Open application launcher (rofi) |
-| $mod+j/k/l/semicolon | Change focus between windows |
-| $mod+Shift+j/k/l/semicolon | Move focused window |
-| $mod+h/v | Split in horizontal/vertical orientation |
-| $mod+f | Toggle fullscreen for the focused container |
-| $mod+s/w/e | Change container layout (stacked, tabbed, toggle split) |
-| $mod+Shift+space | Toggle tiling/floating mode |
-| $mod+1-0 | Switch to workspaces 1-10 |
-| $mod+Shift+1-0 | Move focused container to workspaces 1-10 |
-| $mod+r | Enter resize mode |
-| $mod+Shift+c | Reload configuration file | 
-| $mod+Shift+r | Restart i3 in place |
-| $mod+Shift+e | Exit i3 |
-| $mod+Shift+X | Lock screen using a custom script |
-
-These keybindings provide efficient control over window management, workspace switching, and system actions within the i3wm environment. The configuration is tailored for a productive and visually pleasing desktop experience.
-
-
-
-
-
-
-
+# Tips :
 ## Quick install of Arch
 When booted in the ArchLinux's USB :
 ```bash
