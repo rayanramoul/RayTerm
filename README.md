@@ -24,6 +24,8 @@ _MacOS Setup_
 _Windows and WSL Setup_
 ![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true)
 _ArchLinux Setup_
+![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/arch_preview.png?raw=true)
+
 </div>
 
 # Get Started
