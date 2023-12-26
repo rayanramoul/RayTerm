@@ -5,18 +5,21 @@
 
 This repository is dedicated to reproduce my local ArchLinux setup (starter packages, i3 setup, nvidia drivers, games packages, etc.)
 
-Fetch Script : neoFetch
-Editor : Neovim
-Terminal : Alacritty
-Window Manager : i3wm
-Status Bar : i3blocks
-Terminal Multiplexer : Tmux
-Hotkeys : Managed by i3wm
-Launcher : Rofi
-Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
-Color Scheme : Catppuccin Mocha
-Zsh Theme : Powerlevel10k
-Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
+# Summary :
+- Fetch Script : neoFetch
+- Editor : Neovim
+- Terminal : Alacritty
+- Window Manager : i3wm
+- Status Bar : i3blocks
+- Terminal Multiplexer : Tmux
+- Hotkeys : Managed by i3wm
+- Launcher : Rofi
+- Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
+- Color Scheme : Catppuccin Mocha
+- Zsh Theme : Powerlevel10k
+- Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
+
+
 # Summary
 - [Quick install of Arch](#quick-install-of-arch)
 - [After Installation](#after-installation)
