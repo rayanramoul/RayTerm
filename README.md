@@ -33,6 +33,8 @@
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install.sh -O -)"
 ```
+The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. 
+If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles)
 
 # What is this ?
 RayTerm is a set of configuration, dotfiles and software to ensure a vision on the optimal environement to code in.
@@ -48,3 +50,22 @@ The idea is to have one main key associated with each part of the system
 - `Ctrl` for the terminal.
 - `Ctrl + b` for tmux.
 - `Ctrl` and `Space` for neovim.
+
+# Development
+This repository is delivered with a set of Dockefiles to ensure a reproducible development environement.
+So if you want to altere it and test it let's say on Ubuntu you can do it with the following command :
+```bash
+cd docker
+bash build_test_docker.sh ubuntu
+```
+It will build the docker image (omitting the cache) and run it in interactive mode.
+Possible arguments being : `ubuntu`, `arch`, `macos`, `aws`.
+
+# ❤️ Enjoying RayTerm?
+
+If RayTerm has been helpful to you, please consider giving it a star! ⭐ It helps others discover the repository and shows appreciation for the effort put into creating and maintaining it.
+
+Thank you for your support! 🚀
+
+
+
