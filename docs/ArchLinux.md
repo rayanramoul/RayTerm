@@ -70,28 +70,6 @@ sudo pacman -S archinstall
 archinstall
 ```
 
-## After Installation
-Cloning
-```
-git clone https://github.com/rayanramoul/BetterLinux
-cd BetterLinux
-```
-
-Setup of the whole system from scratch
-```bash
-chmod +x initial_setup.sh
-./initial_setup.sh
-```
-
-Moving the dotfiles in appropriate directories
-```bash
-chmod -R +x *.sh
-chmod +x ./dotfiles/i3blocks
-cd dotfiles
-./load_dotfiles.sh
-```
-
-
 
 ## NVIDIA Drivers Setup
 ### Step 1 - Getting things ready 
@@ -194,43 +172,10 @@ Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /
 
 
 
-## Keybinds
-### OS Keybinds :
-| Keybinding  | Description |
-| ------------- | ------------- |
-| Mod + Enter | Open terminal |
-| Mod + ← | Focus left |
-| Mod + → |	Focus right |
-| Mod + ↑ |	Focus up |
-| Mod + ↓ |	Focus down |
-| Mod + Shift + ←| Move the window to the left side |
-| Mod + Shift + → | Move the window to the right side |
-| Mod + Shift + ↑ | Move the window up |
-| Mod + Shift + ↓ | Move the window down |
-| Mod + f |	Toggle the focused window to full-screen |
-| Mod + v | The next window will be placed vertically |
-| Mod + h | The next window will be placed horizontally |
-| Mod + s | Enables the stacked window layout |
-| Mod + w | Enables the tabbed window layout |
-| Mod + Shift + Space | Enables the floating window (for focused window) |
-| Mod + Left-mouse-click | Drag the entire window using the mouse |
-| Mod + 0-9 | Switch to another workspace |
-| Mod + Shift + 0-9 | Move the window to another workspace |
-| Mod + d | Open the application launcher (D menu) |
-| Mod + Shift + q | Kills the focused window |
-| Mod + Shift + c | Reloads the I3 config file |
-| Mod + Shift + r | Restart the I3 WM |
-| Mod + Shift + e | Exit I3 WM |
 
 
 
-### Tilix Keybinds
-| Keybinding  | Description |
-| ------------- | ------------- |
-| CTRL ALT r | Vertical Split |
-| CTRL ALT d | Horizontal Split
-
-## Mindmap of the important OS Apps:
+# Mindmap of the important OS Apps:
 - Audio Control : pavucontrol : https://aur.archlinux.org/packages/pavucontrol-git
 - Group Messaging Apps : https://github.com/getferdi/ferdi/tree/v5.8.1
 - Heroic Game Launcher : Epic Games Store
@@ -275,32 +220,6 @@ https://github.com/alvr-org/alvr
 ### Assassin's Creed Origin :
 Use at least proton GE 7.3 : https://www.reddit.com/r/SteamDeck/comments/xb6c9q/comment/inyp7pt/?utm_source=share&utm_medium=web2x&context=3
 
-
-## Diverse Tips
-### change theme Manjaro KDE :
-You probably have ```qt5ct``` installed and set up to theme Qt.
-Same with  ```lxappearance```
-
-### i3 config :
-Choose theme for i3 menu bar : https://thomashunter.name/i3-configurator/
-
-### Install Gnome Shell extensions
-```
-sudo pacman -S gnome-shell-extensions
-```
-### Material Shell
-Have tiling features in Gnome :
-- https://material-shell.com/#persistence
-- https://extensions.gnome.org/extension/3357/material-shell/
-
-### Gnome extensions : 
-https://extensions.gnome.org/extension/779/clipboard-indicator/
-https://extensions.gnome.org/extension/750/openweather/
-https://extensions.gnome.org/extension/4338/allow-locked-remote-desktop/
-https://extensions.gnome.org/extension/5306/firefox-pip-always-on-top/
-https://extensions.gnome.org/extension/4727/primary-input-on-lockscreen/
-https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-
 ### Mod Skyrim
 https://github.com/rockerbacon/modorganizer2-linux-installer
 or this  
@@ -308,6 +227,14 @@ https://github.com/sonic2kk/steamtinkerlaunch
 
 ### Manage Proton :
 https://github.com/DavidoTek/ProtonUp-Qt
+## Others :
+
+### change theme GUI  :
+You probably have ```qt5ct``` installed and set up to theme Qt.
+Same with  ```lxappearance```
+
+### i3 config :
+Choose theme for i3 menu bar : https://thomashunter.name/i3-configurator/
 
 ### i3 Setup Tutorial
 
