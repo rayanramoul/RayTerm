@@ -63,9 +63,9 @@ You can find my documentation of each part of my workflow in the [docs](docs) fo
 - [Neovim](docs/Neovim.md): My neovim configuration.
 - [Terminal](docs/Terminal.md): My terminal configuration.
 - [Tmux](docs/Tmux.md): My tmux configuration.
-- [ArchLinux](docs/ArchLinux.md): My ArchLinux installation guide.
-- [MacOS](docs/MacOS.md): My MacOS installation guide.
-- [Windows](docs/Windows.md): My Windows installation guide.
+- [ArchLinux](docs/ArchLinux.md): My ArchLinux workflow guide.
+- [MacOS](docs/MacOS.md): My MacOS workflow guide.
+- [Windows](docs/Windows.md): My Windows workflow guide.
 
 # Development
 This repository is delivered with a set of Dockefiles to ensure a reproducible development environement.
