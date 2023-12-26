@@ -19,14 +19,11 @@
 </h6>
 
 &nbsp;
-
-    _MacOS Setup_
- <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true" alt="RayTerm" width="600">
-  </img>
-    _Windows and WSL Setup_
-   <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true" alt="RayTerm" width="600">
-  </img>
-
+_MacOS Setup_
+![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true)
+_Windows and WSL Setup_
+![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true)
+_ArchLinux Setup_
 </div>
 
 # Get Started
