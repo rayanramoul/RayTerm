@@ -1,3 +1,10 @@
+<div align="center">
+    <h1>Tmux</h1>
+    <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/tmux_preview.png?raw=true"/>
+</div>
+
+
+
 # Why Tmux ?
 - Terminal Multiplexing: Tmux allows users to split a single terminal into multiple panes, each capable of running different commands. This enhances productivity by enabling multitasking within a single terminal window.
 - Session Management: Tmux supports the creation and management of sessions, allowing users to detach from a session and later reattach, even from a different location. This feature is particularly useful for remote development or for persisting work across different sessions.
