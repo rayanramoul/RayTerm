@@ -20,9 +20,10 @@
 
 &nbsp;
 
+    <em>MacOS Setup</em>
  <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true" alt="RayTerm" width="600">
   </img>
-
+    <em>Windows and WSL Setup</em>
    <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true" alt="RayTerm" width="600">
   </img>
 
