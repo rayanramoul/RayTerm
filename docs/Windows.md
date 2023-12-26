@@ -1,5 +1,18 @@
 # Windows
 
+Fetch Script : neoFetch
+Editor : Neovim
+Terminal : Alacritty
+Window Manager : GlazeWM
+Status Bar : GlazeWM bar
+Terminal Multiplexer : Tmux
+Hotkeys : Managed by GlazeWM
+Launcher : Wox
+Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
+Color Scheme : Catppuccin Mocha
+Zsh Theme : Powerlevel10k
+Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
+
 # Explanation 
 GlazeWM Configuration Explanation
 General Configuration

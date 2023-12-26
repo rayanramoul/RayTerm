@@ -1,5 +1,17 @@
 # BetterMacOS
 
+Fetch Script : neoFetch
+Editor : Neovim
+Terminal : Alacritty
+Window Manager : Yabai
+Status Bar : Simple Bar
+Terminal Multiplexer : Tmux
+Hotkeys : Skhd
+Launcher : Raycast
+Fonts : Fira Code, JetBrains Mono, SF Mono, Nerd Fonts
+Color Scheme : Catppuccin Mocha
+
+
 Yabai and Skhd Configuration Explanation
 Yabai Configuration (yabairc)
 ## Autostart Applications
