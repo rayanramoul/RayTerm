@@ -4,8 +4,8 @@
 </div>
 
 # Added Zsh Keybindings :
-- Ctrl + f : global fuzzy finder.
-- Ctrl + e : tmux sessionizer.
+- Ctrl + e : global fuzzy finder.
+- Ctrl + f : tmux sessionizer.
 
 # How to Customize Alacritty :
 https://ostechnix.com/alacritty-terminal-emulator/
