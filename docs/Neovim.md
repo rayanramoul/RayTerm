@@ -102,6 +102,7 @@ In File
 | Visual mode : g c | COMMENT |
 | ]m | Jump to next Function/Method |
 | Space + r | Run main python file or main bash file at the root | 
+| Space + t | Run tests with pytest |
 
 TERMINAL :
 | Keybinding  | Description |
