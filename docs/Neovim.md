@@ -101,12 +101,13 @@ In File
 | va{ | Select everything inside actual { |
 | Visual mode : g c | COMMENT |
 | ]m | Jump to next Function/Method |
-
+| Space + r | Run main python file or main bash file at the root | 
 
 TERMINAL :
 | Keybinding  | Description |
 | ------------- | ------------- |
 | Ctrl t | Open/Close Terminal |
+| Ctrl r | Fzf through history | 
 
 
 LSP :
