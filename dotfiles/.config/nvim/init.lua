@@ -12,8 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(require("ray.lazy", opts))
--- vim.cmd([[colorscheme rose-pine]])
+vim.cmd([[colorscheme rose-pine]])
 -- vim.cmd([[colorscheme tokyonight-night]])
-vim.cmd([[colorscheme catppuccin-mocha]])
+-- vim.cmd([[colorscheme catppuccin-mocha]])
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
