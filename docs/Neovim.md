@@ -94,7 +94,7 @@ In File
 | t + Character | Jump-to Forward where the caracter appears in the line |
 | g d | Jump to DEFINITION |
 | Ctrl O | Jump BACK FROM DEFINITION |
-| Ctrl d | Half page JUMP FORWARD |
+| Ctrl d | Half page JUMP FORWARD | 
 | Ctrl u | Half page JUMP BACKWARD |
 | Space u | Open Undo tree |
 | Space gs | Open Fugitive Git manipulation |
@@ -102,7 +102,7 @@ In File
 | vi" | Select everything inside " | 
 | vi( | Select everything inside next ( |
 | ci( | Change everything inside next ( |
-| va{ | Select everything inside actual { (when you put 'a' it means all so it selects even if you are in the middle of the { |
+| va{ | Select everything inside actual { (when you put 'a' it means all/actual so it selects even if you are in the middle of the { |
 | Visual mode : g c | COMMENT |
 | ]m | Jump to next Function/Method |
 | Space + r | Run main python file or main bash file at the root | 
