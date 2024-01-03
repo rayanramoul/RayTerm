@@ -81,6 +81,10 @@ In File
 | $ | JUMP END LINE |
 | p | New LINE |
 | r | Replace character under cursor |
+| o | New LINE after |
+| O | New LINE before |
+| gg | JUMP BEGINNING FILE |
+| G | JUMP END FILE |
 | A | Move in insert mode to beginning of the line |
 | a | Move in insert mode AFTER the cursor |
 | a | Move in insert mode AFTER the cursor |
@@ -98,7 +102,7 @@ In File
 | vi" | Select everything inside " | 
 | vi( | Select everything inside next ( |
 | ci( | Change everything inside next ( |
-| va{ | Select everything inside actual { |
+| va{ | Select everything inside actual { (when you put 'a' it means all so it selects even if you are in the middle of the { |
 | Visual mode : g c | COMMENT |
 | ]m | Jump to next Function/Method |
 | Space + r | Run main python file or main bash file at the root | 
@@ -195,6 +199,9 @@ Here's a step-by-step example:
 | Ctrl-b L	| Move to the previously selected pane |
 | Ctrl-b M	| Toggle mouse mode on/off |
 | Ctrl-b :	| Enter command mode |
+| { | Jump between Paragraphs before |
+| } | Jump between Paragraphs after |
+
 
 Interaction with selectors :
 | Keybinding  | Description |
