@@ -23,6 +23,7 @@
 - Install [SKHD](https://github.com/koekeishiya/skhd) to set Yabai and system keybinds.
 - Install [Uebersicht](http://tracesof.net/uebersicht/) this launcher will be helpful to setup the top bar.
 - Install [Simple-Bar](https://github.com/Jean-Tinland/simple-bar), then you can configure it by clicking on it then CMD + ,
+- Another potential bar is [Sketchy Bar](https://github.com/FelixKratz/SketchyBar/tree/master).
 - Install [Janky-Border](https://github.com/FelixKratz/JankyBorders) this will help to highlight focused windows.
 - Goo to System Prefs > Mission Control,
 - Uncheck - Automatically rearrange
