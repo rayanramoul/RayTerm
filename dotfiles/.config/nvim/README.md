@@ -1,6 +1,6 @@
 <div align="center">
  <h1>RayTerm</h1>
-  <img src="https://github.com/rayanramoul/RayTerm/blob/master/screenshot.png?raw=true" alt="RayTerm">
+  <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/neovim_preview.png?raw=true" alt="RayTerm">
   </img>
 
 </div>
