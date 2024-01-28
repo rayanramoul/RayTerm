@@ -86,6 +86,7 @@ return {
   },
 	{'mbbill/undotree'},
 	{'github/copilot.vim'},
+    {'andweeb/presence.nvim'},
     -- Fugitive is a Git wrapper so awesome, it should be illegal
 	{'tpope/vim-fugitive'},
 	{
