@@ -2,6 +2,12 @@
     <h1>MacOS</h1>
     <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true"/>
 </div>
+# Table of Content
+- [Tiling Window Management](#how-to-have-tiling-window-management-and-keybindings)
+- [Setup Top Bar](#setup-a-top-bar)
+- [My Dotfiles](#get-my-dotfiles)
+- [Essential Apps](#essential-apps)
+- [Other Interesting Apps](#other-interesting-apps)
 
 # Summary :
 - Fetch Script : neoFetch
@@ -17,7 +23,7 @@
 - Zsh Theme : Powerlevel10k
 - Other Terminal Utilities : Bat, Exa, Fzf, Ripgrep, Starship, Tldr, Zoxide, Lsd, LazyGit
 
-# How To Have Tiling Window Management + Keybindings
+# How To Have Tiling Window Management and Keybindings
 - Install [Yabai](https://github.com/koekeishiya/yabai) Tiling Window Manager, follow this [Tutorial](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)) for example.
 - (Optional) Another Tiling WM alternative is Amethyst but Yabai is better : https://brandonkboswell.com/blog/Mouseless-MacOS-Window-Management-Yabai-vs-Amethyst/
 - (For Apple Silicon users) If you are using a Mac with Apple Silicon you will have to run this : sudo nvram boot-args=-arm64e_preview_abi
@@ -64,7 +70,7 @@ yabai --restart-service
 skhd --restart-service
 ```
 
-# Essential Apps :
+# Essential Apps
 - Keeps Computer not sleepy : https://apps.apple.com/fr/app/amphetamine/id937984704?mt=12
 - Mac native search is really limited, get a better spotlight (search for apps, folders and more) : https://manual.raycast.com/
 - (Optional) another spotlight alternative is [Alfred](https://www.alfredapp.com/), comparison between the 2 : https://joshcollinsworth.com/blog/alfred-raycast
@@ -81,3 +87,6 @@ skhd --restart-service
 - Download latest versions of apps : https://max.codes/latest/
 - Read articles : https://quietreader.app/
 - Get commands recommendations in Terminal (install it if you you are using something else than Warp terminal) : https://youtu.be/ynL1fYncZ1E and https://github.com/zsh-users/zsh-completions and https://fig.io/
+
+# Keybinds
+My keybindgs are the same accross all the OSs i use, you can find a recap of them [here](https://github.com/rayanramoul/RayTerm/blob/master/docs/Keybindings.md)
