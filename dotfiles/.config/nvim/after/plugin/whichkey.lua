@@ -73,5 +73,6 @@ wk.register({
   ["<leader>gF"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
   ["<leader>gS"] = { "<cmd>lua vim.lsp.buf.document_symbol()<CR>", "Document Symbols" },
   ["<leader>gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" }, 
+  ["<leader>gp"] = { ":Gitsigns preview_hunk<CR>", "Git Preview Changes"},
 })
 wk.setup(opts)

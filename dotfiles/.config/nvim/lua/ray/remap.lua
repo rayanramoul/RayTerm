@@ -92,6 +92,6 @@ vim.keymap.set("n", "<C-l>", "<cmd>lua require('tmux').move_right()<CR>")
 
 -- Remap lazygit.nvim to <leader>gg
 vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
-
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
 -- Remap ; to :
 vim.keymap.set("n", ";", ":")
