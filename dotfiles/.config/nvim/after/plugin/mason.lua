@@ -10,12 +10,7 @@ require("mason").setup({
 
 require("mason-lspconfig").setup{
     ensure_installed = {
-"es-lint-lsp",
-            "prettier",
             "cmake",
-            "mypy",
-            "ruff",
-            "rust-analyzer",
             "pyright",
             },
     automatic_installation = true,

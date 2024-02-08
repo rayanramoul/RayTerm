@@ -110,14 +110,10 @@ return {
         'williamboman/mason.nvim',
         opts = {
             ensure_installed = {
-           "es-lint-lsp",
             "eslint",
             "prettier",
             "black",
             "cmake",
-            "mypy",
-            "ruff",
-            "rust-analyzer",
             "pyright",
             "svelte",
            "tsls",
