@@ -78,6 +78,30 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        {
+            name = 'cmdline',
+            option = {
+                ignore_cmds = { 'Man', '!' }
+            }
+        }
+    })
+})
+
 cmp.setup({
   mapping = cmp_mappings,
   sources = {

@@ -16,6 +16,7 @@ return {
             require("ibl").setup()
     end,
 },
+{'andweeb/presence.nvim'},
 {"norcalli/nvim-colorizer.lua"},
     {
   'nvimdev/dashboard-nvim',
@@ -30,6 +31,22 @@ return {
     }
   end,
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
+},
+    -- lazy.nvim
+{
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- add any options here
+  },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }
 },
     -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { 'rose-pine/neovim', name = 'rose-pine' }, 
@@ -140,6 +157,7 @@ return {
     {'nvim-lualine/lualine.nvim'},
     {'kmontocam/nvim-conda'},
     {'gelguy/wilder.nvim'},
+    {'lewis6991/gitsigns.nvim'},
     {
         "nvimdev/guard.nvim",
     -- Builtin configuration, optional
@@ -147,6 +165,7 @@ return {
         "nvimdev/guard-collection",
     }
     },
+    {'hrsh7th/cmp-cmdline'},
     {'christoomey/vim-tmux-navigator', lazy=false},
     { "aserowy/tmux.nvim",
     config = function() return require("tmux").setup() end
