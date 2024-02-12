@@ -9,6 +9,7 @@ return {
           highlight = { enable = true },
           indent = { enable = true },
         })
+
     end
     },
 { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
@@ -33,6 +34,8 @@ return {
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
 },
     -- lazy.nvim
+    {"MunifTanjim/nui.nvim"},
+    {"rcarriga/nvim-notify"},
 {
   "folke/noice.nvim",
   event = "VeryLazy",
