@@ -1,6 +1,7 @@
-return { 
+
+return {
   {'nvim-telescope/telescope.nvim', tag = '0.1.3', dependencies = { 'nvim-lua/plenary.nvim' } }, { 'rose-pine/neovim', name = 'rose-pine' }, {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", 
-  config = function () 
+  config = function ()
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
@@ -14,7 +15,7 @@ return {
     },
 { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
     config = function()
-            require("ibl").setup()
+            require("ibl").setup({indent = { highlight = highlight }})
     end,
 },
 {'andweeb/presence.nvim'},
@@ -204,7 +205,8 @@ return {
     dependencies = {
         'nvim-treesitter/nvim-treesitter', -- optional
         'nvim-tree/nvim-web-devicons',     -- optional
-    }
+    },
+    {'nvim-tree/nvim-web-devicons'},
     },
     {
     'windwp/nvim-autopairs',
@@ -235,6 +237,57 @@ return {
           color_square_width = 2,
         })
       end
+    },
+    {
+        "chrisgrieser/nvim-puppeteer",
+        lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
+    },
+    {
+      'stevearc/dressing.nvim',
+      opts = {},
+    },
+    {
+    'tzachar/highlight-undo.nvim',
+        opts = {
+        },
+    },
+    {'sindrets/diffview.nvim'},
+    {'ErichDonGubler/lsp_lines.nvim'},
+    {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    },
+    {'m-demare/hlargs.nvim'},
+    {'richardbizik/nvim-toc'},--  TOC: Table of Content generator
+    {
+    "ziontee113/icon-picker.nvim",
+        config = function()
+            require("icon-picker").setup({ disable_legacy_commands = true })
+
+            local opts = { noremap = true, silent = true }
+
+            vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
+            vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+            vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
+        end
+    },
+    {'edluffy/hologram.nvim', { }},
+    {
+      "HakonHarnes/img-clip.nvim",
+      event = "BufEnter",
+      opts = {
+        -- add options here
+        -- or leave it empty to use the default settings
+      },
+      keys = {
+        -- suggested keymap
+        { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
+      }
     },
 }
 

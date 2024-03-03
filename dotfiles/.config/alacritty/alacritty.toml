@@ -58,12 +58,17 @@ foreground = "#CDD6F4"
 background = "#A6E3A1"
 foreground = "#1E1E2E"
 
+
 [colors.search.matches]
 background = "#A6ADC8"
 foreground = "#1E1E2E"
 
 [colors.selection]
 background = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.vi_mode_cursor]
+cursor = "#B4BEFE"
 text = "#1E1E2E"
 
 

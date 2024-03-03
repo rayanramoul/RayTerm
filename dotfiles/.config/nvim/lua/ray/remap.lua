@@ -99,3 +99,6 @@ vim.keymap.set("n", ";", ":")
 
 -- Doge doc generationv
 vim.keymap.set("n", "<leader>doc", '<Plug>(doge-generate)')
+
+-- Remap <C-s>
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")

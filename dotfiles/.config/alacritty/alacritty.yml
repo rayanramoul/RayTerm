@@ -10,7 +10,7 @@ window:
 cursor:
   style:
     shape: Beam       # Supported => ▇ Block, _ Underline, | Beam
-    blinking: on          # Supported => Never, off, on, Always
+    blinking: On          # Supported => Never, off, on, Always
     vi_mode_style: Beam
 font:
   size: 18 
