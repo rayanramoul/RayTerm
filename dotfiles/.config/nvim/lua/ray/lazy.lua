@@ -213,6 +213,29 @@ return {
 },
     {"windwp/nvim-ts-autotag"},
     {"MunifTanjim/prettier.nvim"},
+    {'ggandor/leap.nvim'},
+    {
+        'kkoomen/vim-doge',
+        config = function()
+            vim.cmd('call doge#install()')
+        end,
+    },
+    {'onsails/lspkind.nvim'},
+    {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {
+      "roobert/tailwindcss-colorizer-cmp.nvim",
+      -- optionally, override the default options:
+      config = function()
+        require("tailwindcss-colorizer-cmp").setup({
+          color_square_width = 2,
+        })
+      end
+    },
 }
 
 

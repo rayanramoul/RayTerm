@@ -53,8 +53,12 @@ rust_tools.setup({
     end
   }
 })
-require('lspconfig').anakin_language_server.setup{}
-require('lspconfig').pyright.setup{}
+-- require('lspconfig').anakin_language_server.setup{}
+require('lspconfig').pyright.setup{
+    settings = {
+        pyright = {autoImportCompletion = true,},
+    }
+}
 require('lspconfig').ruff_lsp.setup{
   init_options = {
     settings = {
@@ -63,11 +67,42 @@ require('lspconfig').ruff_lsp.setup{
     }
   }
 }
+require('lspconfig').yamlls.setup {
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = ".gitlab-ci.yml"
+      },
+    },
+  }
+}
+ -- Setup through
+ -- pipx install "python-lsp-server[all]"
+ -- pipx install python-lsp-isort pylsp-mypy python-lsp-black
 require"lspconfig".pylsp.setup {
     filetypes = {"python"},
     settings = {
         configurationSources = {"flake8"},
-	formatCommand = {"black"}
+	formatCommand = {"black"},
+        pylsp = {
+    plugins = {
+        -- formatter options
+        black = { enabled = true },
+        autopep8 = { enabled = false },
+        yapf = { enabled = false },
+        -- linter options
+        pylint = { enabled = true, executable = "pylint" },
+        pyflakes = { enabled = false },
+        pycodestyle = { enabled = false },
+        -- type checker
+        pylsp_mypy = { enabled = true },
+        -- auto-completion options
+        jedi_completion = { fuzzy = true },
+        -- import sorting
+        pyls_isort = { enabled = true },
+    },
+    },
     }
 }
 local cmp = require('cmp')
@@ -102,8 +137,28 @@ cmp.setup.cmdline(':', {
     })
 })
 
+-- THEMING CMP
+local lspkind = require('lspkind')
 cmp.setup({
   mapping = cmp_mappings,
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = -3,
+      side_padding = 0,
+    },
+  },
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local strings = vim.split(kind.kind, "%s", { trimempty = true })
+      kind.kind = " " .. (strings[1] or "") .. " "
+      kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+      return kind
+    end,
+  },
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },

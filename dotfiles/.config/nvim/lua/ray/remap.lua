@@ -95,3 +95,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
 -- Remap ; to :
 vim.keymap.set("n", ";", ":")
+
+
+-- Doge doc generationv
+vim.keymap.set("n", "<leader>doc", '<Plug>(doge-generate)')

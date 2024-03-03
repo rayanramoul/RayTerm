@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z fzf-zsh-plugin)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting z fzf-zsh-plugin poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -176,7 +176,7 @@ alias ls="lsd"
 #if [ "$TMUX" = "" ]; then exec tmux; fi
 #bindkey -s '^f' '$(fzf)\n'
 #bindkey -s '^f' 'selected_dir=$(find . -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"\n'
-bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents $HOME/Codes $HOME/github $HOME/work $HOME/Github -maxdepth 8 -type f -o -type d | fzf); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
+bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
 
 
 # now Ctrl + e will execute ~/scripts/tmux_sessionizer.sh
@@ -184,3 +184,9 @@ bindkey -s ^f 'tmux-sessionizer\n'
 
 conda activate base
 
+export PATH=/opt/homebrew/bin:/Users/r.ramoul/miniconda3/bin:/Users/r.ramoul/miniconda3/condabin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/r.ramoul/.oh-my-zsh/custom/plugins/fzf-zsh-plugin/bin:/Users/r.ramoul/.fzf/bin
+export PATH="$HOME/.local/bin:$PATH"
+
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

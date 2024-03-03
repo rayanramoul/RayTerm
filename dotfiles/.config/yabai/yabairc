@@ -82,6 +82,7 @@ yabai -m rule --add app="Battle.net Launcher"    space=5
 yabai -m rule --add app="Battle.net Helper"    space=5
 yabai -m rule --add app="Battle.net Update Agent"    space=5
 yabai -m rule --add app="Epic Games Launcher"    space=5
+yabai -m rule --add app="Google Chrome|Chrome|chrome" manage=on
 
 
 yabai -m rule --add app="^System Preferences$" manage=off
