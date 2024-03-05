@@ -98,6 +98,8 @@ y = 1
 [window]
 blur = true
 dynamic_title = false
-opacity = 0.75
+opacity = 0.95
 startup_mode = "Maximized"
 title = "RayTerm"
+decorations = 'buttonless'
+

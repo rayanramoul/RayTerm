@@ -88,6 +88,7 @@ skhd --restart-service
 - Download latest versions of apps : https://max.codes/latest/
 - Read articles : https://quietreader.app/
 - Get commands recommendations in Terminal (install it if you you are using something else than Warp terminal) : https://youtu.be/ynL1fYncZ1E and https://github.com/zsh-users/zsh-completions and https://fig.io/
+- If you prefer another terminal than Warp you can still setup [Fig.io](https://fig.io/)
 
 # Keybinds
 My keybindgs are the same accross all the OSs i use, you can find a recap of them [here](https://github.com/rayanramoul/RayTerm/blob/master/docs/Keybindings.md)
