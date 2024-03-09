@@ -101,3 +101,4 @@ dynamic_title = false
 opacity = 0.75
 startup_mode = "Maximized"
 title = "RayTerm"
+decorations = 'buttonless'
