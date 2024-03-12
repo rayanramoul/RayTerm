@@ -26,6 +26,7 @@ require('lspconfig').eslint.setup({
   end,
 })
 require('lspconfig').lua_ls.setup({})
+require('lspconfig').tsserver.setup {}
 require('lspconfig').svelte.setup{}
 --require('lspconfig').rust_analyzer.setup{
 --  settings = {
@@ -106,6 +107,8 @@ require"lspconfig".pylsp.setup {
     }
 }
 local cmp = require('cmp')
+
+
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -119,7 +122,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
+        { name = 'buffer' },
+        { name = 'path' }
     }
 })
 
@@ -164,8 +168,11 @@ cmp.setup({
     end,
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "luasnip" },
+    { name = "nvim_lua" },
   }
 })
 

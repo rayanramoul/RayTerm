@@ -102,3 +102,7 @@ vim.keymap.set("n", "<leader>doc", '<Plug>(doge-generate)')
 
 -- Remap <C-s>
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
+
+
+-- Fugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git);

@@ -36,7 +36,11 @@ return {
 },
     -- lazy.nvim
     {"MunifTanjim/nui.nvim"},
-    {"rcarriga/nvim-notify"},
+    {"rcarriga/nvim-notify", 
+    config = function()
+      require('notify').setup({background_colour = "#000000"})
+    end
+  },
 {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -57,7 +61,7 @@ return {
     {'nvim-tree/nvim-tree.lua'},
     {'mfussenegger/nvim-dap'},
     {'terrortylor/nvim-comment'},
-    {'nvim-treesitter/nvim-treesitter-context'},
+    {'nvim-treesitter/nvim-treesitter-context', {}},
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {'liuchengxu/vista.vim'},
     {
@@ -148,7 +152,16 @@ return {
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp'},
+	{'hrsh7th/nvim-cmp',
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-cmdline",
+  },
+},
 	{'lukas-reineke/lsp-format.nvim', dependencies = {'neovim/nvim-lspconfig'}},
     {'simrat39/rust-tools.nvim', ft="rust", dependencies={'neovim/nvim-lspconfig'} },
     {'L3MON4D3/LuaSnip'},
@@ -156,8 +169,12 @@ return {
     {'rmagatti/auto-session'},
     {'nvim-lualine/lualine.nvim'},
     {'kmontocam/nvim-conda'},
-    {'gelguy/wilder.nvim'},
-    {'lewis6991/gitsigns.nvim'},
+    {'gelguy/wilder.nvim', 
+     config = function()
+      modes = {':', '/', '?'}
+     end
+    },
+    {'lewis6991/gitsigns.nvim', {}},
     {
         "nvimdev/guard.nvim",
     -- Builtin configuration, optional
@@ -165,7 +182,7 @@ return {
         "nvimdev/guard-collection",
     }
     },
-    {'hrsh7th/cmp-cmdline'},
+    {'hrsh7th/cmp-cmdline', {}},
     {'christoomey/vim-tmux-navigator', lazy=false},
     { "aserowy/tmux.nvim",
     config = function() return require("tmux").setup() end
@@ -213,9 +230,17 @@ return {
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
 },
-    {"windwp/nvim-ts-autotag"},
+    {"windwp/nvim-ts-autotag", 
+      config = function()
+            require('nvim-ts-autotag').setup()
+      end
+    },
     {"MunifTanjim/prettier.nvim"},
-    {'ggandor/leap.nvim'},
+    {'ggandor/leap.nvim',
+      config = function()
+        require('leap').create_default_mappings()
+      end,
+    },
     {
         'kkoomen/vim-doge',
         config = function()
@@ -230,12 +255,21 @@ return {
     build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
+        'https://github.com/adelarsq/image_preview.nvim',
+        event = 'VeryLazy',
+        config = function()
+            require("image_preview").setup()
+        end
+    },
+    {
       "roobert/tailwindcss-colorizer-cmp.nvim",
       -- optionally, override the default options:
       config = function()
         require("tailwindcss-colorizer-cmp").setup({
           color_square_width = 2,
         })
+        
+        require('colorizer').setup()
       end
     },
     {
@@ -262,7 +296,7 @@ return {
         -- refer to the configuration section below
       }
     },
-    {'m-demare/hlargs.nvim'},
+    {'m-demare/hlargs.nvim', {}},
     {'richardbizik/nvim-toc'},--  TOC: Table of Content generator
     {
     "ziontee113/icon-picker.nvim",
