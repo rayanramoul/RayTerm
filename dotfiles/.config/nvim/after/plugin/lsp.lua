@@ -8,10 +8,8 @@ lsp.configure('gdscript', {
     -- root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
     filetypes = {'gd', 'gdscript', 'gdscript3' }
 })
--- lsp.ensure_installed({
---   'tsserver',
---   'rust_analyzer',
--- })
+
+
 
 -- Fix Undefined global 'vim'
 -- lsp.nvim_workspace()
@@ -26,8 +24,32 @@ require('lspconfig').eslint.setup({
   end,
 })
 require('lspconfig').lua_ls.setup({})
-require('lspconfig').tsserver.setup {}
-require('lspconfig').svelte.setup{}
+require('lspconfig').tsserver.setup({})
+require('lspconfig').svelte.setup({})
+require('lspconfig').html.setup({})
+require('lspconfig').dockerls.setup({})
+require('lspconfig').cssls.setup({
+  capabilities = capabilities,
+})
+require("lspconfig").azure_pipelines_ls.setup {
+  settings = {
+      yaml = {
+          schemas = {
+              ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
+                  "/azure-pipeline*.y*l",
+                  "/*.azure*",
+                  "Azure-Pipelines/**/*.y*l",
+                  "Pipelines/*.y*l",
+              },
+          },
+      },
+  },
+}
+
+
+require("lspconfig").hydralsp.setup({
+  on_attach = lsp.on_attach,
+})
 --require('lspconfig').rust_analyzer.setup{
 --  settings = {
 --    ['rust-analyzer'] = {
