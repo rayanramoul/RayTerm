@@ -85,10 +85,21 @@ vim.keymap.set("n", "<leader>duf", "<cmd>lua require'dapui'.float_element()<CR>"
 
 
 -- Remaps for tmux vim plugin
-vim.keymap.set("n", "<C-h>", "<cmd>lua require('tmux').move_left()<CR>")
-vim.keymap.set("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd>lua require('tmux').move_top()<CR>")
-vim.keymap.set("n", "<C-l>", "<cmd>lua require('tmux').move_right()<CR>")
+-- vim.keymap.set("n", "<C-h>", "<cmd>lua require('tmux').move_left()<CR>")
+-- vim.keymap.set("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<CR>")
+-- vim.keymap.set("n", "<C-k>", "<cmd>lua require('tmux').move_top()<CR>")
+-- vim.keymap.set("n", "<C-l>", "<cmd>lua require('tmux').move_right()<CR>")
+-- remap following keys with vim.keymap.set
+-- { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+--             { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+--             { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+--             { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+--             { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+vim.keymap.set("n", "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>")
+vim.keymap.set("n", "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>")
+vim.keymap.set("n", "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>")
+vim.keymap.set("n", "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>")
+vim.keymap.set("n", "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
 
 -- Remap lazygit.nvim to <leader>gg
 vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
@@ -106,3 +117,6 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+
+
+
