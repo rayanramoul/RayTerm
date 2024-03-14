@@ -107,6 +107,15 @@ In File
 | ]m | Jump to next Function/Method |
 | Space + r | Run main python file or main bash file at the root | 
 | Space + t | Run tests with pytest |
+| gr | See references of a blob with LSP through telescope |
+| gd | Go to definition of a blob with LSP |
+| s <character> | Use leap to search for a character |
+| r e | refactor extract with LSP |
+| r f | refactor extract to file |
+| r v | refactor extract variable |
+| r b | refactor extract block |
+| r b f | refactor extract block file |
+| r n | refactor rename |
 
 TERMINAL :
 | Keybinding  | Description |

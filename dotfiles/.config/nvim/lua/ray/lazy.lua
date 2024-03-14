@@ -57,7 +57,7 @@ return {
     }
 },
     -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    { 'rose-pine/neovim', name = 'rose-pine' }, 
+    {'rose-pine/neovim', name = 'rose-pine' }, 
     {'nvim-tree/nvim-tree.lua'},
     {'mfussenegger/nvim-dap'},
     {'terrortylor/nvim-comment'},
@@ -116,22 +116,6 @@ return {
 	{'tpope/vim-fugitive'},
 	{
         'williamboman/mason.nvim',
-        opts = {
-            ensure_installed = {
-            "eslint",
-            "prettier",
-            "black",
-            "cmake",
-            "pyright",
-            "svelte",
-           "tsls",
-            "debugpy",
-            "flake8",
-            "black",
-            "python-lsp-server",
-            "isort",
-            },
-        },
     },
     {
       "folke/which-key.nvim",
@@ -341,6 +325,13 @@ return {
         { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
       }
     },
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end,
+    },
+    {'akinsho/git-conflict.nvim', version = "*", config = true}
 }
 
 

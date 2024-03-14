@@ -46,7 +46,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- Replace the work you are on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- Make the current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Execute current file
 -- vim.keymap.set("n", "<leader><leader>", function()
@@ -54,7 +54,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- end)
 
 -- Execute main project file
-vim.keymap.set("n", "<leader>r", "<cmd>silent !tmux split-window -v executioner<CR>")
+vim.keymap.set("n", "<leader>x", "<cmd>silent !tmux split-window -v executioner<CR>")
 -- Execute tests of actual project
 vim.keymap.set("n", "<leader>t", "<cmd>silent !tmux split-window -v executioner -t<CR>")
 -- Disable arrows movement
@@ -119,4 +119,15 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
 
 
+-- Refactoring keybinds
+vim.keymap.set("x", "<leader>re", ":Refactor extract ")
+vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
 
+vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+
+vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
+
+vim.keymap.set( "n", "<leader>rI", ":Refactor inline_func")
+
+vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
+vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
