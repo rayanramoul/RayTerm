@@ -50,4 +50,7 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
   when: not ansible_check_mode  # Only clone if not in check mode
-
+- name: Clone fzf-tab plugin
+  git:
+    repo: https://github.com/Aloxaf/fzf-tab.git
+    dest: ~/.oh-my-zsh/custom/plugins/fzf-tab

@@ -174,7 +174,10 @@ return {
       modes = {':', '/', '?'}
      end
     },
-    {'lewis6991/gitsigns.nvim', {}},
+    {'lewis6991/gitsigns.nvim', },
+     config = function()
+        require('gitsigns').setup() 
+    end,
     {
         "nvimdev/guard.nvim",
     -- Builtin configuration, optional
