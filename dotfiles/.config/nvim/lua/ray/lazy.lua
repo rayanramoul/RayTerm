@@ -243,12 +243,12 @@ return {
         require('leap').create_default_mappings()
       end,
     },
-    {
-        'kkoomen/vim-doge',
-        config = function()
-            vim.cmd('call doge#install()')
-        end,
-    },
+    -- {
+    --     'kkoomen/vim-doge',
+    --     config = function()
+    --         vim.cmd('call doge#install()')
+    --     end,
+    -- },
     {'onsails/lspkind.nvim'},
     {
     "iamcco/markdown-preview.nvim",
