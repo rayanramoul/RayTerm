@@ -48,5 +48,6 @@ vim.g.copilot_filetypes = {
     gitrebase = true,
     gitignore = true,
     git = true,
+  nix = true,
   -- Add more filetypes as needed
 }
