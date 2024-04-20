@@ -5,7 +5,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     # Use find with exclusion
-    selected=$(find $HOME/Downloads $HOME/Documents -mindepth 1 -maxdepth 9 -type d | fzf)
+    selected=$(find $HOME/Downloads $HOME/RayTerm $HOME/Documents -mindepth 1 -maxdepth 9 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

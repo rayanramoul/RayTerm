@@ -18,7 +18,6 @@ require("mason-lspconfig").setup{
         'dockerls',
         'cssls',
         'azure_pipelines_ls',
-        'hydra_lsp',
         'pyright',
         'ruff_lsp',
         'yamlls',
