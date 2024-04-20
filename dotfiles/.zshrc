@@ -166,3 +166,33 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+# add also /Users/r.ramoul/.local/bin' to the PATH
+export PATH="$PATH:/Users/r.ramoul/.local/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/r.ramoul/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r.ramoul/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/r.ramoul/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r.ramoul/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+#alias conda="mamba"
+
+
+
+# <<<<<< SPECIFIC TO Apple Silicon
+arch_name="$(uname -m)"
+ 
+if [ "${arch_name}" = "x86_64" ]; then
+    echo "Running on Rosetta using miniforge3"
+    source ~/.start_miniforge3.sh
+elif [ "${arch_name}" = "arm64" ]; then
+    echo "Running on ARM64 using miniconda3"
+    source ~/.start_miniconda3.sh
+else
+    echo "Unknown architecture: ${arch_name}"
+fi
+# <<<<<<<< end <<<<<<<
+
