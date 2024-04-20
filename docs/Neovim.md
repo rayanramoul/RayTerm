@@ -116,7 +116,7 @@ In File
 | r b | refactor extract block |
 | r b f | refactor extract block file |
 | r n | refactor rename |
-
+| Ctrl ^ |  typically toggles between the current buffer and the previously edited buffer. This allows you to quickly switch back and forth between two buffers. It's particularly useful when you need to refer to or copy/paste content between two different files without losing your current editing context. |
 TERMINAL :
 | Keybinding  | Description |
 | ------------- | ------------- |
