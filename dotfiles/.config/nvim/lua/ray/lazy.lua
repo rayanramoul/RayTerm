@@ -18,29 +18,8 @@ return {
             require("ibl").setup({indent = { highlight = highlight }})
     end,
 },
-{"norcalli/nvim-colorizer.lua"},
+{"norcalli/nvim-colorizer.lua", {}},
     -- lazy.nvim
-    {"MunifTanjim/nui.nvim"},
-    {"rcarriga/nvim-notify", 
-    config = function()
-      require('notify').setup({background_colour = "#000000"})
-    end
-  },
-{
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
-  dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
-    }
-},
     -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'rose-pine/neovim', name = 'rose-pine' }, 
     {'nvim-tree/nvim-tree.lua'},
@@ -60,15 +39,28 @@ return {
   },
 	{'mbbill/undotree'},
 	{'github/copilot.vim'},
+  {'stevearc/conform.nvim'},
     -- Fugitive is a Git wrapper so awesome, it should be illegal
 	{'tpope/vim-fugitive'},
-	{
-        'williamboman/mason.nvim',
-  },
+	{'williamboman/mason.nvim',},
   {'mfussenegger/nvim-lint'},
 	{'williamboman/mason-lspconfig.nvim'},
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-	{'neovim/nvim-lspconfig'},
+	{'neovim/nvim-lspconfig', dependencies = {
+    -- Automatically install LSPs and related tools to stdpath for Neovim
+    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    'williamboman/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+
+    -- Useful status updates for LSP.
+    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+    { 'j-hui/fidget.nvim', opts = {} },
+
+    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
+    -- used for completion, annotations and signatures of Neovim apis
+    { 'folke/neodev.nvim', opts = {} },
+  },
+},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp',
     dependencies = {
@@ -79,131 +71,128 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-cmdline",
   },
-},
-	{'lukas-reineke/lsp-format.nvim', dependencies = {'neovim/nvim-lspconfig'}},
-    {'simrat39/rust-tools.nvim', ft="rust", dependencies={'neovim/nvim-lspconfig'} },
-    {'hrsh7th/cmp-path'},
-    {'rmagatti/auto-session'},
-    {'nvim-lualine/lualine.nvim'},
-    {'kmontocam/nvim-conda'},
-    {'gelguy/wilder.nvim', 
-     config = function()
-      modes = {':', '/', '?'}
-     end
-    },
-    {'lewis6991/gitsigns.nvim', },
-     config = function()
-        require('gitsigns').setup() 
-    end,
-    {
-        "nvimdev/guard.nvim",
-    -- Builtin configuration, optional
-        dependencies = {
-        "nvimdev/guard-collection",
-    }
-    },
-    {'hrsh7th/cmp-cmdline', {}},
-    {'christoomey/vim-tmux-navigator',
-        cmd = {
-            "TmuxNavigateLeft",
-            "TmuxNavigateDown",
-            "TmuxNavigateUp",
-            "TmuxNavigateRight",
-            "TmuxNavigatePrevious",
-          },
-          keys = {
-            { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-            { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-          },
-        lazy=false},
-    { "aserowy/tmux.nvim",
-    config = function() return require("tmux").setup() end
-    }, 
-    {"ahmedkhalf/project.nvim",
+  },
+  {'simrat39/rust-tools.nvim', ft="rust", dependencies={'neovim/nvim-lspconfig'} },
+  {'hrsh7th/cmp-path'},
+  {'rmagatti/auto-session'},
+  {'nvim-lualine/lualine.nvim'},
+  {'kmontocam/nvim-conda'},
+  {'gelguy/wilder.nvim', 
     config = function()
-      require("project_nvim").setup {
-
-        sync_root_with_cwd = true,
-      respect_buf_cwd = true,
-      update_focused_file = {
-        enable = true,
-        update_root = true
-      },
-            }
+    modes = {':', '/', '?'}
     end
+  },
+  {'lewis6991/gitsigns.nvim', opts = {
+    signs = {
+      add = { text = '+' },
+      change = { text = '~' },
+      delete = { text = '_' },
+      topdelete = { text = '‾' },
+      changedelete = { text = '~' },
     },
-    {
-            'nvimdev/lspsaga.nvim',
-        config = function()
-        require('lspsaga').setup({})
-
-    end,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter', -- optional
-        'nvim-tree/nvim-web-devicons',     -- optional
-    },
-    },
-    {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
-},
-    {'ggandor/leap.nvim',
-      config = function()
-        require('leap').create_default_mappings()
-      end,
-    },
-    {'onsails/lspkind.nvim'},
-    {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-    },
-    {
-        "chrisgrieser/nvim-puppeteer",
-        lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
-    },
-    {
-      'stevearc/dressing.nvim',
-      opts = {},
-    },
-    {
-    'tzachar/highlight-undo.nvim',
-        opts = {
+  },},
+  {'hrsh7th/cmp-cmdline', {}},
+  {'christoomey/vim-tmux-navigator',
+      cmd = {
+          "TmuxNavigateLeft",
+          "TmuxNavigateDown",
+          "TmuxNavigateUp",
+          "TmuxNavigateRight",
+          "TmuxNavigatePrevious",
         },
+        keys = {
+          { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+          { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+          { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+          { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+          { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
+      lazy=false},
+  { "aserowy/tmux.nvim",
+  config = function() return require("tmux").setup() end
+  }, 
+  {"ahmedkhalf/project.nvim",
+  config = function()
+    require("project_nvim").setup {
+
+      sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true
     },
-    {'sindrets/diffview.nvim'},
-    {'ErichDonGubler/lsp_lines.nvim'},
-    {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
+          }
+  end
+  },
+  {
+          'nvimdev/lspsaga.nvim',
+      config = function()
+      require('lspsaga').setup({})
+
+  end,
+  dependencies = {
+      'nvim-treesitter/nvim-treesitter', -- optional
+      'nvim-tree/nvim-web-devicons',     -- optional
+  },
+  },
+  {
+  'windwp/nvim-autopairs',
+  event = "InsertEnter",
+  opts = {} -- this is equalent to setup({}) function
+},
+  {'ggandor/leap.nvim',
+    config = function()
+      require('leap').create_default_mappings()
+    end,
+  },
+  {'onsails/lspkind.nvim'},
+  {
+  "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  ft = { "markdown" },
+  build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+      "chrisgrieser/nvim-puppeteer",
+      lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  {
+  'tzachar/highlight-undo.nvim',
       opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    },
-    {'m-demare/hlargs.nvim', {}},
-    {'richardbizik/nvim-toc'},--  TOC: Table of Content generator
-    {
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup({
-              signs = {
-                add = { text = '+' },
-                change = { text = '~' },
-                delete = { text = '_' },
-                topdelete = { text = '‾' },
-                changedelete = { text = '~' },
-              },
-            })
-        end,
-    },
-    {'akinsho/git-conflict.nvim', version = "*", config = true}
+      },
+  },
+  {'sindrets/diffview.nvim'},
+  {'ErichDonGubler/lsp_lines.nvim'},
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  {'m-demare/hlargs.nvim', {}},
+  {'richardbizik/nvim-toc'},--  TOC: Table of Content generator
+  {
+      "lewis6991/gitsigns.nvim",
+      config = function()
+          require("gitsigns").setup({
+            signs = {
+              add = { text = '+' },
+              change = { text = '~' },
+              delete = { text = '_' },
+              topdelete = { text = '‾' },
+              changedelete = { text = '~' },
+            },
+          })
+      end,
+  },
+  {'akinsho/git-conflict.nvim', version = "*", config = true}
 }
 
 

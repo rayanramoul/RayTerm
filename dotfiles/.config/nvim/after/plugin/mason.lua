@@ -10,13 +10,10 @@ require("mason").setup({
 
 require("mason-lspconfig").setup{
     ensure_installed = {
-        'tsserver', 
         'rust_analyzer',
         'eslint',
         'lua_ls',
         'html',
-        'dockerls',
-        'cssls',
         'azure_pipelines_ls',
         'pyright',
         'ruff_lsp',
