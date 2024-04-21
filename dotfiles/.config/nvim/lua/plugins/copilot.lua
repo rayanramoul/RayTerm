@@ -1,5 +1,1 @@
-return {
-    {
-        "github/copilot.vim",
-    },
-}
+

@@ -14,7 +14,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Allows search terms to keep cursor in the middle 
+-- Allows search terms to keep cursor in the middle
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -24,10 +24,10 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 -- interactions with the system copy buffers
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>q", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>q", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -104,6 +104,10 @@ vim.keymap.set("n", "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
 -- Remap lazygit.nvim to <leader>gg
 vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
+
+vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
+vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
+
 -- Remap ; to :
 vim.keymap.set("n", ";", ":")
 
@@ -117,7 +121,33 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+vim.keymap.set("n", "<leader>p", function()
+    vim.cmd.Git('push')
+end, opts)
 
+-- rebase always
+vim.keymap.set("n", "<leader>P", function()
+    vim.cmd.Git({ 'pull', '--rebase' })
+end, opts)
+
+-- add current project
+vim.keymap.set("n", "<leader>ga", function()
+    vim.cmd.Git('add %')
+end, opts)
+
+-- add all
+vim.keymap.set("n", "<leader>gA", function()
+    vim.cmd.Git('add .')
+end, opts)
+
+-- commit
+vim.keymap.set("n", "<leader>gc", function()
+    vim.cmd.Git('commit')
+end, opts)
+
+-- NOTE: It allows me to easily set the branch i am pushing and any tracking
+-- needed if i did not set the branch up correctly
+vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
 
 -- Refactoring keybinds
 vim.keymap.set("x", "<leader>re", ":Refactor extract ")
@@ -127,7 +157,24 @@ vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
 
 vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
 
-vim.keymap.set( "n", "<leader>rI", ":Refactor inline_func")
+vim.keymap.set("n", "<leader>rI", ":Refactor inline_func")
 
 vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
 vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
+
+vim.keymap.set('n', '<leader>/', function()
+    -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+
+
+-- Add visual keymap so that when in visual mode, selected text get searched globally
+vim.keymap.set("v", "*", ":<C-u>call VisualSelection('f')<CR>", { noremap = true, silent = true })
+
+
+-- Add keymap to go back to previous buffer with backspace
+vim.keymap.set("n", "<BS>", "<C-o>")

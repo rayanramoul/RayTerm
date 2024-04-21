@@ -1,6 +1,6 @@
 -- Enable GitHub Copilot for additional filetypes
 vim.g.copilot_filetypes = {
-  xml = true,
+    xml = true,
     html = true,
     css = true,
     javascript = true,
@@ -48,6 +48,11 @@ vim.g.copilot_filetypes = {
     gitrebase = true,
     gitignore = true,
     git = true,
-  nix = true,
-  -- Add more filetypes as needed
+    nix = true,
+    -- Add more filetypes as needed
 }
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-y>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+-- require('copilot').setup({})
