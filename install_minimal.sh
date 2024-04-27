@@ -35,20 +35,20 @@ cp -r dotfiles/.* ~
 rm -rf ~/RayTerm
 
 # reminders on what to install
-echo "Don't forget to install the following:"
-echo "1. zsh"
-echo "2. oh-my-zsh"
-echo "3. powerlevel10k"
-echo "4. tmux"
-echo "5. vim"
-echo "6. fzf"
-echo "7. bat"
-echo "8. exa"
-echo "9. fd"
-echo "10. ripgrep"
-echo "11. tldr"
-echo "12. bpytop"
+sudo apt-get update
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt install python3-pip
+pip3 install bpytop
 
+sudo apt-get install -y zsh git tmux fzf bat fd-find ripgrep tldr 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh -p $HOME/miniconda3 -b
 
 # End message
 echo "Done! Enjoy your new terminal setup!"
