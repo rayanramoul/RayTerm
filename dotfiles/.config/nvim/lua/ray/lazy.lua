@@ -224,10 +224,4 @@ return {
         build = "make install_jsregexp"
     },
     { "rafamadriz/friendly-snippets", },
-    {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-            require("copilot_cmp").setup()
-        end
-    }
 }

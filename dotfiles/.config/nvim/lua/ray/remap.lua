@@ -112,8 +112,6 @@ vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
 vim.keymap.set("n", ";", ":")
 
 
--- Doge doc generationv
-vim.keymap.set("n", "<leader>doc", '<Plug>(doge-generate)')
 
 -- Remap <C-s>
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
@@ -131,12 +129,12 @@ vim.keymap.set("n", "<leader>P", function()
 end, opts)
 
 -- add current project
-vim.keymap.set("n", "<leader>ga", function()
+vim.keymap.set("n", "<leader>gA", function()
     vim.cmd.Git('add %')
 end, opts)
 
 -- add all
-vim.keymap.set("n", "<leader>gA", function()
+vim.keymap.set("n", "<leader>ga", function()
     vim.cmd.Git('add .')
 end, opts)
 
