@@ -24,7 +24,7 @@ display_ascii_art() {
 # Display ASCII art
 display_ascii_art
 
-git clone https://github.com/rayanramoul/RayTerm.git ~/RayTerm
+git clone --recursive https://github.com/rayanramoul/RayTerm.git ~/RayTerm
 # cd into RayTerm
 cd ~/RayTerm
 

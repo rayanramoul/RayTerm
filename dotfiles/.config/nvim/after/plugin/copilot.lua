@@ -52,5 +52,4 @@ vim.g.copilot_filetypes = {
     -- Add more filetypes as needed
 }
 
-vim.g.copilot_no_tab_map = true
--- require('copilot').setup({})
+-- vim.g.copilot_no_tab_map = true

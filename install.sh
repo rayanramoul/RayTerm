@@ -57,7 +57,7 @@ else
   # Clone the dotfiles repository
   cd ~
   display_message "Cloning dotfiles repository..."
-  git clone https://github.com/rayanramoul/RayTerm.git ~/RayTerm
+  git clone --recursive https://github.com/rayanramoul/RayTerm.git ~/RayTerm
 
   # Change into the cloned repository directory
   cd ~/RayTerm

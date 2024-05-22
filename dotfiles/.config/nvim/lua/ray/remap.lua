@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<leader>pv", ":NvimTreeOpen<CR>")
 -- this is for move commands, when highlighting we can move the corresponding lines
@@ -45,13 +44,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Replace the work you are on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- Make the current file executable
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- Execute current file
--- vim.keymap.set("n", "<leader><leader>", function()
---     vim.cmd("so")
--- end)
 
 -- Execute main project file
 vim.keymap.set("n", "<leader>x", "<cmd>silent !tmux split-window -v executioner<CR>")
@@ -63,47 +55,12 @@ vim.keymap.set('', '<Down>', '<Nop>')
 vim.keymap.set('', '<Left>', '<Nop>')
 vim.keymap.set('', '<Right>', '<Nop>')
 
-
--- Debugger remaps
-vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
-vim.keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
-vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<CR>")
-vim.keymap.set("n", "<leader>du", "<cmd>lua require'dap'.up()<CR>")
-vim.keymap.set("n", "<leader>dd", "<cmd>lua require'dap'.down()<CR>")
-vim.keymap.set("n", "<leader>de", "<cmd>lua require'dap'.disconnect()<CR>")
-vim.keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.close()<CR>")
-
--- Mapping for dap ui
-vim.keymap.set("n", "<leader>dui", "<cmd>lua require'dapui'.toggle()<CR>")
-vim.keymap.set("n", "<leader>duh", "<cmd>lua require'dapui'.hover()<CR>")
-vim.opt.colorcolumn = "80"
-vim.keymap.set("n", "<leader>duf", "<cmd>lua require'dapui'.float_element()<CR>")
-
-
--- Remaps for tmux vim plugin
--- vim.keymap.set("n", "<C-h>", "<cmd>lua require('tmux').move_left()<CR>")
--- vim.keymap.set("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<CR>")
--- vim.keymap.set("n", "<C-k>", "<cmd>lua require('tmux').move_top()<CR>")
--- vim.keymap.set("n", "<C-l>", "<cmd>lua require('tmux').move_right()<CR>")
--- remap following keys with vim.keymap.set
--- { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
---             { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
---             { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
---             { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
---             { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 vim.keymap.set("n", "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>")
 vim.keymap.set("n", "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
 
--- Remap lazygit.nvim to <leader>gg
-vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
 
 vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")

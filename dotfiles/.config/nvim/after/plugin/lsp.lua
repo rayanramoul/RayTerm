@@ -30,34 +30,7 @@ require('lspconfig').dockerls.setup({})
 require('lspconfig').cssls.setup({
     capabilities = capabilities,
 })
-require("lspconfig").azure_pipelines_ls.setup {
-    settings = {
-        yaml = {
-            schemas = {
-                ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
-                    "/azure-pipeline*.y*l",
-                    "/*.azure*",
-                    "Azure-Pipelines/**/*.y*l",
-                    "Pipelines/*.y*l",
-                },
-            },
-        },
-    },
-}
 
-
--- require("lspconfig").hydralsp.setup({
---   on_attach = lsp.on_attach,
--- })
---require('lspconfig').rust_analyzer.setup{
---  settings = {
---    ['rust-analyzer'] = {
---      diagnostics = {
---        enable = false;
---      }
---    }
---  }
---}
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
@@ -102,32 +75,6 @@ require('lspconfig').yamlls.setup {
         },
     }
 }
--- Setup through
--- pipx install "python-lsp-server[all]"
--- pipx install python-lsp-isort pylsp-mypy python-lsp-black python-lsp-ruff
--- pipx install pylsp-rope --include-deps
---require("lspconfig").pylsp.setup {
---    filetypes = {"python"},
---    settings = {
--- configurationSources = {"flake8"},
---	formatCommand = {"black"},
---        pylsp = {
---    plugins = {
---        -- formatter options
---        black = { enabled = true },
---       yapf = { enabled = false },
---       -- linter options
---      pycodestyle = { enabled = true },
---     -- type checker
---      pylsp_mypy = { enabled = true },
--- auto-completion options
---        jedi_completion = { fuzzy = false, enabled=false},
--- import sorting
---        pyls_isort = { enabled = true },
---    },
---    },
---    }
---}
 local cmp = require('cmp')
 
 
