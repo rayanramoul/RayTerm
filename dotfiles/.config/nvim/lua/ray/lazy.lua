@@ -32,7 +32,6 @@ return {
         opts = {},
     },
     { 'nvim-tree/nvim-tree.lua' },
-    { 'terrortylor/nvim-comment' },
     { 'nvim-treesitter/nvim-treesitter-context', {} },
     { 'akinsho/bufferline.nvim',                 version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
     { 'ThePrimeagen/harpoon' },

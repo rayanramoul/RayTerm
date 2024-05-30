@@ -125,6 +125,17 @@ vim.keymap.set('n', '<leader>/', function()
     })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+-- Add git conflict commands to the keymap
+-- GitConflictChooseOurs — Select the current changes.
+-- GitConflictChooseTheirs — Select the incoming changes.
+-- GitConflictChooseBoth — Select both changes.
+-- GitConflictNextConflict — Move to the next conflict.
+-- GitConflictPrevConflict — Move to the previous conflict.
+vim.keymap.set("n", "<leader>gco", ":GitConflictChooseOurs<CR>")
+vim.keymap.set("n", "<leader>gct", ":GitConflictChooseTheirs<CR>")
+vim.keymap.set("n", "<leader>gcb", ":GitConflictChooseBoth<CR>")
+vim.keymap.set("n", "<leader>gcn", ":GitConflictNextConflict<CR>")
+vim.keymap.set("n", "<leader>gcp", ":GitConflictPrevConflict<CR>")
 
 
 -- Add visual keymap so that when in visual mode, selected text get searched globally
