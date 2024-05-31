@@ -59,12 +59,14 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
-exec --no-startup-id feh --bg-fill /home/$USER/Images/Wallpaper.jpg
+exec --no-startup-id feh --bg-fill /home/$USER/Pictures/Wallpaper.jpg
 exec_always xset -dpms
 exec_always compton -f
 bindsym $mod+space exec --no-startup-id rofi -show run
 # -theme onedark -lines 5 -opacity "60"
 
+# automatically execute ~/screens.sh when i3 starts
+exec --no-startup-id ~/screens.sh
 
 
 # A more modern dmenu replacement is rofi:
@@ -74,10 +76,10 @@ bindsym $mod+space exec --no-startup-id rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -86,10 +88,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -98,7 +100,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -165,17 +167,26 @@ assign [class="Inkscape"] $ws6
 # Define names for default workspaces for which we configure key bindings later>
 # We use variables to avoid repeating the names in multiple places.
 # https://fontawesome.com/v5/cheatsheet?ref=itsfoss.com
-set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
-set $ws3 "3: Code"
-set $ws4 "4: Music/Discord"
-set $ws5 "5: Gaming"
+set $ws1 "1:  Terminal"
+set $ws2 "2:  Firefox"
+set $ws3 "3:  Code"
+set $ws4 "4:  Music/Discord"
+set $ws5 "5:  Gaming"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+workspace 2 output HDMI-0
+workspace 1 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+workspace 6 output HDMI-0
+workspace 7 output HDMI-0
+workspace 8 output HDMI-0
+workspace 9 output HDMI-0
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -188,6 +199,8 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -237,34 +250,31 @@ bindsym $mod+r mode "resize"
 
 
 set $rosewater #f5e0dc
-set $flamingo  #f2cdcd
-set $pink      #f5c2e7
-set $mauve     #cba6f7
-set $red       #f38ba8
-
-set $maroon    #eba0ac
-set $peach     #fab387
-set $yellow    #f9e2af
-set $green     #a6e3a1
-set $teal      #94e2d5
-set $sky       #89dceb
-set $sapphire  #74c7ec
-set $blue      #89b4fa
-
-set $lavender  #b4befe
-set $text      #cdd6f4
-set $subtext1  #bac2de
-set $subtext0  #a6adc8
-set $overlay2  #9399b2
-set $overlay1  #7f849c
-set $overlay0  #6c7086
-set $surface2  #585b70
-
-set $surface1  #45475a
-set $surface0  #313244
-set $base      #1e1e2e
-set $mantle    #181825
-set $crust     #11111b
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
@@ -272,8 +282,9 @@ client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
 client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-
 client.background        $base
+
+
 
 # LOCK
 bindsym $mod+Shift+X exec sh /home/$USER/.config/i3/lock.sh
@@ -284,33 +295,27 @@ bindsym $mod+Shift+X exec sh /home/$USER/.config/i3/lock.sh
 hide_edge_borders both
 exec_always --no-startup-id $HOME/.config/i3/polyscript.sh
 
-# Colorr Schemees with Transparrency
-set $bgcolor    #66405f
-set $in-bgcolor #3636364D
-set $focused-ws #ff6be4
-set $bar-color  #523d640D
-
-bar {
-    position top
-    tray_output primary
-    status_command i3status --config /home/$USER/.config/i3/i3status.conf
-    #status_command i3blocks -c /home/$USER/.config/i3blocks/i3blocks.conf
-    font pango: FiraCode Nerd Font 11
-    colors {
-        background         $base
-        statusline         $text
-        focused_statusline $text
-        active_workspace   $base $text $blue
-        focused_separator  $base
-        focused_workspace  $base $base $green
-        active_workspace   $base $base $blue
-        inactive_workspace $base $base $surface1
-        urgent_workspace   $base $base $surface1
-        binding_mode       $base $base $surface1
-        }
-    i3bar_command i3bar --transparency
-    tray_output none
-}
+# bar {
+#     # position top
+#     # tray_output primary
+#     # status_command i3status --config /home/$USER/.config/i3/i3status.conf
+#     # #status_command i3blocks -c /home/$USER/.config/i3blocks/i3blocks.conf
+#     # font pango: FiraCode Nerd Font 11
+#     # colors {
+#     #     background         $base
+#     #     statusline         $text
+#     #     focused_statusline $text
+#     #     focused_separator  $base
+#     #     focused_workspace  $base $base $green
+#     #     active_workspace   $base $base $blue
+#     #     inactive_workspace $base $base $surface1
+#     #     urgent_workspace   $base $base $surface1
+#     #     binding_mode       $base $base $surface1
+#     # }
+#     # i3bar_command i3bar --transparency
+#     # separator_symbol ":|:"
+#     # tray_output none
+# }
 
 
 workspace_auto_back_and_forth true
