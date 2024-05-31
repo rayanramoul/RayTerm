@@ -41,6 +41,11 @@ cd RayTerm
 stow -t $HOME -R dotfiles
 ```
 
+Or if you want a minimal setup for a server (only copy dotfiles) you can run the following command :
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/install_minimal.sh -O -)" -- -m
+```
+
 _for Windows you can check the [Windows](docs/Windows.md) doc_
 
 # What is this ?

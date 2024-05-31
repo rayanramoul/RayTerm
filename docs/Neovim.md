@@ -116,6 +116,9 @@ In File
 | r b | refactor extract block |
 | r b f | refactor extract block file |
 | r n | refactor rename |
+| Ctrl ^ |  typically toggles between the current buffer and the previously edited buffer. This allows you to quickly switch back and forth between two buffers. It's particularly useful when you need to refer to or copy/paste content between two different files without losing your current editing context. |
+| 5 j | in [] for example jump to beginning |
+| 5 k | in [] for example jump to ending |
 
 TERMINAL :
 | Keybinding  | Description |
@@ -152,15 +155,6 @@ HARPOON :
 | Space 3 | Nav 3 |
 | Space 4 | Nav 4 |
 
-DAP DEBUGGING :
-| Keybinding  | Description |
-| ------------- | ------------- |
-| Space d b | TOGGLE BREAKPOINT |
-| Space d l | RUN LAST |
-| Space d c | CONTINUE |
-| Space d u i | DAP UI TOGGLE |
-| Space 5 | RUN CURRENT FILE |
-
 TMUX :
 | Keybinding  | Description |
 | ------------- | ------------- |
@@ -171,6 +165,15 @@ GIT :
 | Keybinding  | Description |
 | ------------- | ------------- |
 | Space g g | Activate LazyGit |
+| Space g a | Git add all project |
+| Space g A | Git add current file |
+| Space g c | Git Commit |
+| Space g p | Git Push |
+| Space g P | Git Pull |
+| Space g c o | Git Conflict Accept Ours |
+| Space g c t | Git Conflict Accept Theirs |
+| Space g c n | Git Conflict Next Conflict |
+| Space g c p | Git Conflict Previous Conflict |
 
 
 Indentation :

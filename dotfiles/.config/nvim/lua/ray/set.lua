@@ -1,5 +1,3 @@
-vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -42,18 +40,25 @@ local au = vim.api.nvim_create_autocmd
 ---Highlight yanked text
 --
 au('TextYankPost', {
-  group = ag('yank_highlight', {}),
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank { higroup='IncSearch', timeout=300 }
-  end,
+    group = ag('yank_highlight', {}),
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+    end,
 })
 
 -- Set clipboard to unnamed
-vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option("clipboard", "unnamed")
 
 -- Set colorcolumn
-vim.api.nvim_set_option("colorcolumn","120")
+vim.api.nvim_set_option("colorcolumn", "120")
 
 -- Set clipboard to be shared between vim and system
-vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.api.nvim_set_option("clipboard", "unnamedplus")
+
+-- Jump to last edit position on opening file
+vim.cmd([[
+
+  au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+]])

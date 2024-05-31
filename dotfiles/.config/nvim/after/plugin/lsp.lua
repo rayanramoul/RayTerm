@@ -6,7 +6,7 @@ lsp.configure('gdscript', {
     single_file_support = true,
     -- cmd = {'ncat', '127.0.0.1', '6008'}, -- the important trick for Windows!
     -- root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
-    filetypes = {'gd', 'gdscript', 'gdscript3' }
+    filetypes = { 'gd', 'gdscript', 'gdscript3' }
 })
 
 
@@ -15,53 +15,26 @@ lsp.configure('gdscript', {
 -- lsp.nvim_workspace()
 -- lsp.setup_servers({'lua_ls', 'rust_analyzer', 'tsserver', "anakinls" })
 require('lspconfig').eslint.setup({
-  --- ...
-  on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-  end,
+    --- ...
+    on_attach = function(client, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+        })
+    end,
 })
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').tsserver.setup({})
 require('lspconfig').html.setup({})
 require('lspconfig').dockerls.setup({})
 require('lspconfig').cssls.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
-require("lspconfig").azure_pipelines_ls.setup {
-  settings = {
-      yaml = {
-          schemas = {
-              ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] = {
-                  "/azure-pipeline*.y*l",
-                  "/*.azure*",
-                  "Azure-Pipelines/**/*.y*l",
-                  "Pipelines/*.y*l",
-              },
-          },
-      },
-  },
-}
 
-
-require("lspconfig").hydralsp.setup({
-  on_attach = lsp.on_attach,
-})
---require('lspconfig').rust_analyzer.setup{
---  settings = {
---    ['rust-analyzer'] = {
---      diagnostics = {
---        enable = false;
---      }
---    }
---  }
---}
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({ buffer = bufnr })
 end)
 
 
@@ -69,74 +42,66 @@ end)
 local rust_tools = require('rust-tools')
 
 rust_tools.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, {buffer = bufnr})
-    end
-  }
+    server = {
+        on_attach = function(_, bufnr)
+            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+        end
+    }
 })
 -- require('lspconfig').anakin_language_server.setup{}
-require('lspconfig').pyright.setup{
+require('lspconfig').pyright.setup {
     settings = {
-        pyright = {autoImportCompletion = true,},
+        pyright = { autoImportCompletion = true, },
     }
 }
-require('lspconfig').ruff_lsp.setup{
-  init_options = {
-    settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {},
+require('lspconfig').ruff_lsp.setup {
+    init_options = {
+        settings = {
+            -- Any extra CLI arguments for `ruff` go here.
+            args = {},
+        }
     }
-  }
 }
 
 
 -- YAML SCHEMES
 require('lspconfig').yamlls.setup {
-  settings = {
-    yaml = {
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-        ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = ".gitlab-ci.yml"
-      },
-    },
-  }
-}
- -- Setup through
- -- pipx install "python-lsp-server[all]"
- -- pipx install python-lsp-isort pylsp-mypy python-lsp-black python-lsp-ruff
-require"lspconfig".pylsp.setup {
-    filetypes = {"python"},
     settings = {
-        -- configurationSources = {"flake8"},
-	formatCommand = {"black"},
-        pylsp = {
-    plugins = {
-        -- formatter options
-        black = { enabled = true },
-        yapf = { enabled = false },
-        -- linter options
-        pycodestyle = { enabled = true },
-        -- type checker
-        pylsp_mypy = { enabled = true },
-        -- auto-completion options
-        jedi_completion = { fuzzy = false, enabled=false},
-        -- import sorting
-        pyls_isort = { enabled = true },
-    },
-    },
+        yaml = {
+            schemas = {
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = ".gitlab-ci.yml"
+            },
+        },
     }
 }
 local cmp = require('cmp')
 
 
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+    -- ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    -- ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.select_next_item()
+        elseif require('luasnip').expand_or_jumpable() then
+            vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+        elseif vim.b._copilot_suggestion ~= nil then
+            vim.fn.feedkeys(vim.api.nvim_replace_termcodes(vim.fn['copilot#Accept'](), true, true, true), '')
+        else
+            fallback()
+        end
+    end, {
+        'i',
+        's',
+    }),
+    -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
 })
 
 -- `/` cmdline setup.
@@ -166,35 +131,35 @@ cmp.setup.cmdline(':', {
 -- THEMING CMP
 local lspkind = require('lspkind')
 cmp.setup({
-  mapping = cmp_mappings,
-  window = {
-    documentation = cmp.config.window.bordered(),
-    completion = {
-      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-      col_offset = -3,
-      side_padding = 0,
-      border = 'rounded',
-      scrollbar = '║',
+    mapping = cmp_mappings,
+    window = {
+        documentation = cmp.config.window.bordered(),
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+            border = 'rounded',
+            scrollbar = '║',
+        },
     },
-  },
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-      local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      kind.kind = " " .. (strings[1] or "") .. " "
-      kind.menu = "    (" .. (strings[2] or "") .. ")"
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+            local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.kind = " " .. (strings[1] or "") .. " "
+            kind.menu = "    (" .. (strings[2] or "") .. ")"
 
-      return kind
-    end,
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "buffer" },
-    { name = "path" },
-    { name = "luasnip" },
-    { name = "nvim_lua" },
-  }
+            return kind
+        end,
+    },
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "luasnip" },
+        { name = "nvim_lua" },
+    }
 })
 
 -- AUTO COMPLETION
@@ -225,23 +190,23 @@ end
 
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  -- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_definitions<cr>", opts)
-  -- vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
-  -- feed lsp.buf.references() to telescope
-  vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
---  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-  vim.keymap.set('n', '<leader>qf', quickfix, opts)
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    -- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_definitions<cr>", opts)
+    -- vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+    -- feed lsp.buf.references() to telescope
+    vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    --  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set('n', '<leader>qf', quickfix, opts)
 end)
 
 lsp.setup()

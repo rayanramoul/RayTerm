@@ -1,48 +1,17 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -50,60 +19,22 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
 plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting z fzf-zsh-plugin poetry )
@@ -132,11 +63,34 @@ alias oldvim="\vim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="nvim"
+alias v="nvim"
 alias oldvi="\vi"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+# Git stuff
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gs='git status'
+alias gd='git diff'
+alias gf='git fetch'
+alias gm='git merge'
+alias gr='git rebase'
+alias gp='git push'
+alias gu='git unstage'
+alias gco='git checkout'
+alias gb='git branch'
+alias open='xdg-open 2>/dev/null'
+alias please='sudo !!'
 
 # add bpytop as an alias for both top and htop
 alias top="bpytop"
 alias htop="bpytop"
+# ls after every cd command
+# Custom cd function to automatically list directory contents
+cd() {
+    builtin cd "$@" && ls
+}
 
 # add bat as an alias for cat
 # if bat command is detected alias it to cat, otherwise alias batcat
@@ -149,17 +103,43 @@ fi
 
 # add lsd as an alias for ls
 alias ls="lsd"
-# alias tmux-sessionizer="bash ~/scripts/tmux-sessionizer.sh"
-# execute fastfetch at startup
+# replace rm with trash-cli
+alias rm="trash-put"
 
-#if [ "$TMUX" = "" ]; then exec tmux; fi
-#bindkey -s '^f' '$(fzf)\n'
-#bindkey -s '^f' 'selected_dir=$(find . -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"\n'
 bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
 
+# Define the tmux-sessionizer function
+tmux-sessionizer() {
+    if [[ $# -eq 1 ]]; then
+        selected=$1
+    else
+        # Use find with exclusion
+        selected=$(find $HOME/Downloads $HOME/RayTerm $HOME/Documents -mindepth 1 -maxdepth 9 -type d | fzf)
+    fi
 
-# now Ctrl + e will execute ~/scripts/tmux_sessionizer.sh
-bindkey -s ^f 'tmux-sessionizer\n'
+    if [[ -z $selected ]]; then
+        exit 0
+    fi
+
+    selected_name=$(basename "$selected" | tr . _)
+    tmux_running=$(pgrep tmux)
+
+    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+        tmux new-session -s $selected_name -c $selected
+        exit 0
+    fi
+
+    if ! tmux has-session -t=$selected_name 2> /dev/null; then
+        tmux new-session -ds $selected_name -c $selected
+    fi
+
+    tmux switch-client -t $selected_name
+}
+zle -N tmux-sessionizer
+
+# Bind Ctrl+F to tmux-sessionizer function
+bindkey '^f' tmux-sessionizer
+
 
 # FZF THEME
 export FZF_DEFAULT_OPTS=" \
@@ -167,32 +147,22 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-
-export PATH="$HOME/.poetry/bin:$PATH"
-# add also /Users/r.ramoul/.local/bin' to the PATH
-export PATH="$PATH:/Users/r.ramoul/.local/bin"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/r.ramoul/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r.ramoul/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/r.ramoul/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r.ramoul/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-#alias conda="mamba"
-
-
-
-# <<<<<< SPECIFIC TO Apple Silicon
-arch_name="$(uname -m)"
- 
-if [ "${arch_name}" = "x86_64" ]; then
-    echo "Running on Rosetta using miniforge3"
-    source ~/.start_miniforge3.sh
-elif [ "${arch_name}" = "arm64" ]; then
-    echo "Running on ARM64 using miniconda3"
-    source ~/.start_miniconda3.sh
+# Check if miniforge3 or miniconda3 exists in the $HOME directory and set up the environment accordingly
+if [ -d "$HOME/miniforge3" ]; then
+    if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniforge3/bin:$PATH"
+    fi
+elif [ -d "$HOME/miniconda3" ]; then
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniconda3/bin:$PATH"
+    fi
 else
-    echo "Unknown architecture: ${arch_name}"
+    echo "Neither miniforge3 nor miniconda3 found in the home directory."
 fi
-# <<<<<<<< end <<<<<<<
+
+
 

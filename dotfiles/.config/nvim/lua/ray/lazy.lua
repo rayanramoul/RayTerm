@@ -1,337 +1,232 @@
-
 return {
-  {'nvim-telescope/telescope.nvim', tag = '0.1.3', dependencies = { 'nvim-lua/plenary.nvim' } }, { 'rose-pine/neovim', name = 'rose-pine' }, {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", 
-  config = function ()
-      local configs = require("nvim-treesitter.configs")
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.3',     dependencies = { 'nvim-lua/plenary.nvim' } }, { 'rose-pine/neovim', name = 'rose-pine' }, {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+        local configs = require("nvim-treesitter.configs")
 
-      configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "rust", "typescript", "python"},
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
+        configs.setup({
+            ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "rust", "typescript", "python" },
+            sync_install = false,
+            highlight = { enable = true },
+            indent = { enable = true },
         })
-
     end
+},
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            scope = { show_start = false, show_end = false },
+            indent = { tab_char = "▎" }
+        }
     },
-{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
-    config = function()
-            require("ibl").setup({indent = { highlight = highlight }})
-    end,
-},
-{'andweeb/presence.nvim'},
-{"norcalli/nvim-colorizer.lua"},
     {
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
-  config = function()
-    require('dashboard').setup {
-      -- config
-        theme='hyper',
-        config={
-            header= require('ray.ascii'),
-                }
-    }
-  end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
-},
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require('colorizer').setup({ '*' })
+        end,
+
+    },
     -- lazy.nvim
-    {"MunifTanjim/nui.nvim"},
-    {"rcarriga/nvim-notify", 
-    config = function()
-      require('notify').setup({background_colour = "#000000"})
-    end
-  },
-{
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
-  dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
-    }
-},
-    -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    {'rose-pine/neovim', name = 'rose-pine' }, 
-    {'nvim-tree/nvim-tree.lua'},
-    {'mfussenegger/nvim-dap'},
-    {'terrortylor/nvim-comment'},
-    {'nvim-treesitter/nvim-treesitter-context', {}},
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-    {'liuchengxu/vista.vim'},
+    -- { "catppuccin/nvim",               name = "catppuccin", priority = 1000 },
+    { "tiagovla/tokyodark.nvim",       name = "tokyodark",  priority = 1000 },
+    { 'rose-pine/neovim',              name = 'rose-pine' },
     {
-        'mfussenegger/nvim-dap-python',
-        ft = {'python'},
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    { 'nvim-tree/nvim-tree.lua' },
+    { 'akinsho/bufferline.nvim',                 version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'ThePrimeagen/harpoon' },
+    {
+        "ThePrimeagen/refactoring.nvim",
         dependencies = {
-            {
-                'mfussenegger/nvim-dap',
-                'rcarriga/nvim-dap-ui',
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("refactoring").setup()
+        end,
+    },
+    { 'mbbill/undotree' },
+    { 'github/copilot.vim' },
+    { 'stevearc/conform.nvim' },
+    -- Fugitive is a Git wrapper so awesome, it should be illegal
+    {
+        'tpope/vim-fugitive', {}
+    },
+    { 'mfussenegger/nvim-lint' },
+    { 'f-person/git-blame.nvim',          {} },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            -- Automatically install LSPs and related tools to stdpath for Neovim
+            { 'williamboman/mason.nvim',           config = true }, -- NOTE: Must be loaded before dependants
+            { 'williamboman/mason-lspconfig.nvim', opt = { automatic_installation = true, } },
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
+
+            -- Useful status updates for LSP.
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim', opts = {} },
+
+            -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
+            -- used for completion, annotations and signatures of Neovim apis
+            { 'folke/neodev.nvim', opts = {} },
+        },
+    },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    {
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            "friendly-snippets",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-cmdline",
+        },
+    },
+    { 'simrat39/rust-tools.nvim', ft = "rust", dependencies = { 'neovim/nvim-lspconfig' } },
+    { 'hrsh7th/cmp-path' },
+    { 'rmagatti/auto-session' },
+    { 'nvim-lualine/lualine.nvim' },
+    { 'kmontocam/nvim-conda' },
+    {
+        'gelguy/wilder.nvim',
+        config = function()
+            modes = { ':', '/', '?' }
+        end
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        opts = {
+            signs = {
+                add = { text = '+' },
+                change = { text = '~' },
+                delete = { text = '_' },
+                topdelete = { text = '‾' },
+                changedelete = { text = '~' },
             },
         },
-        config = function()
-            require('dap-python').setup('~/.pyenv/versions/debugpy/bin/python')
-        end,
-
     },
+    { 'hrsh7th/cmp-cmdline', {} },
     {
-        'rcarriga/nvim-dap-ui',
-        dependencies = {
-            {'mfussenegger/nvim-dap'},
-        },
-        config = function()
-            local dap = require('dap')
-            local dapui = require('dapui')
-            dapui.setup() -- enables the UI
-            dap.listeners.after.event_initialized['dapui_config'] = function()
-                dapui.open()
-            end
-            dap.listeners.before.event_terminated['dapui_config'] = function()
-                dapui.close()
-            end
-            dap.listeners.before.event_exited['dapui_config'] = function()
-                dapui.close()
-            end
-        end,
-    },
-    {'theprimeagen/harpoon'},
-    {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("refactoring").setup()
-    end,
-  },
-	{'mbbill/undotree'},
-	{'github/copilot.vim'},
-    {'andweeb/presence.nvim'},
-    -- Fugitive is a Git wrapper so awesome, it should be illegal
-	{'tpope/vim-fugitive'},
-	{
-        'williamboman/mason.nvim',
-    },
-    {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-      end,
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    },
-    {'averms/black-nvim'},
-    {'mfussenegger/nvim-lint'},
-	{'williamboman/mason-lspconfig.nvim'},
-	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp',
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-cmdline",
-  },
-},
-	{'lukas-reineke/lsp-format.nvim', dependencies = {'neovim/nvim-lspconfig'}},
-    {'simrat39/rust-tools.nvim', ft="rust", dependencies={'neovim/nvim-lspconfig'} },
-    {'L3MON4D3/LuaSnip'},
-    {'hrsh7th/cmp-path'},
-    {'rmagatti/auto-session'},
-    {'nvim-lualine/lualine.nvim'},
-    {'kmontocam/nvim-conda'},
-    {'gelguy/wilder.nvim', 
-     config = function()
-      modes = {':', '/', '?'}
-     end
-    },
-    {'lewis6991/gitsigns.nvim', },
-     config = function()
-        require('gitsigns').setup() 
-    end,
-    {
-        "nvimdev/guard.nvim",
-    -- Builtin configuration, optional
-        dependencies = {
-        "nvimdev/guard-collection",
-    }
-    },
-    {'hrsh7th/cmp-cmdline', {}},
-    {'christoomey/vim-tmux-navigator',
+        'christoomey/vim-tmux-navigator',
         cmd = {
             "TmuxNavigateLeft",
             "TmuxNavigateDown",
             "TmuxNavigateUp",
             "TmuxNavigateRight",
             "TmuxNavigatePrevious",
-          },
-          keys = {
-            { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-            { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-            { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-            { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-            { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-          },
-        lazy=false},
-    { "aserowy/tmux.nvim",
-    config = function() return require("tmux").setup() end
-    }, 
-    {
-        "kdheepak/lazygit.nvim",
-        -- optional for floating window border decoration
-        dependencies = {
-            "nvim-lua/plenary.nvim",
         },
+        keys = {
+            { "<C-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+            { "<C-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+            { "<C-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+            { "<C-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+            { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+        },
+        lazy = false
     },
     {
-      "karb94/neoscroll.nvim",
-      config = function ()
-        require('neoscroll').setup {}
-      end
-    },
-    {"ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-
-        sync_root_with_cwd = true,
-      respect_buf_cwd = true,
-      update_focused_file = {
-        enable = true,
-        update_root = true
-      },
-            }
-    end
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
     },
     {
-            'nvimdev/lspsaga.nvim',
-    config = function()
-        require('lspsaga').setup({})
-
-    end,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter', -- optional
-        'nvim-tree/nvim-web-devicons',     -- optional
-    },
-    {'nvim-tree/nvim-web-devicons'},
-    },
-    {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
-},
-    {"windwp/nvim-ts-autotag", 
-      config = function()
-            require('nvim-ts-autotag').setup()
-      end
-    },
-    {"MunifTanjim/prettier.nvim"},
-    {'ggandor/leap.nvim',
-      config = function()
-        require('leap').create_default_mappings()
-      end,
-    },
-    -- {
-    --     'kkoomen/vim-doge',
-    --     config = function()
-    --         vim.cmd('call doge#install()')
-    --     end,
-    -- },
-    {'onsails/lspkind.nvim'},
-    {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-    },
-    {
-        'https://github.com/adelarsq/image_preview.nvim',
-        event = 'VeryLazy',
+        "ahmedkhalf/project.nvim",
         config = function()
-            require("image_preview").setup()
+            require("project_nvim").setup {
+
+                sync_root_with_cwd = true,
+                respect_buf_cwd = true,
+                update_focused_file = {
+                    enable = true,
+                    update_root = true
+                },
+            }
         end
     },
     {
-      "roobert/tailwindcss-colorizer-cmp.nvim",
-      -- optionally, override the default options:
-      config = function()
-        require("tailwindcss-colorizer-cmp").setup({
-          color_square_width = 2,
-        })
-        
-        require('colorizer').setup()
-      end
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        },
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
+    {
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').create_default_mappings()
+        end,
+    },
+    { 'onsails/lspkind.nvim' },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
         "chrisgrieser/nvim-puppeteer",
         lazy = false, -- plugin lazy-loads itself. Can also load on filetypes.
     },
     {
-      'stevearc/dressing.nvim',
-      opts = {},
+        'stevearc/dressing.nvim',
+        opts = {},
     },
     {
-    'tzachar/highlight-undo.nvim',
+        'tzachar/highlight-undo.nvim',
         opts = {
         },
     },
-    {'sindrets/diffview.nvim'},
-    {'ErichDonGubler/lsp_lines.nvim'},
+    { 'sindrets/diffview.nvim' },
+    { 'ErichDonGubler/lsp_lines.nvim' },
     {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
     },
-    {'m-demare/hlargs.nvim', {}},
-    {'richardbizik/nvim-toc'},--  TOC: Table of Content generator
-    {
-    "ziontee113/icon-picker.nvim",
-        config = function()
-            require("icon-picker").setup({ disable_legacy_commands = true })
-
-            local opts = { noremap = true, silent = true }
-
-           -- vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
-           -- vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
-           -- vim.keymap.set("i", "::", "<cmd>IconPickerInsert<cr>", opts)
-        end
-    },
-    {'edluffy/hologram.nvim', { }},
-    {
-      "HakonHarnes/img-clip.nvim",
-      event = "BufEnter",
-      opts = {
-        -- add options here
-        -- or leave it empty to use the default settings
-      },
-      keys = {
-        -- suggested keymap
-        { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
-      }
-    },
+    { 'm-demare/hlargs.nvim', {} },
+    { 'richardbizik/nvim-toc' }, --  TOC: Table of Content generator
     {
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("gitsigns").setup()
+            require("gitsigns").setup({
+                signs = {
+                    add = { text = '+' },
+                    change = { text = '~' },
+                    delete = { text = '_' },
+                    topdelete = { text = '‾' },
+                    changedelete = { text = '~' },
+                },
+            })
         end,
     },
-    {'akinsho/git-conflict.nvim', version = "*", config = true}
+    { 'akinsho/git-conflict.nvim',    version = "*", config = true },
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    { "rafamadriz/friendly-snippets", },
 }
-
-

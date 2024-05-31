@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<leader>pv", ":NvimTreeOpen<CR>")
 -- this is for move commands, when highlighting we can move the corresponding lines
@@ -14,7 +13,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Allows search terms to keep cursor in the middle 
+-- Allows search terms to keep cursor in the middle
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -24,10 +23,10 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 -- interactions with the system copy buffers
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>q", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>q", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -45,13 +44,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Replace the work you are on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- Make the current file executable
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- Execute current file
--- vim.keymap.set("n", "<leader><leader>", function()
---     vim.cmd("so")
--- end)
 
 -- Execute main project file
 vim.keymap.set("n", "<leader>x", "<cmd>silent !tmux split-window -v executioner<CR>")
@@ -63,53 +55,20 @@ vim.keymap.set('', '<Down>', '<Nop>')
 vim.keymap.set('', '<Left>', '<Nop>')
 vim.keymap.set('', '<Right>', '<Nop>')
 
-
--- Debugger remaps
-vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
-vim.keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
-vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<CR>")
-vim.keymap.set("n", "<leader>du", "<cmd>lua require'dap'.up()<CR>")
-vim.keymap.set("n", "<leader>dd", "<cmd>lua require'dap'.down()<CR>")
-vim.keymap.set("n", "<leader>de", "<cmd>lua require'dap'.disconnect()<CR>")
-vim.keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.close()<CR>")
-
--- Mapping for dap ui
-vim.keymap.set("n", "<leader>dui", "<cmd>lua require'dapui'.toggle()<CR>")
-vim.keymap.set("n", "<leader>duh", "<cmd>lua require'dapui'.hover()<CR>")
-vim.opt.colorcolumn = "80"
-vim.keymap.set("n", "<leader>duf", "<cmd>lua require'dapui'.float_element()<CR>")
-
-
--- Remaps for tmux vim plugin
--- vim.keymap.set("n", "<C-h>", "<cmd>lua require('tmux').move_left()<CR>")
--- vim.keymap.set("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<CR>")
--- vim.keymap.set("n", "<C-k>", "<cmd>lua require('tmux').move_top()<CR>")
--- vim.keymap.set("n", "<C-l>", "<cmd>lua require('tmux').move_right()<CR>")
--- remap following keys with vim.keymap.set
--- { "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
---             { "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
---             { "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
---             { "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
---             { "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 vim.keymap.set("n", "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>")
 vim.keymap.set("n", "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>")
 
--- Remap lazygit.nvim to <leader>gg
-vim.keymap.set("n", "<leader>gg", "<cmd>lua require('lazygit').lazygit()<CR>")
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
+
+vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
+vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
+
 -- Remap ; to :
 vim.keymap.set("n", ";", ":")
 
 
--- Doge doc generationv
-vim.keymap.set("n", "<leader>doc", '<Plug>(doge-generate)')
 
 -- Remap <C-s>
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
@@ -117,7 +76,33 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+vim.keymap.set("n", "<leader>p", function()
+    vim.cmd.Git('push')
+end, opts)
 
+-- rebase always
+vim.keymap.set("n", "<leader>P", function()
+    vim.cmd.Git({ 'pull', '--rebase' })
+end, opts)
+
+-- add current project
+vim.keymap.set("n", "<leader>gA", function()
+    vim.cmd.Git('add %')
+end, opts)
+
+-- add all
+vim.keymap.set("n", "<leader>ga", function()
+    vim.cmd.Git('add .')
+end, opts)
+
+-- commit
+vim.keymap.set("n", "<leader>gc", function()
+    vim.cmd.Git('commit')
+end, opts)
+
+-- NOTE: It allows me to easily set the branch i am pushing and any tracking
+-- needed if i did not set the branch up correctly
+vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
 
 -- Refactoring keybinds
 vim.keymap.set("x", "<leader>re", ":Refactor extract ")
@@ -127,7 +112,35 @@ vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
 
 vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
 
-vim.keymap.set( "n", "<leader>rI", ":Refactor inline_func")
+vim.keymap.set("n", "<leader>rI", ":Refactor inline_func")
 
 vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
 vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
+
+vim.keymap.set('n', '<leader>/', function()
+    -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+-- Add git conflict commands to the keymap
+-- GitConflictChooseOurs — Select the current changes.
+-- GitConflictChooseTheirs — Select the incoming changes.
+-- GitConflictChooseBoth — Select both changes.
+-- GitConflictNextConflict — Move to the next conflict.
+-- GitConflictPrevConflict — Move to the previous conflict.
+vim.keymap.set("n", "<leader>gco", ":GitConflictChooseOurs<CR>")
+vim.keymap.set("n", "<leader>gct", ":GitConflictChooseTheirs<CR>")
+vim.keymap.set("n", "<leader>gcb", ":GitConflictChooseBoth<CR>")
+vim.keymap.set("n", "<leader>gcn", ":GitConflictNextConflict<CR>")
+vim.keymap.set("n", "<leader>gcp", ":GitConflictPrevConflict<CR>")
+
+
+-- Add visual keymap so that when in visual mode, selected text get searched globally
+vim.keymap.set("v", "*", ":<C-u>call VisualSelection('f')<CR>", { noremap = true, silent = true })
+
+
+-- Add keymap to go back to previous buffer with backspace
+vim.keymap.set("n", "<BS>", "<C-o>")
