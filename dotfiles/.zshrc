@@ -106,39 +106,12 @@ alias ls="lsd"
 # replace rm with trash-cli
 alias rm="trash-put"
 
-bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
+bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf --preview "bat --style=numbers --color=always --line-range=:500 {}" --preview-window=right:60%); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
+# now Ctrl + e will execute ~/scripts/tmux_sessionizer.sh
+bindkey -s ^f 'tmux-sessionizer\n'
 
-# Define the tmux-sessionizer function
-tmux-sessionizer() {
-    if [[ $# -eq 1 ]]; then
-        selected=$1
-    else
-        # Use find with exclusion
-        selected=$(find $HOME/Downloads $HOME/RayTerm $HOME/Documents -mindepth 1 -maxdepth 9 -type d | fzf)
-    fi
 
-    if [[ -z $selected ]]; then
-        exit 0
-    fi
 
-    selected_name=$(basename "$selected" | tr . _)
-    tmux_running=$(pgrep tmux)
-
-    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-        tmux new-session -s $selected_name -c $selected
-        exit 0
-    fi
-
-    if ! tmux has-session -t=$selected_name 2> /dev/null; then
-        tmux new-session -ds $selected_name -c $selected
-    fi
-
-    tmux switch-client -t $selected_name
-}
-zle -N tmux-sessionizer
-
-# Bind Ctrl+F to tmux-sessionizer function
-bindkey '^f' tmux-sessionizer
 
 
 # FZF THEME

@@ -38,19 +38,19 @@ color = '#db4b4b'
 size = 18
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "JetBrainsMono NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "JetBrainsMono NF"
 style = "Bold Italic"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "JetBrainsMono NF"
 style = "Regular Italic"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "JetBrainsMono NF"
 style = "Regular"
 
 [font.offset]

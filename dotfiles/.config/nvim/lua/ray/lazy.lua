@@ -1,5 +1,5 @@
 return {
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.3',     dependencies = { 'nvim-lua/plenary.nvim' } }, { 'rose-pine/neovim', name = 'rose-pine' }, {
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.3',      dependencies = { 'nvim-lua/plenary.nvim' } }, { 'rose-pine/neovim', name = 'rose-pine' }, {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -30,7 +30,7 @@ return {
     },
     -- lazy.nvim
     -- { "catppuccin/nvim",               name = "catppuccin", priority = 1000 },
-    { "tiagovla/tokyodark.nvim",       name = "tokyodark",  priority = 1000 },
+    { "tiagovla/tokyodark.nvim",       name = "tokyodark", priority = 1000 },
     { 'rose-pine/neovim',              name = 'rose-pine' },
     {
         "folke/tokyonight.nvim",
@@ -39,7 +39,7 @@ return {
         opts = {},
     },
     { 'nvim-tree/nvim-tree.lua' },
-    { 'akinsho/bufferline.nvim',                 version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
     { 'ThePrimeagen/harpoon' },
     {
         "ThePrimeagen/refactoring.nvim",
@@ -229,4 +229,38 @@ return {
         build = "make install_jsregexp"
     },
     { "rafamadriz/friendly-snippets", },
+    {
+        "kdheepak/lazygit.nvim",
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+        keys = {
+            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        }
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    }
 }
