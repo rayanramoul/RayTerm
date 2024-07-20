@@ -67,6 +67,7 @@ alias v="nvim"
 alias oldvi="\vi"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias yz="yazi"
 # Git stuff
 alias ga='git add'
 alias gc='git commit'
@@ -123,15 +124,15 @@ export FZF_DEFAULT_OPTS=" \
 # Check if miniforge3 or miniconda3 exists in the $HOME directory and set up the environment accordingly
 if [ -d "$HOME/miniforge3" ]; then
     if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniforge3/etc/profile.d/conda.sh"
+# . "$HOME/miniforge3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
         export PATH="$HOME/miniforge3/bin:$PATH"
     fi
 elif [ -d "$HOME/miniconda3" ]; then
     if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+# . "$HOME/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
     fi
 else
     echo "Neither miniforge3 nor miniconda3 found in the home directory."
@@ -139,3 +140,26 @@ fi
 
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rayanramoul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rayanramoul/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+eval "$(uv generate-shell-completion zsh)"
+
+PATH="/home/rayanramoul/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/rayanramoul/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/rayanramoul/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/rayanramoul/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/rayanramoul/perl5"; export PERL_MM_OPT;
