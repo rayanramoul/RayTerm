@@ -137,20 +137,22 @@ elif [ -d "$HOME/miniconda3" ]; then
 else
     echo "Neither miniforge3 nor miniconda3 found in the home directory."
 fi
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+#zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 
 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rayanramoul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/r.ramoul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/r.ramoul/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/r.ramoul/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/rayanramoul/miniconda3/bin:$PATH"
+        export PATH="/Users/r.ramoul/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
