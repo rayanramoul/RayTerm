@@ -11,6 +11,7 @@ return {
     opts = {
       -- colorscheme = "rose-pine",
       -- colorscheme = "github_dark_default",
+      -- colorscheme = "tokyodark",
       colorscheme = "yorumi",
     },
   },
