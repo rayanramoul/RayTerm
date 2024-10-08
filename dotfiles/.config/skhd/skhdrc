@@ -96,7 +96,7 @@ alt - 5 : yabai -m space --focus 5 || yabai -m space --focus recent
 alt - 6 : yabai -m space --focus 6 || yabai -m space --focus recent
 alt - 7 : yabai -m space --focus 7 || yabai -m space --focus recent
 
-alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+alt - return : /Applications/kitty.app/Contents/MacOS/kitty
 
 # close window shortcut
 shift + alt - q: yabai -m window --close
