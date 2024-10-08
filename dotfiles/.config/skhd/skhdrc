@@ -34,12 +34,12 @@ alt - g: yabai -m display --focus east
 # -- Modifying Window Size --
 
 # maximize a window
-#alt - f : yabai -m window --toggle zoom-fullscreen
+# alt - f : yabai -m window --toggle zoom-fullscreen
 alt - f : yabai -m query --spaces --window | grep '"type":"float"' && yabai -m space --layout bsp;\
           yabai -m query --windows --window | grep '"floating":1' && yabai -m window --toggle float;\
           yabai -m window --toggle native-fullscreen;  #zoom-fullscreen;
 # alternative
-#alt - f : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')"
+# alt - f : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')"
 
 
 # balance out tree of windows (resize to occupy same area)
@@ -80,7 +80,7 @@ shift + alt - 7 : yabai -m window --space 7;
 # -- Starting/Stopping/Restarting Yabai --
 
 # stop/start/restart yabai
-shift + alt - q : yabai --stop-servicei
+shift + alt - q : yabai --stop-service
 shift + alt - s : yabai --start-service
 shift + alt - r : yabai --restart-service
 
@@ -96,10 +96,10 @@ alt - 5 : yabai -m space --focus 5 || yabai -m space --focus recent
 alt - 6 : yabai -m space --focus 6 || yabai -m space --focus recent
 alt - 7 : yabai -m space --focus 7 || yabai -m space --focus recent
 
-alt - return : /Applications/kitty.app/Contents/MacOS/kitty
+alt - return : /Applications/kitty.app/Contents/MacOS/kitty ~
 
 # close window shortcut
-shift + alt - q: yabai -m window --close
+alt - q: yabai -m window --close
 
 # go to previous space
 alt - p: yabai -m space --focus prev
