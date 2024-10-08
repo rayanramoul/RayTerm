@@ -6,10 +6,6 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=application_front_switched action="~/.config/yabai/window_border.sh"
 sudo yabai --load-sa
-# yabai -m space --create
-# yabai -m space --create
-# yabai -m space --create
-# yabai -m space --create
 yabai -m config external_bar all:26:0
 
 # .. more yabai startup stuff
@@ -64,13 +60,12 @@ setup_space 3 "3:Music"
 setup_space 4 "4:Chat"
 setup_space 5 "5:Games"
 setup_space 6 "6:Meetings"
-setup_space 7 "7"
-setup_space 8 "8" 
-setup_space 9 "9" 
+# setup_space 7 "7"
+# setup_space 8 "8" 
+# setup_space 9 "9" 
 
 # yabai -m rule --add app="Google Chrome" space=1
 # yabai -m rule --add app="Alacritty"     space=2
-# ^^ these are annoying
 yabai -m rule --add app="^Code|code|alacritty|Alacritty"         space=1
 yabai -m rule --add app="^Safari|safari|firefox|Firefox|chrome|Chrome"        space=2
 yabai -m rule --add app="^Spotify|spotify|music|Music|Apple Music"       space=3
