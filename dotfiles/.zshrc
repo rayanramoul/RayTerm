@@ -11,18 +11,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 
 
 # User configuration
@@ -112,9 +102,6 @@ bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8
 bindkey -s ^f 'tmux-sessionizer\n'
 
 
-
-
-
 # FZF THEME
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -134,4 +121,10 @@ PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # Export miniconda3 path
-# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize  # commented out by conda initialize
+export PATH="$HOME/miniconda3/bin:$PATH"  
+source ~/miniconda3/bin/activate base
+
+# Export google-cloud-sdk
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"  
+
+
