@@ -1,7 +1,7 @@
 * {
   border: none;
   font-family: 'Fira Code', 'Symbols Nerd Font Mono';
-  font-size: 16px;
+  font-size: 20px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   min-height: 25px;
 }
@@ -15,10 +15,10 @@ window#waybar {
   background-color: #1e1e2e;
   color: #fab387;
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 25px;
   padding-top: 1px;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 #custom-arch {
@@ -32,7 +32,7 @@ window#waybar {
   color: #fab387;
 }
 
-#clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
+#tray #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
   border-radius: 10px;
   background-color:  	#1e1e2e;
   color: #cdd6f4;
@@ -42,6 +42,34 @@ window#waybar {
   margin-right: 15px;
 }
 
+#cpu {
+  border-radius: 10px;
+  background-color:  	#1e1e2e;
+  color: #cdd6f4;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+}
+#memory {
+  border-radius: 10px;
+  background-color:  	#1e1e2e;
+  color: #cdd6f4;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+}
+
+#tray {
+  border-radius: 10px;
+  background-color:  	#1e1e2e;
+  color: #cdd6f4;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+}
 #backlight, #bluetooth {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -49,13 +77,25 @@ window#waybar {
   margin-right: 0
 }
 
-#pulseaudio, #network {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 5px;
+/* #pulseaudio, #network { */
+/*   border-top-left-radius: 0; */
+/*   border-bottom-left-radius: 0; */
+/*   padding-left: 5px; */
+/* } */
+
+#pulseaudio {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 #clock {
-  margin-right: 0;
+  /*margin-right: 0; */
+  border-radius: 10px;
+  background-color:  	#1e1e2e;
+  color: #cdd6f4;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
 }
 

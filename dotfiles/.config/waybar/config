@@ -12,7 +12,6 @@
     "pulseaudio",
     "cpu",
     "memory",
-    "custom/weather",
     "bluetooth",
     "network",
     "battery",
@@ -25,11 +24,9 @@
   },
   "memory": {
     "format": "{}% ",
-    "on-click": "alacritty -e bash -ci htop --sort-key PERCENT_MEM"
   },
   "cpu": {
     "format": "{usage}% ",
-    "on-click": "alacritty -e bash -ci htop --sort-key PERCENT_CPU"
   },
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
@@ -58,7 +55,7 @@
     }
   },
   "clock": {
-    "format": "<span color='#b4befe'> </span>{:%H:%M}",
+    "format": "<span color='#b4befe'> </span>  {:%H:%M}",
   },
   "pulseaudio": {
     "format": "<span color='#b4befe'>{icon}</span> {volume}%",
@@ -75,7 +72,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "on-click": "pavucontrol;"
     },
     "scroll-step": 1,
   },
@@ -115,18 +113,4 @@
     "icon-size": 21,
     "spacing": 10
   },
-  "custom/weather": {
-    "format": "{}",
-    //"format-alt": "{alt}: {}",
-    //"format-alt-click": "click-left",
-    "interval": 300,
-    "return-type": "json",
-    // sleep before curl seems required because network might not yet be up
-    // this avoids having to wait until interval until the indicator comes
-    // back online
-    "exec": "sleep 5 && curl -s 'https://wttr.in/Pordenone?format=1' |jq --unbuffered --compact-output -M -R '{text:.}'",
-    // "exec-if": "ping wttr.in -c1",
-    "on-click-right": "kitty --start-as fullscreen bash -ci ~/bin/wttr"
-    // "on-click-right": "alacritty -e bash -ci ~/bin/wttr"
-  }
 }

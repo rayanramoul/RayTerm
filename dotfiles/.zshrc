@@ -121,27 +121,10 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-# # Check if miniforge3 or miniconda3 exists in the $HOME directory and set up the environment accordingly
-# if [ -d "$HOME/miniforge3" ]; then
-#     if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
-# # . "$HOME/miniforge3/etc/profile.d/conda.sh"  # commented out by conda initialize
-#     else
-#         export PATH="$HOME/miniforge3/bin:$PATH"
-#     fi
-# elif [ -d "$HOME/miniconda3" ]; then
-#     if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-# # . "$HOME/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-#     else
-# # export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
-#     fi
-# else
-#     echo "Neither miniforge3 nor miniconda3 found in the home directory."
-# fi
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 #zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # >>> conda initialize >>>
-export PATH="$HOME/miniconda3/bin:$PATH"
 eval "$(uv generate-shell-completion zsh)"
 
 PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -149,3 +132,6 @@ PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
+
+# Export miniconda3 path
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize  # commented out by conda initialize
