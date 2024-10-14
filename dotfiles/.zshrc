@@ -94,8 +94,6 @@ fi
 
 # add lsd as an alias for ls
 alias ls="lsd"
-# replace rm with trash-cli
-alias rm="trash-put"
 
 bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf --preview "bat --style=numbers --color=always --line-range=:500 {}" --preview-window=right:60%); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
 # now Ctrl + e will execute ~/scripts/tmux_sessionizer.sh
