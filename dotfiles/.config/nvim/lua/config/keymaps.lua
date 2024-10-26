@@ -45,3 +45,5 @@ vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
 vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
