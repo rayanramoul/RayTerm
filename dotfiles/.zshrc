@@ -126,3 +126,10 @@ source ~/miniconda3/bin/activate base
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"  
 
 
+
+# bun completions
+[ -s "/home/rayanramoul/.bun/_bun" ] && source "/home/rayanramoul/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
