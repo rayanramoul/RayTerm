@@ -3,12 +3,8 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    opts = {
-      variant = "auto",
-      dark_variant = "main",
-      styles = {
-        transparency = true,
-      },
+    options = {
+      transparent = true,
     },
   },
   -- Configure LazyVim to load rose-pine
