@@ -1,10 +1,8 @@
 return {
   -- add rose-pine
   {
-    -- "rose-pine/neovim",
-    "EdenEast/nightfox.nvim",
-    -- name = "rose-pine",
-    name = "carbonfox",
+    "rose-pine/neovim",
+    name = "rose-pine",
     options = {
       transparent = true,
     },
@@ -20,7 +18,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "carbonfox",
+      colorscheme = "rose-pine",
     },
   },
 }
