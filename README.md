@@ -36,7 +36,7 @@ sh -c "$(wget https://raw.githubusercontent.com/rayanramoul/RayTerm/master/insta
 The script will clone this repository and install ansible then prompt you to choose which part of the install you want to run. <br>
 If you only want to check the dotfiles you can get them at this link : [Dotfiles](dotfiles) and for example run [Stow](https://www.gnu.org/software/stow/) to symlink your config with the repositories ones :
 ```bash
-git clone https://github.com/rayanramoul/RayTerm/
+git clone --recurse-submodules  https://github.com/rayanramoul/RayTerm/
 cd RayTerm
 stow -t $HOME -R dotfiles
 ```
