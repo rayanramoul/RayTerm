@@ -57,6 +57,7 @@ alias vimdiff="nvim -d"
 alias vi="nvim"
 alias v="nvim"
 alias oldvi="\vi"
+
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias yz="yazi"
