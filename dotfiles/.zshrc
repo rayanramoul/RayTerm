@@ -128,6 +128,8 @@ export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 # bun completions
 [ -s "/home/rayanramoul/.bun/_bun" ] && source "/home/rayanramoul/.bun/_bun"
 
+export PATH=$PATH:~/miniconda3/bin
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -144,3 +146,19 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rayanramoul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rayanramoul/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
