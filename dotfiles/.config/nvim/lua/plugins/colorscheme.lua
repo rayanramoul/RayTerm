@@ -1,24 +1,14 @@
 return {
-  -- add rose-pine
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    options = {
-      transparent = true,
-    },
-    -- opts = {
-    --   variant = "auto",
-    --   dark_variant = "main",
-    --   styles = {
-    --     transparency = true,
-    --   },
-    -- },
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
   },
   -- Configure LazyVim to load rose-pine
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "tokyonight-night",
     },
   },
 }
