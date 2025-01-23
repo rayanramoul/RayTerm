@@ -31,7 +31,7 @@ export EDITOR='nvim'
 
 
 
-plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting z fzf-zsh-plugin poetry )
+plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting z fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
 
