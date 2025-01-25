@@ -1,0 +1,36 @@
+[user]
+	name = Your Name
+	email = e.mail@instadeep.com
+
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+  cim = commit -m
+	cia = commit -a
+	wip = commit -m "WIP" -n
+	rbi = rebase -i
+	rbc = rebase --continue
+
+	# display the 10 branches with the latest commits 
+	recent = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads
+
+	# delete local branches merged
+	dlb = "! f() { git co main && git pull -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
+	
+	# open the GitHub / GitLab repository in your browser
+	open = "!f(){ python -m webbrowser `git config --get remote.origin.url | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's@\\.git@@'`| head -n1; }; f"
+
+	# open the issue board in your browser
+	# /!\ gitlab only
+	board = "!f(){ python -m webbrowser `git config --get remote.origin.url | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's@\\.git@/-/boards@'`| head -n1; }; f"
+
+	# open the issue list in your browser
+	# /!\ gitlab only
+	issues = "!f(){ python -m webbrowser `git config --get remote.origin.url | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's@\\.git@/-/issues@'`| head -n1; }; f"
+	
+	# erase your current local branch with the remote one 
+	rh =!git fetch && git reset --hard origin/$(git branch --show-current)
+  
+  # display repository logs as tree
+  tree = log --oneline --graph --decorate --all
