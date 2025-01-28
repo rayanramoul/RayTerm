@@ -147,7 +147,6 @@ eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
 
-. "$HOME/.local/bin/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
