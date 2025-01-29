@@ -1,7 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps hereby
-vim.keymap.set("n", "<leader>pv", ":NvimTreeOpen<CR>")
+vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Allow half page jumpings to keep the cursor in the middle
@@ -47,3 +47,6 @@ vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- Search in Files
+-- vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>")

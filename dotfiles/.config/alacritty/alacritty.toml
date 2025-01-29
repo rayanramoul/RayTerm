@@ -1,5 +1,5 @@
 [colors.primary]
-background = '#1a1b26'
+background = '#000000'
 foreground = '#c0caf5'
 # Normal colors
 [colors.normal]
@@ -55,7 +55,7 @@ y = 1
 [window]
 blur = true
 dynamic_title = false
-opacity = 0.80
+opacity = 0.95
 startup_mode = "Maximized"
 title = "RayTerm"
 decorations = 'buttonless'
@@ -68,3 +68,4 @@ shape = "Block"
 
 [terminal]
 shell = "wsl.exe"
+
