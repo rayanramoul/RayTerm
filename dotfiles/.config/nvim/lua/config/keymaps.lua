@@ -1,7 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps hereby
-vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
+-- vim.keymap.set("n", "<leader>pv", ":Neotree toggle<CR>")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Allow half page jumpings to keep the cursor in the middle
