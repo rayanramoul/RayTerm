@@ -106,11 +106,6 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 # Export google-cloud-sdk
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"  
 
-
-
-# bun completions
-[ -s "/home/rayanramoul/.bun/_bun" ] && source "/home/rayanramoul/.bun/_bun"
-
 export PATH=$PATH:~/miniconda3/bin
 
 # bun
@@ -127,18 +122,18 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rayanramoul/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rayanramoul/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/rayanramoul/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda initialize <
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
