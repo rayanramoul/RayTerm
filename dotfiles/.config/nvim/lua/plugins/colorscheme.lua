@@ -2,13 +2,15 @@ return {
   {
     -- "folke/tokyonight.nvim",
     -- "nyoom-engineering/oxocarbon.nvim",
-    -- "rose-pine/neovim",
-    "tiagovla/tokyodark.nvim",
+    "rose-pine/neovim",
+    -- "tiagovla/tokyodark.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("tokyodark").setup({
-        transparent_background = true,
+      require("rose-pine").setup({
+        styles = {
+          transparency = true,
+        }
       })
     end,
   },
@@ -16,7 +18,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyodark",
+      colorscheme = "rose-pine",
     },
   },
 }

@@ -1,9 +1,9 @@
-theme = CGA
+theme = rose-pine
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 0.5
 macos-titlebar-style = transparent
-font-family = Fira Code Nerd Font
-font-size = 16
+font-family = JetBrainsMono Nerd Font
+font-size = 18
 background-opacity = 0.6
 background-blur-radius = 20
 title = RayTerm
