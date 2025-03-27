@@ -81,6 +81,25 @@ fi
 # add lsd as an alias for ls
 alias ls="lsd"
 
+# Note taking
+notes() {
+  if tmux has-session -t Notes 2>/dev/null; then
+    if [ -n "$TMUX" ]; then
+      tmux switch-client -t Notes
+    else
+      tmux attach-session -t Notes
+    fi
+  else
+    tmux new-session -ds Notes -c ~/Documents/Notes 'nvim .'
+  fi
+  if [ -n "$TMUX" ]; then
+    tmux switch-client -t Notes
+  else
+    tmux attach-session -t Notes
+  fi
+}
+bindkey -s ^n 'notes\n'
+
 bindkey -s ^e 'selected_entry=$(find $HOME/Downloads $HOME/Documents -maxdepth 8 -type f -o -type d | fzf --preview "bat --style=numbers --color=always --line-range=:500 {}" --preview-window=right:60%); [ -n "$selected_entry" ] && { [ -d "$selected_entry" ] && cd "$selected_entry" || vim "$selected_entry"; }\n'
 # now Ctrl + e will execute ~/scripts/tmux_sessionizer.sh
 bindkey -s ^f 'tmux-sessionizer\n'
@@ -142,8 +161,9 @@ _uv_run_mod() {
     if [[ "$words[2]" == "run" && "$words[CURRENT]" != -* ]]; then
         _arguments '*:filename:_files'
     else
-        _uv "$@"
+        uv "$@"
     fi
 }
 compdef _uv_run_mod uv
+
 
