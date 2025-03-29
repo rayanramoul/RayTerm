@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS installation using Homebrew
+echo "Installing packages on macOS using Homebrew..."
+brew bundle --file=/dev/stdin <<EOF
+{{- range .packages.darwin.brews }}
+brew "{{ . }}"
+{{- end }}
+{{- range .packages.darwin.casks }}
+cask "{{ . }}"
+{{- end }}
+EOF
+
+{{- else if eq .chezmoi.os "linux" }}
+
+
+if [ -f /etc/arch-release ]; then
+  echo "Installing packages on Arch Linux using yay..."
+  if ! command -v yay &> /dev/null; then
+    echo "❌ yay is not installed. Please install yay first."
+    exit 1
+  fi
+  yay -S --noconfirm {{ range .packages.arch.packages }}"{{ . }}" {{ end }}
+
+elif [ -f /etc/debian_version ]; then
+  echo "Installing packages on Ubuntu/Debian using apt..."
+  sudo apt update
+  sudo apt install -y {{ range .packages.ubuntu.packages }}"{{ . }}" {{ end }}
+
+fi
+
+
+{{- end }}
+

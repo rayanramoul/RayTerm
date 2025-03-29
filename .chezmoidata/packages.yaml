@@ -1,0 +1,49 @@
+packages:
+  darwin:
+    brews:
+      - git
+      - neovim
+
+      - python
+      - bpytop
+      - zsh
+      - tmux
+      - fzf
+      - bat
+      - fd
+      - ripgrep
+      - tldr
+      - stow
+
+    casks:
+      - google-chrome
+      - ulauncher
+  arch:
+    packages:
+      - git
+      - neovim
+      - python-pip
+      - bpytop
+      - zsh
+      - tmux
+
+      - fzf
+      - bat
+      - fd
+      - ripgrep
+      - tldr
+      - ulauncher
+  ubuntu:
+    packages:
+      - git
+      - neovim
+      - python3-pip
+      - bpytop
+      - zsh
+      - tmux
+      - fzf
+      - bat
+      - fd-find
+      - ripgrep
+      - tldr
+      - ulauncher
