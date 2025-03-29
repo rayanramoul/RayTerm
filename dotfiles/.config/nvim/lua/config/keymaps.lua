@@ -48,5 +48,8 @@ vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
+-- Keymap to switch to my Notes
+vim.keymap.set("n", "<C-n>", "<cmd>silent !notes<cr>", { desc = "Switch to or create tmux session Notes" })
+
 -- Search in Files
 -- vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>")
