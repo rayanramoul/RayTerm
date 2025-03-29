@@ -46,5 +46,4 @@ packages:
       - fd-find
       - ripgrep
       - tldr
-      - ulauncher
       - eza
