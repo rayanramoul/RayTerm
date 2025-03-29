@@ -3,7 +3,7 @@ packages:
     brews:
       - git
       - neovim
-
+      - eza
       - python
       - bpytop
       - zsh
@@ -26,7 +26,7 @@ packages:
       - bpytop
       - zsh
       - tmux
-
+      - eza
       - fzf
       - bat
       - fd
@@ -47,3 +47,4 @@ packages:
       - ripgrep
       - tldr
       - ulauncher
+      - eza
