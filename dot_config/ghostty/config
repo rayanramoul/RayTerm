@@ -1,0 +1,10 @@
+theme = CGA
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 0.5
+macos-titlebar-style = transparent
+font-family = Fira Code Nerd Font
+font-size = 16
+background-opacity = 0.6
+background-blur-radius = 20
+title = RayTerm
+background = #000000
