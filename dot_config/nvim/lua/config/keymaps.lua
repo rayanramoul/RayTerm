@@ -47,4 +47,5 @@ vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<C-n>", "<cmd>silent !notes<CR>")
+vim.keymap.set("n", "<C-n>", "<cmd>silent !notes<cr>", { desc = "Switch to or create tmux session Notes" })
+
