@@ -45,4 +45,4 @@ packages:
       - fd-find
       - ripgrep
       - tldr
-      - eza
+      # - eza
