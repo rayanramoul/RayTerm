@@ -1,0 +1,68 @@
+
+(gjs:129324): Gjs-WARNING **: 14:58:55.827: Type interface of property Gtk.ColorButton::rgba does not match type gboolean of first argument of setter set_use_alpha. Falling back to slow path
+
+** (gjs:129324): WARNING **: 14:58:56.293: icon.vala:21: g-icon is deprecated. Use gicon instead.
+
+(gjs:129324): hyprpanel-CRITICAL **: 14:58:56.791: Gio.IOErrorEnum: Traceback (most recent call last):
+  File "/usr/lib/python3.13/site-packages/dbus/bus.py", line 173, in activate_name_owner
+    return self.get_name_owner(bus_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/bus.py", line 348, in get_name_owner
+    return self.call_blocking(BUS_DAEMON_NAME, BUS_DAEMON_PATH,
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                              BUS_DAEMON_IFACE, 'GetNameOwner',
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                              's', (bus_name,))
+                              ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/connection.py", line 696, in call_blocking
+    reply_message = self.send_message_with_reply_and_block(
+        message, timeout)
+dbus.exceptions.DBusException: org.freedesktop.DBus.Error.NameHasNoOwner: The name does not have an owner
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/hyprpanel/scripts/bluetooth.py", line 171, in <module>
+    register_agent()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/share/hyprpanel/scripts/bluetooth.py", line 162, in register_agent
+    manager = dbus.Interface(bus.get_object("org.bluez", "/org/bluez"), "org.bluez.AgentManager1")
+                             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/bus.py", line 237, in get_object
+    return self.ProxyObjectClass(self, bus_name, object_path,
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 introspect=introspect,
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+                                 follow_name_owner_changes=follow_name_owner_changes)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/proxies.py", line 250, in __init__
+    self._named_service = conn.activate_name_owner(bus_name)
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/bus.py", line 178, in activate_name_owner
+    self.start_service_by_name(bus_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/bus.py", line 273, in start_service_by_name
+    return (True, self.call_blocking(BUS_DAEMON_NAME, BUS_DAEMON_PATH,
+                  ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     BUS_DAEMON_IFACE,
+                                     ^^^^^^^^^^^^^^^^^
+                                     'StartServiceByName',
+                                     ^^^^^^^^^^^^^^^^^^^^^
+                                     'su', (bus_name, flags)))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/site-packages/dbus/connection.py", line 696, in call_blocking
+    reply_message = self.send_message_with_reply_and_block(
+        message, timeout)
+dbus.exceptions.DBusException: org.freedesktop.DBus.Error.ServiceUnknown: Could not activate remote peer 'org.bluez': activation request failed: unknown unit
+execAsync/</<@file:///usr/share/hyprpanel/hyprpanel.js:132:34
+handleRealization@file:///usr/share/hyprpanel/hyprpanel.js:21107:12
+async*initializeMenus/<@file:///usr/share/hyprpanel/hyprpanel.js:22271:22
+initializeMenus@file:///usr/share/hyprpanel/hyprpanel.js:22266:17
+main@file:///usr/share/hyprpanel/hyprpanel.js:22286:5
+async*mkApp/start/<@file:///usr/share/hyprpanel/hyprpanel.js:703:15
+_init/GLib.MainLoop.prototype.runAsync/</<@resource:///org/gnome/gjs/modules/core/overrides/GLib.js:263:34
+  
+
+** (gjs:129324): CRITICAL **: 15:06:06.187: file.vala:10: Failed to open file “/usr/share/hyprpanel/src/scss/main.scss”: No such file or directory
+
+** (gjs:129324): CRITICAL **: 15:06:06.195: file.vala:10: Failed to open file “/usr/share/hyprpanel/src/scss/main.scss”: No such file or directory
