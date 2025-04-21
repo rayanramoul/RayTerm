@@ -46,6 +46,12 @@ vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<C-n>", "<cmd>silent !notes<cr>", { desc = "Switch to or create tmux session Notes" })
-
+vim.keymap.set(
+  "n",
+  "<C-f>",
+  "<cmd>silent !tmux neww tmux-sessionizer<CR>",
+  { desc = "Switch to or create tmux session Tmux-Sessionizer" }
+)
+vim.keymap.set("n", "<C-n>", function()
+  os.execute("tmux switch-client -t Notes || tmux new-session -s Notes")
+end, { desc = "Switch to or create tmux session Notes" })

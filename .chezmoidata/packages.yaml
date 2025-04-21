@@ -14,9 +14,9 @@ packages:
       - ripgrep
       - tldr
       - stow
-
     casks:
       - google-chrome
+
   arch:
     packages:
       - git
@@ -75,4 +75,3 @@ packages:
       - fd-find
       - ripgrep
       - tldr
-      # - eza
