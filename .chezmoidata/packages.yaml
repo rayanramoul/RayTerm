@@ -25,26 +25,42 @@ packages:
       - bpytop
       - zsh
       - tmux
+      - git
+      - lazygit
+      - lazydocker
       - eza
       - fzf
       - bat
       - fd
+      - lsd
       - ripgrep
       - tldr
       - ulauncher
+      - playerctl
+      - pavucontrol
       - steam
       - wine
       - lutris
       - swww
-      - hyprland
-      - hyprlock
-      - hypridle
+      - hyprland-git
+      - hyprlock-git
+      - hypridle-git
+      - hyprshot-git
       - waybar
       - dolphin
       - hyprpaper
       - ags-hyprpanel-git
-      - brave-bin
+      - zen-browser-bin
+      - kitty
+      - slack-desktop
+      - compton
       - openssh
+      - heroic-games-launcher-bin
+      - docker
+      - docker-compose
+      - gamemode
+      - swaync
+      - stremio
 
   ubuntu:
     packages:
