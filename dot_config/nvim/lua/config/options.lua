@@ -14,19 +14,17 @@ vim.cmd([[
   au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 ]])
-vim.g.snacks_animate = false
+-- Open Snacks explorer automatically on directory
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    local arg = vim.fn.argv(0)
+    if arg and vim.fn.isdirectory(arg) == 1 then
+      vim.cmd("cd " .. arg)
+      require("snacks").picker.explorer()
+    end
+  end,
+})
 
-if vim.fn.has("wsl") == 1 then
-  vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
-end
+vim.g.snacks_animate = false
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
