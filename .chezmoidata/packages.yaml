@@ -60,6 +60,7 @@ packages:
       - docker-compose
       - gamemode
       - stremio
+      - obsidian
 
   ubuntu:
     packages:
