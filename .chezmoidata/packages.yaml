@@ -32,6 +32,20 @@ packages:
       - ripgrep
       - tldr
       - ulauncher
+      - steam
+      - wine
+      - lutris
+      - swww
+      - hyprland
+      - hyprlock
+      - hypridle
+      - waybar
+      - dolphin
+      - hyprpaper
+      - ags-hyprpanel-git
+      - brave-bin
+      - openssh
+
   ubuntu:
     packages:
       - git
