@@ -59,7 +59,6 @@ packages:
       - docker
       - docker-compose
       - gamemode
-      - swaync
       - stremio
 
   ubuntu:
