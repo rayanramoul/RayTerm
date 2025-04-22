@@ -166,4 +166,8 @@ _uv_run_mod() {
 }
 compdef _uv_run_mod uv
 
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    export TERM=xterm-256color
+fi
 
+export DOCKER_BUILDKIT=1
