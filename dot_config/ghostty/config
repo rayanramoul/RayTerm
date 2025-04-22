@@ -8,3 +8,4 @@ background-opacity = 0.6
 background-blur-radius = 20
 title = RayTerm
 background = #000000
+clipboard-paste-protection = false
