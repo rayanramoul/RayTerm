@@ -47,7 +47,7 @@ packages:
       - hyprshot-git
       - waybar
       - dolphin
-      - hyprpaper
+      - hyprpaper-git
       - ags-hyprpanel-git
       - zen-browser-bin
       - kitty
