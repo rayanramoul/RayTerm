@@ -34,7 +34,6 @@ packages:
       - fd
       - lsd
       - ripgrep
-      - tldr
       - ulauncher
       - playerctl
       - pavucontrol
