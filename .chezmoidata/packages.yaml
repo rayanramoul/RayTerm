@@ -20,6 +20,7 @@ packages:
   arch:
     packages:
       - git
+      - aquamarine-git
       - neovim
       - python-pip
       - bpytop
