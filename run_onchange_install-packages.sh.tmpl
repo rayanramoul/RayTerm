@@ -22,7 +22,7 @@ if [ -f /etc/arch-release ]; then
     echo "❌ yay is not installed. Please install yay first."
     exit 1
   fi
-  yay -S --noconfirm {{ range .packages.arch.packages }}"{{ . }}" {{ end }}
+  yay -S --noconfirm --needed --batchinstall {{ range .packages.arch.packages }}"{{ . }}" {{ end }}
 
 elif [ -f /etc/debian_version ]; then
   echo "Installing packages on Ubuntu/Debian using apt..."
