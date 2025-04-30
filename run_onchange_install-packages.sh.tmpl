@@ -20,9 +20,12 @@ if [ -f /etc/arch-release ]; then
   echo "Installing packages on Arch Linux using yay..."
   if ! command -v yay &> /dev/null; then
     echo "❌ yay is not installed. Please install yay first."
+    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     exit 1
   fi
-  yay -S --noconfirm --needed --batchinstall {{ range .packages.arch.packages }}"{{ . }}" {{ end }}
+  # sudo pacman -Qq aquamarine &>/dev/null && sudo pacman -Rnd --noconfirm aquamarine
+  # sudo pacman -Qq | grep '^hypr' | xargs -r sudo pacman -Rnd --noconfirm
+  yay -S --noconfirm {{ range .packages.arch.packages }}"{{ . }}" {{ end }}
 
 elif [ -f /etc/debian_version ]; then
   echo "Installing packages on Ubuntu/Debian using apt..."

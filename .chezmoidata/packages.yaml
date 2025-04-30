@@ -20,12 +20,14 @@ packages:
   arch:
     packages:
       - git
+      - ghostty
       - aquamarine-git
       - neovim
       - python-pip
       - bpytop
       - zsh
       - tmux
+      - copyq
       - git
       - lazygit
       - lazydocker
@@ -61,6 +63,9 @@ packages:
       - gamemode
       - stremio
       - obsidian
+      - vesktop
+      - xdg-desktop-portal-hyprland-git
+      - uv
 
   ubuntu:
     packages:
