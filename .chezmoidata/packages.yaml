@@ -60,6 +60,7 @@ packages:
       - heroic-games-launcher-bin
       - docker
       - docker-compose
+      - yazi
       - gamemode
       - stremio
       - obsidian
