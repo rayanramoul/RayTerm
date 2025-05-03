@@ -1,3 +1,5 @@
+# To Reload config:
+# Ctrl + Shift + , 
 theme = CGA
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 0.5
