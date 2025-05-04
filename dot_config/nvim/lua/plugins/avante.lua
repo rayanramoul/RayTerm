@@ -1,3 +1,14 @@
+vim.api.nvim_set_hl(0, "MyAvanteCurrentGroup", {
+  fg = nil,
+  bg = "#9c1e1e",
+})
+
+
+vim.api.nvim_set_hl(0, "MyAvanteIncomingGroup", {
+  fg = nil,
+  bg = "#258036",
+})
+
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
@@ -33,6 +44,12 @@ return {
   },
   opts = {
     provider = "gemini", -- Recommend using Claude
+    highlights = {
+      diff = {
+        current = "MyAvanteCurrentGroup",
+        incoming = "MyAvanteIncomingGroup"
+      }
+    },
     behaviour = {
       auto_suggestions = false,
       auto_set_highlight_group = true,
