@@ -1,30 +1,30 @@
 <div align="center">
 
-<img width="200" src="https://github.com/rayanramoul/RayTerm/blob/master/assets/logo.png?raw=true">
+<img width="200" src="https://github.com/rayanramoul/dotfiles/blob/main/assets/logo.png?raw=true">
 </img>
 <h1>RayTerm</h1>
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />
 <h6 align="center">
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Neovim.md">Neovim</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/Neovim.md">Neovim</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Terminal.md">Terminal</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/Terminal.md">Terminal</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Tmux.md">Tmux</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/Tmux.md">Tmux</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/ArchLinux.md">ArchLinux</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/ArchLinux.md">ArchLinux</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/MacOS.md">MacOS</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/MacOS.md">MacOS</a>
   ·
-  <a href="https://github.com/rayanramoul/RayTerm/blob/master/docs/Windows.md">Windows</a>
+  <a href="https://github.com/rayanramoul/dotfiles/blob/main/docs/Windows.md">Windows</a>
 </h6>
 
 &nbsp;
 _MacOS Setup_
-![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/macos_preview.png?raw=true)
+![RayTerm](https://github.com/rayanramoul/dotfiles/blob/main/assets/macos_preview.png?raw=true)
 _Windows and WSL Setup_
-![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/windows_preview.png?raw=true)
+![RayTerm](https://github.com/rayanramoul/dotfiles/blob/main/assets/windows_preview.png?raw=true)
 _ArchLinux Setup_
-![RayTerm](https://github.com/rayanramoul/RayTerm/blob/master/assets/arch_preview.png?raw=true)
+![RayTerm](https://github.com/rayanramoul/dotfiles/blob/main/assets/arch_preview.png?raw=true)
 
 </div>
 
@@ -33,9 +33,9 @@ _ArchLinux Setup_
 ```bash
 # install chezmoi  (https://chezmoi.io)
 sudo pacman -S chezmoi
-chezmoi init --apply https://github.com/rayanramoul/RayTerm.git
+chezmoi init --apply https://github.com/rayanramoul
 # or if you have the permission
-chezmoi init --apply git@github.com:rayanramoul/RayTerm.git
+chezmoi init --apply git@github.com:rayanramoul
 ```
 
 # What is this ?
