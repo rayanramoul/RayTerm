@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Terminal</h1>
-    <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/terminal_preview.png?raw=true"/>
+    <img src="https://github.com/rayanramoul/dotfiles/blob/main/assets/terminal_preview.png?raw=true"/>
 </div>
 
 # Added Zsh Keybindings :
