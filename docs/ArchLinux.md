@@ -1,6 +1,6 @@
 <div align="center">
     <h1>ArchLinux</h1>
-    <img src="https://github.com/rayanramoul/RayTerm/blob/master/assets/arch_preview.png?raw=true"/>
+    <img src="https://github.com/rayanramoul/dotfiles/blob/main/assets/arch_preview.png?raw=true"/>
 </div>
 
 # Summary
