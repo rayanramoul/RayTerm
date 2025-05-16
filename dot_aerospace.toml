@@ -1,4 +1,11 @@
-# Place a copy of this config to ~/.aerospace.toml
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 # After that, you can edit ~/.aerospace.toml to your liking
 
 # You can use it to add commands that run after login to macOS user session.
@@ -13,6 +20,7 @@ after-startup-command = [
     # Install JankyBorders first, it has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget borders active_color=0xff00FFFF inactive_color=0xffa1a1a1 width=5.0',
+    'exec-and-forget sketchybar'
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -103,10 +111,14 @@ alt-comma = 'layout accordion horizontal vertical'
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-cmd-left = 'focus left'
-alt-cmd-down = 'focus down'
-alt-cmd-up = 'focus up'
-alt-cmd-right = 'focus right'
+alt-left = 'focus left'
+alt-h = 'focus left'
+alt-down = 'focus down'
+alt-j = 'focus down'
+alt-up = 'focus up'
+alt-k = 'focus up'
+alt-right = 'focus right'
+alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-left = 'move left'
@@ -217,30 +229,51 @@ run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser.app.mdpkiolbdkhdjpekfbkbmhigcaggjagi'
-run = 'move-node-to-workspace 5'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 5'
 
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = ''
+run = 'move-node-to-workspace 3'
 
 # workspace 6 apps (games & movies)
 [[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam.helper'
-run = ['layout tiling', 'move-node-to-workspace 6']
+run = ['layout tiling', 'move-node-to-workspace 5']
 
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+run = 'move-node-to-workspace 5'
 
 # floating apps
-[[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.googlecode.iterm2'
+# run = 'layout floating'
 
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
-
-# Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
