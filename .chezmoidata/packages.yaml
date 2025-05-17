@@ -20,8 +20,6 @@ packages:
   arch:
     packages:
       - git
-      - ghostty
-      - aquamarine-git
       - neovim
       - python-pip
       - bpytop
@@ -37,35 +35,15 @@ packages:
       - fd
       - lsd
       - ripgrep
-      - ulauncher
       - playerctl
       - pavucontrol
-      - steam
       - wine
-      - lutris
       - swww
-      - hyprland-git
-      - hyprlock-git
-      - hypridle-git
-      - hyprshot-git
-      - waybar
       - dolphin
-      - hyprpaper-git
-      - ags-hyprpanel-git
       - zen-browser-bin
-      - kitty
-      - slack-desktop
       - compton
       - openssh
-      - heroic-games-launcher-bin
-      - docker
-      - docker-compose
       - yazi
-      - gamemode
-      - stremio
-      - obsidian
-      - vesktop
-      - xdg-desktop-portal-hyprland-git
       - uv
 
   ubuntu:
