@@ -55,3 +55,5 @@ vim.keymap.set(
 vim.keymap.set("n", "<C-n>", function()
   os.execute("tmux switch-client -t Notes || tmux new-session -s Notes")
 end, { desc = "Switch to or create tmux session Notes" })
+
+vim.keymap.set("x", "p", '"_dP', { desc = "Paste without overwriting yank register" })
